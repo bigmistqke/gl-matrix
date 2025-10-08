@@ -66,7 +66,7 @@ export function fromValues(x, y, z) {
 /**
  * Copy the values from one vec3 to another
  *
- * @template {vec3} T
+ * @template {Vec3} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec3} a the source vector
  * @returns {ReturnType.Vec3<T>} out
@@ -81,7 +81,7 @@ export function copy(out, a) {
 /**
  * Set the components of a vec3 to the given values
  *
- * @template {vec3} T
+ * @template {Vec3} T
  * @param {T} out the receiving vector
  * @param {Number} x X component
  * @param {Number} y Y component
@@ -98,7 +98,7 @@ export function set(out, x, y, z) {
 /**
  * Adds two vec3's
  *
- * @template {vec3} T
+ * @template {Vec3} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec3} a the first operand
  * @param {ReadonlyVec3} b the second operand
@@ -114,7 +114,7 @@ export function add(out, a, b) {
 /**
  * Subtracts vector b from vector a
  *
- * @template {vec3} T
+ * @template {Vec3} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec3} a the first operand
  * @param {ReadonlyVec3} b the second operand
@@ -130,7 +130,7 @@ export function subtract(out, a, b) {
 /**
  * Multiplies two vec3's
  *
- * @template {vec3} T
+ * @template {Vec3} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec3} a the first operand
  * @param {ReadonlyVec3} b the second operand
@@ -146,7 +146,7 @@ export function multiply(out, a, b) {
 /**
  * Divides two vec3's
  *
- * @template {vec3} T
+ * @template {Vec3} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec3} a the first operand
  * @param {ReadonlyVec3} b the second operand
@@ -162,7 +162,7 @@ export function divide(out, a, b) {
 /**
  * Math.ceil the components of a vec3
  *
- * @template {vec3} T
+ * @template {Vec3} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec3} a vector to ceil
  * @returns {ReturnType.Vec3<T>} out
@@ -177,7 +177,7 @@ export function ceil(out, a) {
 /**
  * Math.floor the components of a vec3
  *
- * @template {vec3} T
+ * @template {Vec3} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec3} a vector to floor
  * @returns {ReturnType.Vec3<T>} out
@@ -192,7 +192,7 @@ export function floor(out, a) {
 /**
  * Returns the minimum of two vec3's
  *
- * @template {vec3} T
+ * @template {Vec3} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec3} a the first operand
  * @param {ReadonlyVec3} b the second operand
@@ -208,7 +208,7 @@ export function min(out, a, b) {
 /**
  * Returns the maximum of two vec3's
  *
- * @template {vec3} T
+ * @template {Vec3} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec3} a the first operand
  * @param {ReadonlyVec3} b the second operand
@@ -224,7 +224,7 @@ export function max(out, a, b) {
 /**
  * symmetric round the components of a vec3
  *
- * @template {vec3} T
+ * @template {Vec3} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec3} a vector to round
  * @returns {ReturnType.Vec3<T>} out
@@ -239,7 +239,7 @@ export function round(out, a) {
 /**
  * Scales a vec3 by a scalar number
  *
- * @template {vec3} T
+ * @template {Vec3} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec3} a the vector to scale
  * @param {Number} b amount to scale the vector by
@@ -255,7 +255,7 @@ export function scale(out, a, b) {
 /**
  * Adds two vec3's after scaling the second operand by a scalar value
  *
- * @template {vec3} T
+ * @template {Vec3} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec3} a the first operand
  * @param {ReadonlyVec3} b the second operand
@@ -313,7 +313,7 @@ export function squaredLength(a) {
 /**
  * Negates the components of a vec3
  *
- * @template {vec3} T
+ * @template {Vec3} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec3} a vector to negate
  * @returns {ReturnType.Vec3<T>} out
@@ -328,7 +328,7 @@ export function negate(out, a) {
 /**
  * Returns the inverse of the components of a vec3
  *
- * @template {vec3} T
+ * @template {Vec3} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec3} a vector to invert
  * @returns {ReturnType.Vec3<T>} out
@@ -343,7 +343,7 @@ export function inverse(out, a) {
 /**
  * Normalize a vec3
  *
- * @template {vec3} T
+ * @template {Vec3} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec3} a vector to normalize
  * @returns {ReturnType.Vec3<T>} out
@@ -377,7 +377,7 @@ export function dot(a, b) {
 /**
  * Computes the cross product of two vec3's
  *
- * @template {vec3} T
+ * @template {Vec3} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec3} a the first operand
  * @param {ReadonlyVec3} b the second operand
@@ -400,7 +400,7 @@ export function cross(out, a, b) {
 /**
  * Performs a linear interpolation between two vec3's
  *
- * @template {vec3} T
+ * @template {Vec3} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec3} a the first operand
  * @param {ReadonlyVec3} b the second operand
@@ -420,7 +420,7 @@ export function lerp(out, a, b, t) {
 /**
  * Performs a spherical linear interpolation between two vec3's
  *
- * @template {vec3} T
+ * @template {Vec3} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec3} a the first operand
  * @param {ReadonlyVec3} b the second operand
@@ -443,7 +443,7 @@ export function slerp(out, a, b, t) {
 /**
  * Performs a hermite interpolation with two control points
  *
- * @template {vec3} T
+ * @template {Vec3} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec3} a the first operand
  * @param {ReadonlyVec3} b the second operand
@@ -469,7 +469,7 @@ export function hermite(out, a, b, c, d, t) {
 /**
  * Performs a bezier interpolation with two control points
  *
- * @template {vec3} T
+ * @template {Vec3} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec3} a the first operand
  * @param {ReadonlyVec3} b the second operand
@@ -497,7 +497,7 @@ export function bezier(out, a, b, c, d, t) {
 /**
  * Generates a random vector with the given scale
  *
- * @template {vec3} T
+ * @template {Vec3} T
  * @param {T} out the receiving vector
  * @param {Number} [scale] Length of the resulting vector. If omitted, a unit vector will be returned
  * @returns {ReturnType.Vec3<T>} out
@@ -519,7 +519,7 @@ export function random(out, scale) {
  * Transforms the vec3 with a mat4.
  * 4th vector component is implicitly '1'
  *
- * @template {vec3} T
+ * @template {Vec3} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec3} a the vector to transform
  * @param {ReadonlyMat4} m matrix to transform with
@@ -540,7 +540,7 @@ export function transformMat4(out, a, m) {
 /**
  * Transforms the vec3 with a mat3.
  *
- * @template {vec3} T
+ * @template {Vec3} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec3} a the vector to transform
  * @param {ReadonlyMat3} m the 3x3 matrix to transform with
@@ -560,7 +560,7 @@ export function transformMat3(out, a, m) {
  * Transforms the vec3 with a quat
  * Can also be used for dual quaternions. (Multiply it with the real part)
  *
- * @template {vec3} T
+ * @template {Vec3} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec3} a the vector to transform
  * @param {ReadonlyQuat} q normalized quaternion to transform with
@@ -600,7 +600,7 @@ export function transformQuat(out, a, q) {
 
 /**
  * Rotate a 3D vector around the x-axis
- * @template {vec3} T
+ * @template {Vec3} T
  * @param {T} out The receiving vec3
  * @param {ReadonlyVec3} a The vec3 point to rotate
  * @param {ReadonlyVec3} b The origin of the rotation
@@ -630,7 +630,7 @@ export function rotateX(out, a, b, rad) {
 
 /**
  * Rotate a 3D vector around the y-axis
- * @template {vec3} T
+ * @template {Vec3} T
  * @param {T} out The receiving vec3
  * @param {ReadonlyVec3} a The vec3 point to rotate
  * @param {ReadonlyVec3} b The origin of the rotation
@@ -660,7 +660,7 @@ export function rotateY(out, a, b, rad) {
 
 /**
  * Rotate a 3D vector around the z-axis
- * @template {vec3} T
+ * @template {Vec3} T
  * @param {T} out The receiving vec3
  * @param {ReadonlyVec3} a The vec3 point to rotate
  * @param {ReadonlyVec3} b The origin of the rotation
@@ -709,7 +709,7 @@ export function angle(a, b) {
 /**
  * Set the components of a vec3 to zero
  *
- * @template {vec3} T
+ * @template {Vec3} T
  * @param {T} out the receiving vector
  * @returns {ReturnType.Vec3<T>} out
  */

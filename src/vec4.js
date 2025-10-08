@@ -57,7 +57,7 @@ export function fromValues(x, y, z, w) {
 /**
  * Copy the values from one vec4 to another
  *
- * @template {vec4} T
+ * @template {Vec4} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec4} a the source vector
  * @returns {ReturnType.Vec4<T>} out
@@ -73,7 +73,7 @@ export function copy(out, a) {
 /**
  * Set the components of a vec4 to the given values
  *
- * @template {vec4} T
+ * @template {Vec4} T
  * @param {T} out the receiving vector
  * @param {Number} x X component
  * @param {Number} y Y component
@@ -92,7 +92,7 @@ export function set(out, x, y, z, w) {
 /**
  * Adds two vec4's
  *
- * @template {vec4} T
+ * @template {Vec4} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec4} a the first operand
  * @param {ReadonlyVec4} b the second operand
@@ -109,7 +109,7 @@ export function add(out, a, b) {
 /**
  * Subtracts vector b from vector a
  *
- * @template {vec4} T
+ * @template {Vec4} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec4} a the first operand
  * @param {ReadonlyVec4} b the second operand
@@ -126,7 +126,7 @@ export function subtract(out, a, b) {
 /**
  * Multiplies two vec4's
  *
- * @template {vec4} T
+ * @template {Vec4} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec4} a the first operand
  * @param {ReadonlyVec4} b the second operand
@@ -143,7 +143,7 @@ export function multiply(out, a, b) {
 /**
  * Divides two vec4's
  *
- * @template {vec4} T
+ * @template {Vec4} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec4} a the first operand
  * @param {ReadonlyVec4} b the second operand
@@ -160,7 +160,7 @@ export function divide(out, a, b) {
 /**
  * Math.ceil the components of a vec4
  *
- * @template {vec4} T
+ * @template {Vec4} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec4} a vector to ceil
  * @returns {ReturnType.Vec4<T>} out
@@ -176,7 +176,7 @@ export function ceil(out, a) {
 /**
  * Math.floor the components of a vec4
  *
- * @template {vec4} T
+ * @template {Vec4} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec4} a vector to floor
  * @returns {ReturnType.Vec4<T>} out
@@ -192,7 +192,7 @@ export function floor(out, a) {
 /**
  * Returns the minimum of two vec4's
  *
- * @template {vec4} T
+ * @template {Vec4} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec4} a the first operand
  * @param {ReadonlyVec4} b the second operand
@@ -209,7 +209,7 @@ export function min(out, a, b) {
 /**
  * Returns the maximum of two vec4's
  *
- * @template {vec4} T
+ * @template {Vec4} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec4} a the first operand
  * @param {ReadonlyVec4} b the second operand
@@ -226,7 +226,7 @@ export function max(out, a, b) {
 /**
  * symmetric round the components of a vec4
  *
- * @template {vec4} T
+ * @template {Vec4} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec4} a vector to round
  * @returns {ReturnType.Vec4<T>} out
@@ -242,7 +242,7 @@ export function round(out, a) {
 /**
  * Scales a vec4 by a scalar number
  *
- * @template {vec4} T
+ * @template {Vec4} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec4} a the vector to scale
  * @param {Number} b amount to scale the vector by
@@ -259,7 +259,7 @@ export function scale(out, a, b) {
 /**
  * Adds two vec4's after scaling the second operand by a scalar value
  *
- * @template {vec4} T
+ * @template {Vec4} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec4} a the first operand
  * @param {ReadonlyVec4} b the second operand
@@ -335,7 +335,7 @@ export function squaredLength(a) {
 /**
  * Negates the components of a vec4
  *
- * @template {vec4} T
+ * @template {Vec4} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec4} a vector to negate
  * @returns {ReturnType.Vec4<T>} out
@@ -351,7 +351,7 @@ export function negate(out, a) {
 /**
  * Returns the inverse of the components of a vec4
  *
- * @template {vec4} T
+ * @template {Vec4} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec4} a vector to invert
  * @returns {ReturnType.Vec4<T>} out
@@ -367,7 +367,7 @@ export function inverse(out, a) {
 /**
  * Normalize a vec4
  *
- * @template {vec4} T
+ * @template {Vec4} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec4} a vector to normalize
  * @returns {ReturnType.Vec4<T>} out
@@ -402,7 +402,7 @@ export function dot(a, b) {
 /**
  * Returns the cross-product of three vectors in a 4-dimensional space
  *
- * @template {vec4} T
+ * @template {Vec4} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec4} u the first vector
  * @param {ReadonlyVec4} v the second vector
@@ -432,7 +432,7 @@ export function cross(out, u, v, w) {
 /**
  * Performs a linear interpolation between two vec4's
  *
- * @template {vec4} T
+ * @template {Vec4} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec4} a the first operand
  * @param {ReadonlyVec4} b the second operand
@@ -454,7 +454,7 @@ export function lerp(out, a, b, t) {
 /**
  * Generates a random vector with the given scale
  *
- * @template {vec4} T
+ * @template {Vec4} T
  * @param {T} out the receiving vector
  * @param {Number} [scale] Length of the resulting vector. If omitted, a unit vector will be returned
  * @returns {ReturnType.Vec4<T>} out
@@ -490,7 +490,7 @@ export function random(out, scale) {
 /**
  * Transforms the vec4 with a mat4.
  *
- * @template {vec4} T
+ * @template {Vec4} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec4} a the vector to transform
  * @param {ReadonlyMat4} m matrix to transform with
@@ -511,7 +511,7 @@ export function transformMat4(out, a, m) {
 /**
  * Transforms the vec4 with a quat
  *
- * @template {vec4} T
+ * @template {Vec4} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec4} a the vector to transform
  * @param {ReadonlyQuat} q normalized quaternion to transform with
@@ -552,7 +552,7 @@ export function transformQuat(out, a, q) {
 /**
  * Set the components of a vec4 to zero
  *
- * @template {vec4} T
+ * @template {Vec4} T
  * @param {T} out the receiving vector
  * @returns {ReturnType.Vec4<T>} out
  */

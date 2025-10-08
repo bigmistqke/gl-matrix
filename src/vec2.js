@@ -49,7 +49,7 @@ export function fromValues(x, y) {
 /**
  * Copy the values from one vec2 to another
  *
- * @template {vec2} T
+ * @template {Vec2} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec2} a the source vector
  * @returns {ReturnType.Vec2<T>} out
@@ -63,7 +63,7 @@ export function copy(out, a) {
 /**
  * Set the components of a vec2 to the given values
  *
- * @template {vec2} T
+ * @template {Vec2} T
  * @param {T} out the receiving vector
  * @param {Number} x X component
  * @param {Number} y Y component
@@ -78,7 +78,7 @@ export function set(out, x, y) {
 /**
  * Adds two vec2's
  *
- * @template {vec2} T
+ * @template {Vec2} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec2} a the first operand
  * @param {ReadonlyVec2} b the second operand
@@ -93,7 +93,7 @@ export function add(out, a, b) {
 /**
  * Subtracts vector b from vector a
  *
- * @template {vec2} T
+ * @template {Vec2} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec2} a the first operand
  * @param {ReadonlyVec2} b the second operand
@@ -108,7 +108,7 @@ export function subtract(out, a, b) {
 /**
  * Multiplies two vec2's
  *
- * @template {vec2} T
+ * @template {Vec2} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec2} a the first operand
  * @param {ReadonlyVec2} b the second operand
@@ -123,7 +123,7 @@ export function multiply(out, a, b) {
 /**
  * Divides two vec2's
  *
- * @template {vec2} T
+ * @template {Vec2} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec2} a the first operand
  * @param {ReadonlyVec2} b the second operand
@@ -138,7 +138,7 @@ export function divide(out, a, b) {
 /**
  * Math.ceil the components of a vec2
  *
- * @template {vec2} T
+ * @template {Vec2} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec2} a vector to ceil
  * @returns {ReturnType.Vec2<T>} out
@@ -152,7 +152,7 @@ export function ceil(out, a) {
 /**
  * Math.floor the components of a vec2
  *
- * @template {vec2} T
+ * @template {Vec2} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec2} a vector to floor
  * @returns {ReturnType.Vec2<T>} out
@@ -166,7 +166,7 @@ export function floor(out, a) {
 /**
  * Returns the minimum of two vec2's
  *
- * @template {vec2} T
+ * @template {Vec2} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec2} a the first operand
  * @param {ReadonlyVec2} b the second operand
@@ -181,7 +181,7 @@ export function min(out, a, b) {
 /**
  * Returns the maximum of two vec2's
  *
- * @template {vec2} T
+ * @template {Vec2} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec2} a the first operand
  * @param {ReadonlyVec2} b the second operand
@@ -196,7 +196,7 @@ export function max(out, a, b) {
 /**
  * symmetric round the components of a vec2
  *
- * @template {vec2} T
+ * @template {Vec2} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec2} a vector to round
  * @returns {ReturnType.Vec2<T>} out
@@ -210,7 +210,7 @@ export function round(out, a) {
 /**
  * Scales a vec2 by a scalar number
  *
- * @template {vec2} T
+ * @template {Vec2} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec2} a the vector to scale
  * @param {Number} b amount to scale the vector by
@@ -225,7 +225,7 @@ export function scale(out, a, b) {
 /**
  * Adds two vec2's after scaling the second operand by a scalar value
  *
- * @template {vec2} T
+ * @template {Vec2} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec2} a the first operand
  * @param {ReadonlyVec2} b the second operand
@@ -291,7 +291,7 @@ export function squaredLength(a) {
 /**
  * Negates the components of a vec2
  *
- * @template {vec2} T
+ * @template {Vec2} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec2} a vector to negate
  * @returns {ReturnType.Vec2<T>} out
@@ -305,7 +305,7 @@ export function negate(out, a) {
 /**
  * Returns the inverse of the components of a vec2
  *
- * @template {vec2} T
+ * @template {Vec2} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec2} a vector to invert
  * @returns {ReturnType.Vec2<T>} out
@@ -319,7 +319,7 @@ export function inverse(out, a) {
 /**
  * Normalize a vec2
  *
- * @template {vec2} T
+ * @template {Vec2} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec2} a vector to normalize
  * @returns {ReturnType.Vec2<T>} out
@@ -352,7 +352,7 @@ export function dot(a, b) {
  * Computes the cross product of two vec2's
  * Note that the cross product must by definition produce a 3D vector
  *
- * @template {vec3} T
+ * @template {Vec3} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec2} a the first operand
  * @param {ReadonlyVec2} b the second operand
@@ -368,7 +368,7 @@ export function cross(out, a, b) {
 /**
  * Performs a linear interpolation between two vec2's
  *
- * @template {vec2} T
+ * @template {Vec2} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec2} a the first operand
  * @param {ReadonlyVec2} b the second operand
@@ -386,7 +386,7 @@ export function lerp(out, a, b, t) {
 /**
  * Generates a random vector with the given scale
  *
- * @template {vec2} T
+ * @template {Vec2} T
  * @param {T} out the receiving vector
  * @param {Number} [scale] Length of the resulting vector. If omitted, a unit vector will be returned
  * @returns {ReturnType.Vec2<T>} out
@@ -402,7 +402,7 @@ export function random(out, scale) {
 /**
  * Transforms the vec2 with a mat2
  *
- * @template {vec2} T
+ * @template {Vec2} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec2} a the vector to transform
  * @param {ReadonlyMat2} m matrix to transform with
@@ -419,7 +419,7 @@ export function transformMat2(out, a, m) {
 /**
  * Transforms the vec2 with a mat2d
  *
- * @template {vec2} T
+ * @template {Vec2} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec2} a the vector to transform
  * @param {ReadonlyMat2d} m matrix to transform with
@@ -437,7 +437,7 @@ export function transformMat2d(out, a, m) {
  * Transforms the vec2 with a mat3
  * 3rd vector component is implicitly '1'
  *
- * @template {vec2} T
+ * @template {Vec2} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec2} a the vector to transform
  * @param {ReadonlyMat3} m matrix to transform with
@@ -456,7 +456,7 @@ export function transformMat3(out, a, m) {
  * 3rd vector component is implicitly '0'
  * 4th vector component is implicitly '1'
  *
- * @template {vec2} T
+ * @template {Vec2} T
  * @param {T} out the receiving vector
  * @param {ReadonlyVec2} a the vector to transform
  * @param {ReadonlyMat4} m matrix to transform with
@@ -472,7 +472,7 @@ export function transformMat4(out, a, m) {
 
 /**
  * Rotate a 2D vector
- * @template {vec2} T
+ * @template {Vec2} T
  * @param {T} out The receiving vec2
  * @param {ReadonlyVec2} a The vec2 point to rotate
  * @param {ReadonlyVec2} b The origin of the rotation
@@ -522,7 +522,7 @@ export function signedAngle(a, b) {
 /**
  * Set the components of a vec2 to zero
  *
- * @template {vec2} T
+ * @template {Vec2} T
  * @param {T} out the receiving vector
  * @returns {ReturnType.Vec2<T>} out
  */

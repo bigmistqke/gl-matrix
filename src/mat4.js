@@ -63,7 +63,7 @@ export function clone(a) {
 /**
  * Copy the values from one mat4 to another
  *
- * @template {mat4} T
+ * @template {Mat4} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat4} a the source matrix
  * @returns {ReturnType.Mat4<T>} out
@@ -150,7 +150,7 @@ export function fromValues(
 /**
  * Set the components of a mat4 to the given values
  *
- * @template {mat4} T
+ * @template {Mat4} T
  * @param {T} out the receiving matrix
  * @param {Number} m00 Component in column 0, row 0 position (index 0)
  * @param {Number} m01 Component in column 0, row 1 position (index 1)
@@ -211,7 +211,7 @@ export function set(
 /**
  * Set a mat4 to the identity matrix
  *
- * @template {mat4} T
+ * @template {Mat4} T
  * @param {T} out the receiving matrix
  * @returns {ReturnType.Mat4<T>} out
  */
@@ -238,7 +238,7 @@ export function identity(out) {
 /**
  * Transpose the values of a mat4
  *
- * @template {mat4} T
+ * @template {Mat4} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat4} a the source matrix
  * @returns {ReturnType.Mat4<T>} out
@@ -290,7 +290,7 @@ export function transpose(out, a) {
 /**
  * Inverts a mat4
  *
- * @template {mat4} T
+ * @template {Mat4} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat4} a the source matrix
  * @returns {ReturnType.Mat4<T> | null} out, or null if source matrix is not invertible
@@ -358,7 +358,7 @@ export function invert(out, a) {
 /**
  * Calculates the adjugate of a mat4
  *
- * @template {mat4} T
+ * @template {Mat4} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat4} a the source matrix
  * @returns {ReturnType.Mat4<T>} out
@@ -455,7 +455,7 @@ export function determinant(a) {
 /**
  * Multiplies two mat4s
  *
- * @template {mat4} T
+ * @template {Mat4} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat4} a the first operand
  * @param {ReadonlyMat4} b the second operand
@@ -521,7 +521,7 @@ export function multiply(out, a, b) {
 /**
  * Translate a mat4 by the given vector
  *
- * @template {mat4} T
+ * @template {Mat4} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat4} a the matrix to translate
  * @param {ReadonlyVec3} v vector to translate by
@@ -579,7 +579,7 @@ export function translate(out, a, v) {
 /**
  * Scales the mat4 by the dimensions in the given vec3 not using vectorization
  *
- * @template {mat4} T
+ * @template {Mat4} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat4} a the matrix to scale
  * @param {ReadonlyVec3} v the vec3 to scale the matrix by
@@ -612,7 +612,7 @@ export function scale(out, a, v) {
 /**
  * Rotates a mat4 by the given angle around the given axis
  *
- * @template {mat4} T
+ * @template {Mat4} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat4} a the matrix to rotate
  * @param {Number} rad the angle to rotate the matrix by
@@ -696,7 +696,7 @@ export function rotate(out, a, rad, axis) {
 /**
  * Rotates a matrix by the given angle around the X axis
  *
- * @template {mat4} T
+ * @template {Mat4} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat4} a the matrix to rotate
  * @param {Number} rad the angle to rotate the matrix by
@@ -741,7 +741,7 @@ export function rotateX(out, a, rad) {
 /**
  * Rotates a matrix by the given angle around the Y axis
  *
- * @template {mat4} T
+ * @template {Mat4} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat4} a the matrix to rotate
  * @param {Number} rad the angle to rotate the matrix by
@@ -786,7 +786,7 @@ export function rotateY(out, a, rad) {
 /**
  * Rotates a matrix by the given angle around the Z axis
  *
- * @template {mat4} T
+ * @template {Mat4} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat4} a the matrix to rotate
  * @param {Number} rad the angle to rotate the matrix by
@@ -835,7 +835,7 @@ export function rotateZ(out, a, rad) {
  *     mat4.identity(dest);
  *     mat4.translate(dest, dest, vec);
  *
- * @template {mat4} T
+ * @template {Mat4} T
  * @param {T} out mat4 receiving operation result
  * @param {ReadonlyVec3} v Translation vector
  * @returns {ReturnType.Mat4<T>} out
@@ -867,7 +867,7 @@ export function fromTranslation(out, v) {
  *     mat4.identity(dest);
  *     mat4.scale(dest, dest, vec);
  *
- * @template {mat4} T
+ * @template {Mat4} T
  * @param {T} out mat4 receiving operation result
  * @param {ReadonlyVec3} v Scaling vector
  * @returns {ReturnType.Mat4<T>} out
@@ -899,7 +899,7 @@ export function fromScaling(out, v) {
  *     mat4.identity(dest);
  *     mat4.rotate(dest, dest, rad, axis);
  *
- * @template {mat4} T
+ * @template {Mat4} T
  * @param {T} out mat4 receiving operation result
  * @param {Number} rad the angle to rotate the matrix by
  * @param {ReadonlyVec3} axis the axis to rotate around
@@ -952,7 +952,7 @@ export function fromRotation(out, rad, axis) {
  *     mat4.identity(dest);
  *     mat4.rotateX(dest, dest, rad);
  *
- * @template {mat4} T
+ * @template {Mat4} T
  * @param {T} out mat4 receiving operation result
  * @param {Number} rad the angle to rotate the matrix by
  * @returns {ReturnType.Mat4<T>} out
@@ -988,7 +988,7 @@ export function fromXRotation(out, rad) {
  *     mat4.identity(dest);
  *     mat4.rotateY(dest, dest, rad);
  *
- * @template {mat4} T
+ * @template {Mat4} T
  * @param {T} out mat4 receiving operation result
  * @param {Number} rad the angle to rotate the matrix by
  * @returns {ReturnType.Mat4<T>} out
@@ -1024,7 +1024,7 @@ export function fromYRotation(out, rad) {
  *     mat4.identity(dest);
  *     mat4.rotateZ(dest, dest, rad);
  *
- * @template {mat4} T
+ * @template {Mat4} T
  * @param {T} out mat4 receiving operation result
  * @param {Number} rad the angle to rotate the matrix by
  * @returns {ReturnType.Mat4<T>} out
@@ -1063,9 +1063,9 @@ export function fromZRotation(out, rad) {
  *     mat4.fromQuat(quatMat, quat);
  *     mat4.multiply(dest, dest, quatMat);
  *
- * @template {mat4} T
+ * @template {Mat4} T
  * @param {T} out mat4 receiving operation result
- * @param {quat} q Rotation quaternion
+ * @param {Quat} q Rotation quaternion
  * @param {ReadonlyVec3} v Translation vector
  * @returns {ReturnType.Mat4<T>} out
  */
@@ -1112,7 +1112,7 @@ export function fromRotationTranslation(out, q, v) {
 /**
  * Creates a new mat4 from a dual quat.
  *
- * @param {mat4} out Matrix
+ * @param {Mat4} out Matrix
  * @param {ReadonlyQuat2} a Dual Quaternion
  * @returns {ArrayType} mat4 receiving operation result
  */
@@ -1147,9 +1147,9 @@ export function fromQuat2(out, a) {
  *  matrix. If a matrix is built with fromRotationTranslation,
  *  the returned vector will be the same as the translation vector
  *  originally supplied.
- * @param  {vec3} out Vector to receive translation component
+ * @param  {Vec3} out Vector to receive translation component
  * @param  {ReadonlyMat4} mat Matrix to be decomposed (input)
- * @return {vec3} out
+ * @return {Vec3} out
  */
 export function getTranslation(out, mat) {
   out[0] = mat[12];
@@ -1165,9 +1165,9 @@ export function getTranslation(out, mat) {
  *  with a normalized Quaternion parameter, the returned vector will be
  *  the same as the scaling vector
  *  originally supplied.
- * @param  {vec3} out Vector to receive scaling factor component
+ * @param  {Vec3} out Vector to receive scaling factor component
  * @param  {ReadonlyMat4} mat Matrix to be decomposed (input)
- * @return {vec3} out
+ * @return {Vec3} out
  */
 export function getScaling(out, mat) {
   let m11 = mat[0];
@@ -1192,9 +1192,9 @@ export function getScaling(out, mat) {
  *  of a transformation matrix. If a matrix is built with
  *  fromRotationTranslation, the returned quaternion will be the
  *  same as the quaternion originally supplied.
- * @param {quat} out Quaternion to receive the rotation component
+ * @param {Quat} out Quaternion to receive the rotation component
  * @param {ReadonlyMat4} mat Matrix to be decomposed (input)
- * @return {quat} out
+ * @return {Quat} out
  */
 export function getRotation(out, mat) {
   let scaling = new glMatrix.ARRAY_TYPE(3);
@@ -1250,9 +1250,9 @@ export function getRotation(out, mat) {
  * Decomposes a transformation matrix into its rotation, translation
  * and scale components. Returns only the rotation component
  * 
- * @param  {quat} out_r Quaternion to receive the rotation component
- * @param  {vec3} out_t Vector to receive the translation vector
- * @param  {vec3} out_s Vector to receive the scaling factor
+ * @param  {Quat} out_r Quaternion to receive the rotation component
+ * @param  {Vec3} out_t Vector to receive the translation vector
+ * @param  {Vec3} out_s Vector to receive the scaling factor
  * @param  {ReadonlyMat4} mat Matrix to be decomposed (input)
  * @returns {ArrayType} out_r
  */
@@ -1332,9 +1332,9 @@ export function decompose(out_r, out_t, out_s, mat) {
  *     mat4.multiply(dest, dest, quatMat);
  *     mat4.scale(dest, dest, scale)
  *
- * @template {mat4} T
+ * @template {Mat4} T
  * @param {T} out mat4 receiving operation result
- * @param {quat} q Rotation quaternion
+ * @param {Quat} q Rotation quaternion
  * @param {ReadonlyVec3} v Translation vector
  * @param {ReadonlyVec3} s Scaling vector
  * @returns {ReturnType.Mat4<T>} out
@@ -1395,9 +1395,9 @@ export function fromRotationTranslationScale(out, q, v, s) {
  *     mat4.scale(dest, dest, scale)
  *     mat4.translate(dest, dest, negativeOrigin);
  *
- * @template {mat4} T
+ * @template {Mat4} T
  * @param {T} out mat4 receiving operation result
- * @param {quat} q Rotation quaternion
+ * @param {Quat} q Rotation quaternion
  * @param {ReadonlyVec3} v Translation vector
  * @param {ReadonlyVec3} s Scaling vector
  * @param {ReadonlyVec3} o The origin vector around which to scale and rotate
@@ -1464,7 +1464,7 @@ export function fromRotationTranslationScaleOrigin(out, q, v, s, o) {
 /**
  * Calculates a 4x4 matrix from the given quaternion
  *
- * @template {mat4} T
+ * @template {Mat4} T
  * @param {T} out mat4 receiving operation result
  * @param {ReadonlyQuat} q Quaternion to create matrix from
  *
@@ -1515,8 +1515,8 @@ export function fromQuat(out, q) {
 /**
  * Generates a frustum matrix with the given bounds
  *
- * @template {mat4} T
- * @param {mat4} out mat4 frustum matrix will be written into
+ * @template {Mat4} T
+ * @param {Mat4} out mat4 frustum matrix will be written into
  * @param {Number} left Left bound of the frustum
  * @param {Number} right Right bound of the frustum
  * @param {Number} bottom Bottom bound of the frustum
@@ -1554,7 +1554,7 @@ export function frustum(out, left, right, bottom, top, near, far) {
  * which matches WebGL/OpenGL's clip volume.
  * Passing null/undefined/no value for far will generate infinite projection matrix.
  *
- * @template {mat4} T
+ * @template {Mat4} T
  * @param {T} out mat4 frustum matrix will be written into
  * @param {number} fovy Vertical field of view in radians
  * @param {number} aspect Aspect ratio. typically viewport width/height
@@ -1601,8 +1601,8 @@ export const perspective = perspectiveNO;
  * which matches WebGPU/Vulkan/DirectX/Metal's clip volume.
  * Passing null/undefined/no value for far will generate infinite projection matrix.
  *
- * @template {mat4} T
- * @param {mat4} out mat4 frustum matrix will be written into
+ * @template {Mat4} T
+ * @param {Mat4} out mat4 frustum matrix will be written into
  * @param {number} fovy Vertical field of view in radians
  * @param {number} aspect Aspect ratio. typically viewport width/height
  * @param {number} near Near bound of the frustum
@@ -1641,8 +1641,8 @@ export function perspectiveZO(out, fovy, aspect, near, far) {
  * This is primarily useful for generating projection matrices to be used
  * with the still experiemental WebVR API.
  *
- * @template {mat4} T
- * @param {mat4} out mat4 frustum matrix will be written into
+ * @template {Mat4} T
+ * @param {Mat4} out mat4 frustum matrix will be written into
  * @param {Object} fov Object containing the following values: upDegrees, downDegrees, leftDegrees, rightDegrees
  * @param {number} near Near bound of the frustum
  * @param {number} far Far bound of the frustum
@@ -1680,8 +1680,8 @@ export function perspectiveFromFieldOfView(out, fov, near, far) {
  * The near/far clip planes correspond to a normalized device coordinate Z range of [-1, 1],
  * which matches WebGL/OpenGL's clip volume.
  *
- * @template {mat4} T
- * @param {mat4} out mat4 frustum matrix will be written into
+ * @template {Mat4} T
+ * @param {Mat4} out mat4 frustum matrix will be written into
  * @param {number} left Left bound of the frustum
  * @param {number} right Right bound of the frustum
  * @param {number} bottom Bottom bound of the frustum
@@ -1724,8 +1724,8 @@ export const ortho = orthoNO;
  * The near/far clip planes correspond to a normalized device coordinate Z range of [0, 1],
  * which matches WebGPU/Vulkan/DirectX/Metal's clip volume.
  *
- * @template {mat4} T
- * @param {mat4} out mat4 frustum matrix will be written into
+ * @template {Mat4} T
+ * @param {Mat4} out mat4 frustum matrix will be written into
  * @param {number} left Left bound of the frustum
  * @param {number} right Right bound of the frustum
  * @param {number} bottom Bottom bound of the frustum
@@ -1761,8 +1761,8 @@ export function orthoZO(out, left, right, bottom, top, near, far) {
  * Generates a look-at matrix with the given eye position, focal point, and up axis.
  * If you want a matrix that actually makes an object look at another object, you should use targetTo instead.
  *
- * @template {mat4} T
- * @param {mat4} out mat4 frustum matrix will be written into
+ * @template {Mat4} T
+ * @param {Mat4} out mat4 frustum matrix will be written into
  * @param {ReadonlyVec3} eye Position of the viewer
  * @param {ReadonlyVec3} center Point the viewer is looking at
  * @param {ReadonlyVec3} up vec3 pointing up
@@ -1851,8 +1851,8 @@ export function lookAt(out, eye, center, up) {
 /**
  * Generates a matrix that makes something look at something else.
  *
- * @template {mat4} T
- * @param {mat4} out mat4 frustum matrix will be written into
+ * @template {Mat4} T
+ * @param {Mat4} out mat4 frustum matrix will be written into
  * @param {ReadonlyVec3} eye Position of the viewer
  * @param {ReadonlyVec3} target Point the viewer is looking at
  * @param {ReadonlyVec3} up vec3 pointing up
@@ -1983,7 +1983,7 @@ export function frob(a) {
 /**
  * Adds two mat4's
  *
- * @template {mat4} T
+ * @template {Mat4} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat4} a the first operand
  * @param {ReadonlyMat4} b the second operand
@@ -2012,7 +2012,7 @@ export function add(out, a, b) {
 /**
  * Subtracts matrix b from matrix a
  *
- * @template {mat4} T
+ * @template {Mat4} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat4} a the first operand
  * @param {ReadonlyMat4} b the second operand
@@ -2041,7 +2041,7 @@ export function subtract(out, a, b) {
 /**
  * Multiply each element of the matrix by a scalar.
  *
- * @template {mat4} T
+ * @template {Mat4} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat4} a the matrix to scale
  * @param {Number} b amount to scale the matrix's elements by
@@ -2070,7 +2070,7 @@ export function multiplyScalar(out, a, b) {
 /**
  * Adds two mat4's after multiplying each element of the second operand by a scalar value.
  *
- * @template {mat4} T
+ * @template {Mat4} T
  * @param {T} out the receiving vector
  * @param {ReadonlyMat4} a the first operand
  * @param {ReadonlyMat4} b the second operand

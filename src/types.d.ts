@@ -1,23 +1,39 @@
 /**
  * Users can augment this interface to override the default array type
- * 
+ *
  * @example
- * declare module "gl-matrix" { 
- *   interface Overrides { 
- *     ArrayType: Float64Array 
- *   } 
+ * // For ambient module declarations (backwards compatibility)
+ * declare module "gl-matrix" {
+ *   interface Overrides {
+ *     ArrayType: Float64Array
+ *   }
+ * }
+ *
+ * // For ES modules with moduleResolution: "Bundler"
+ * declare module "gl-matrix/types" {
+ *   interface Overrides {
+ *     ArrayType: Float64Array
+ *   }
  * }
  */
 interface Overrides { }
 
 /**
- * Users can override `ArrayType` by augmenting `gl-matrix` module
- * 
+ * Users can override `ArrayType` by augmenting the module
+ *
  * @example
- * declare module "gl-matrix" { 
- *   interface Overrides { 
- *     ArrayType: Float64Array 
- *   } 
+ * // For ambient module declarations (backwards compatibility)
+ * declare module "gl-matrix" {
+ *   interface Overrides {
+ *     ArrayType: Float64Array
+ *   }
+ * }
+ *
+ * // For ES modules with moduleResolution: "Bundler"
+ * declare module "gl-matrix/types" {
+ *   interface Overrides {
+ *     ArrayType: Float64Array
+ *   }
  * }
  */
 declare type ArrayType = Overrides extends { ArrayType: infer T } ? T : Float32Array
@@ -116,14 +132,32 @@ declare namespace ReturnType {
   export type Vec4<T extends IndexedCollection> = T extends Array<number> ? Tuple.Vec4 : T
 }
 
+declare type Mat2 = IndexedCollection | Tuple.Mat2;
+/** @deprecated use Mat2 instead */
 declare type mat2 = IndexedCollection | Tuple.Mat2;
+declare type Mat2d = IndexedCollection | Tuple.Mat2d;
+/** @deprecated  use Mat2d instead*/
 declare type mat2d = IndexedCollection | Tuple.Mat2d;
+declare type Mat3 = IndexedCollection | Tuple.Mat3;
+/** @deprecated use Mat3 instead */
 declare type mat3 = IndexedCollection | Tuple.Mat3;
+declare type Mat4 = IndexedCollection | Tuple.Mat4;
+/** @deprecated use Mat4 instead */
 declare type mat4 = IndexedCollection | Tuple.Mat4;
+declare type Quat = IndexedCollection | Tuple.Quat;
+/** @deprecated use Quat instead */
 declare type quat = IndexedCollection | Tuple.Quat;
+declare type Quat2 = IndexedCollection | Tuple.Quat2;
+/** @deprecated  use Quat2 instead*/
 declare type quat2 = IndexedCollection | Tuple.Quat2;
+declare type Vec2 = IndexedCollection | Tuple.Vec2;
+/** @deprecated use Vec2 instead */
 declare type vec2 = IndexedCollection | Tuple.Vec2;
+declare type Vec3 = IndexedCollection | Tuple.Vec3;
+/** @deprecated use Vec3 instead */
 declare type vec3 = IndexedCollection | Tuple.Vec3;
+declare type Vec4 = IndexedCollection | Tuple.Vec4;
+/** @deprecated use Vec4 instead */
 declare type vec4 = IndexedCollection | Tuple.Vec4;
 
 declare type ReadonlyMat2 = IndexedCollection | Tuple.ReadonlyMat2;

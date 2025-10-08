@@ -13,44 +13,47 @@
       "types": "./dist/esm/index.d.ts",
       "default": "./dist/esm/index.js"
     },
+    "./types": {
+      "types": "./dist/esm/types.d.ts"
+    },
     "./common": {
-      "types": "./dist/esm/index.d.ts",
+      "types": "./dist/esm/common.d.ts",
       "default": "./dist/esm/common.js"
     },
     "./mat2": {
-      "types": "./dist/esm/index.d.ts",
+      "types": "./dist/esm/mat2.d.ts",
       "default": "./dist/esm/mat2.js"
     },
     "./mat2d": {
-      "types": "./dist/esm/index.d.ts",
+      "types": "./dist/esm/mat2d.d.ts",
       "default": "./dist/esm/mat2d.js"
     },
     "./mat3": {
-      "types": "./dist/esm/index.d.ts",
+      "types": "./dist/esm/mat3.d.ts",
       "default": "./dist/esm/mat3.js"
     },
     "./mat4": {
-      "types": "./dist/esm/index.d.ts",
+      "types": "./dist/esm/mat4.d.ts",
       "default": "./dist/esm/mat4.js"
     },
     "./quat": {
-      "types": "./dist/esm/index.d.ts",
+      "types": "./dist/esm/quat.d.ts",
       "default": "./dist/esm/quat.js"
     },
     "./quat2": {
-      "types": "./dist/esm/index.d.ts",
+      "types": "./dist/esm/quat2.d.ts",
       "default": "./dist/esm/quat2.js"
     },
     "./vec2": {
-      "types": "./dist/esm/index.d.ts",
+      "types": "./dist/esm/vec2.d.ts",
       "default": "./dist/esm/vec2.js"
     },
     "./vec3": {
-      "types": "./dist/esm/index.d.ts",
+      "types": "./dist/esm/vec3.d.ts",
       "default": "./dist/esm/vec3.js"
     },
     "./vec4": {
-      "types": "./dist/esm/index.d.ts",
+      "types": "./dist/esm/vec4.d.ts",
       "default": "./dist/esm/vec4.js"
     }
   },
@@ -79,8 +82,8 @@
     "update-license-version": "node utils/update-license-version.js",
     "build-umd": "rollup -c",
     "build-esm": "babel src -d dist/esm",
-    "build-dts": "tsc --allowJs --declaration --emitDeclarationOnly --module amd --moduleResolution node --outFile ./dist/index.d.ts ./src/index.js ./src/types.d.ts && node ./utils/bundle-dts.js && tsc --noEmit ./dist/index.d.ts",
-    "build": "del dist && npm run update-license-version && npm run build-umd && npm run build-esm && npm run build-dts && node ./utils/build.js",
+    "build-dts": "tsc --allowJs --declaration --emitDeclarationOnly --module esnext --moduleResolution bundler --outDir ./dist/esm ./src/*.js ./src/types.d.ts && tsc --allowJs --declaration --emitDeclarationOnly --module amd --moduleResolution node --outFile ./dist/index.d.ts ./src/index.js ./src/types.d.ts && node ./utils/bundle-dts.js && tsc --noEmit ./dist/index.d.ts",
+    "build": "npm run update-license-version && npm run build-umd && npm run build-esm && npm run build-dts && node ./utils/build.js",
     "prepare": "npm run build"
   },
   "devDependencies": {

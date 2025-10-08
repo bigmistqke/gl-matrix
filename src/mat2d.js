@@ -57,7 +57,7 @@ export function clone(a) {
 /**
  * Copy the values from one mat2d to another
  *
- * @template {mat2d} T
+ * @template {Mat2d} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat2d} a the source matrix
  * @returns {ReturnType.Mat2d<T>} out
@@ -75,7 +75,7 @@ export function copy(out, a) {
 /**
  * Set a mat2d to the identity matrix
  *
- * @template {mat2d} T
+ * @template {Mat2d} T
  * @param {T} out the receiving matrix
  * @returns {ReturnType.Mat2d<T>} out
  */
@@ -114,7 +114,7 @@ export function fromValues(a, b, c, d, tx, ty) {
 /**
  * Set the components of a mat2d to the given values
  *
- * @template {mat2d} T
+ * @template {Mat2d} T
  * @param {T} out the receiving matrix
  * @param {Number} a Component A (index 0)
  * @param {Number} b Component B (index 1)
@@ -137,7 +137,7 @@ export function set(out, a, b, c, d, tx, ty) {
 /**
  * Inverts a mat2d
  *
- * @template {mat2d} T
+ * @template {Mat2d} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat2d} a the source matrix
  * @returns {ReturnType.Mat2d<T> | null} out, or null if source matrix is not invertible
@@ -178,7 +178,7 @@ export function determinant(a) {
 /**
  * Multiplies two mat2d's
  *
- * @template {mat2d} T
+ * @template {Mat2d} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat2d} a the first operand
  * @param {ReadonlyMat2d} b the second operand
@@ -209,7 +209,7 @@ export function multiply(out, a, b) {
 /**
  * Rotates a mat2d by the given angle
  *
- * @template {mat2d} T
+ * @template {Mat2d} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat2d} a the matrix to rotate
  * @param {Number} rad the angle to rotate the matrix by
@@ -236,7 +236,7 @@ export function rotate(out, a, rad) {
 /**
  * Scales the mat2d by the dimensions in the given vec2
  *
- * @template {mat2d} T
+ * @template {Mat2d} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat2d} a the matrix to translate
  * @param {ReadonlyVec2} v the vec2 to scale the matrix by
@@ -263,7 +263,7 @@ export function scale(out, a, v) {
 /**
  * Translates the mat2d by the dimensions in the given vec2
  *
- * @template {mat2d} T
+ * @template {Mat2d} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat2d} a the matrix to translate
  * @param {ReadonlyVec2} v the vec2 to translate the matrix by
@@ -294,7 +294,7 @@ export function translate(out, a, v) {
  *     mat2d.identity(dest);
  *     mat2d.rotate(dest, dest, rad);
  *
- * @template {mat2d} T
+ * @template {Mat2d} T
  * @param {T} out mat2d receiving operation result
  * @param {Number} rad the angle to rotate the matrix by
  * @returns {ReturnType.Mat2d<T>} out
@@ -318,7 +318,7 @@ export function fromRotation(out, rad) {
  *     mat2d.identity(dest);
  *     mat2d.scale(dest, dest, vec);
  *
- * @template {mat2d} T
+ * @template {Mat2d} T
  * @param {T} out mat2d receiving operation result
  * @param {ReadonlyVec2} v Scaling vector
  * @returns {ReturnType.Mat2d<T>} out
@@ -340,7 +340,7 @@ export function fromScaling(out, v) {
  *     mat2d.identity(dest);
  *     mat2d.translate(dest, dest, vec);
  *
- * @template {mat2d} T
+ * @template {Mat2d} T
  * @param {T} out mat2d receiving operation result
  * @param {ReadonlyVec2} v Translation vector
  * @returns {ReturnType.Mat2d<T>} out
@@ -392,7 +392,7 @@ export function frob(a) {
 /**
  * Adds two mat2d's
  *
- * @template {mat2d} T
+ * @template {Mat2d} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat2d} a the first operand
  * @param {ReadonlyMat2d} b the second operand
@@ -411,7 +411,7 @@ export function add(out, a, b) {
 /**
  * Subtracts matrix b from matrix a
  *
- * @template {mat2d} T
+ * @template {Mat2d} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat2d} a the first operand
  * @param {ReadonlyMat2d} b the second operand
@@ -430,7 +430,7 @@ export function subtract(out, a, b) {
 /**
  * Multiply each element of the matrix by a scalar.
  *
- * @template {mat2d} T
+ * @template {Mat2d} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat2d} a the matrix to scale
  * @param {Number} b amount to scale the matrix's elements by
@@ -449,7 +449,7 @@ export function multiplyScalar(out, a, b) {
 /**
  * Adds two mat2d's after multiplying each element of the second operand by a scalar value.
  *
- * @template {mat2d} T
+ * @template {Mat2d} T
  * @param {T} out the receiving vector
  * @param {ReadonlyMat2d} a the first operand
  * @param {ReadonlyMat2d} b the second operand
