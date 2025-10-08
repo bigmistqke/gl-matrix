@@ -2,24 +2,40 @@ declare module "gl-matrix" {
 
 /**
  * Users can augment this interface to override the default array type
- * 
+ *
  * @example
- * export module "gl-matrix" { 
- *   interface Overrides { 
- *     ArrayType: Float64Array 
- *   } 
+ * // For ambient module declarations (backwards compatibility)
+ * export module "gl-matrix" {
+ *   interface Overrides {
+ *     ArrayType: Float64Array
+ *   }
+ * }
+ *
+ * // For ES modules with moduleResolution: "Bundler"
+ * export module "gl-matrix/types" {
+ *   interface Overrides {
+ *     ArrayType: Float64Array
+ *   }
  * }
  */
 interface Overrides { }
 
 /**
- * Users can override `ArrayType` by augmenting `gl-matrix` module
- * 
+ * Users can override `ArrayType` by augmenting the module
+ *
  * @example
- * export module "gl-matrix" { 
- *   interface Overrides { 
- *     ArrayType: Float64Array 
- *   } 
+ * // For ambient module declarations (backwards compatibility)
+ * export module "gl-matrix" {
+ *   interface Overrides {
+ *     ArrayType: Float64Array
+ *   }
+ * }
+ *
+ * // For ES modules with moduleResolution: "Bundler"
+ * export module "gl-matrix/types" {
+ *   interface Overrides {
+ *     ArrayType: Float64Array
+ *   }
  * }
  */
 export type ArrayType = Overrides extends { ArrayType: infer T } ? T : Float32Array
@@ -118,14 +134,32 @@ export namespace ReturnType {
   export type Vec4<T extends IndexedCollection> = T extends Array<number> ? Tuple.Vec4 : T
 }
 
+export type Mat2 = IndexedCollection | Tuple.Mat2;
+/** @deprecated use Mat2 instead */
 export type mat2 = IndexedCollection | Tuple.Mat2;
+export type Mat2d = IndexedCollection | Tuple.Mat2d;
+/** @deprecated  use Mat2d instead*/
 export type mat2d = IndexedCollection | Tuple.Mat2d;
+export type Mat3 = IndexedCollection | Tuple.Mat3;
+/** @deprecated use Mat3 instead */
 export type mat3 = IndexedCollection | Tuple.Mat3;
+export type Mat4 = IndexedCollection | Tuple.Mat4;
+/** @deprecated use Mat4 instead */
 export type mat4 = IndexedCollection | Tuple.Mat4;
+export type Quat = IndexedCollection | Tuple.Quat;
+/** @deprecated use Quat instead */
 export type quat = IndexedCollection | Tuple.Quat;
+export type Quat2 = IndexedCollection | Tuple.Quat2;
+/** @deprecated  use Quat2 instead*/
 export type quat2 = IndexedCollection | Tuple.Quat2;
+export type Vec2 = IndexedCollection | Tuple.Vec2;
+/** @deprecated use Vec2 instead */
 export type vec2 = IndexedCollection | Tuple.Vec2;
+export type Vec3 = IndexedCollection | Tuple.Vec3;
+/** @deprecated use Vec3 instead */
 export type vec3 = IndexedCollection | Tuple.Vec3;
+export type Vec4 = IndexedCollection | Tuple.Vec4;
+/** @deprecated use Vec4 instead */
 export type vec4 = IndexedCollection | Tuple.Vec4;
 
 export type ReadonlyMat2 = IndexedCollection | Tuple.ReadonlyMat2;
@@ -205,20 +239,20 @@ export namespace mat2 {
     /**
      * Copy the values from one mat2 to another
      *
-     * @template {mat2} T
+     * @template {Mat2} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat2} a the source matrix
      * @returns {ReturnType.Mat2<T>} out
      */
-    export function copy<T extends mat2>(out: T, a: ReadonlyMat2): ReturnType.Mat2<T>;
+    export function copy<T extends Mat2>(out: T, a: ReadonlyMat2): ReturnType.Mat2<T>;
     /**
      * Set a mat2 to the identity matrix
      *
-     * @template {mat2} T
+     * @template {Mat2} T
      * @param {T} out the receiving matrix
      * @returns {ReturnType.Mat2<T>} out
      */
-    export function identity<T extends mat2>(out: T): ReturnType.Mat2<T>;
+    export function identity<T extends Mat2>(out: T): ReturnType.Mat2<T>;
     /**
      * Create a new mat2 with the given values
      *
@@ -232,7 +266,7 @@ export namespace mat2 {
     /**
      * Set the components of a mat2 to the given values
      *
-     * @template {mat2} T
+     * @template {Mat2} T
      * @param {T} out the receiving matrix
      * @param {Number} m00 Component in column 0, row 0 position (index 0)
      * @param {Number} m01 Component in column 0, row 1 position (index 1)
@@ -240,34 +274,34 @@ export namespace mat2 {
      * @param {Number} m11 Component in column 1, row 1 position (index 3)
      * @returns {ReturnType.Mat2<T>} out
      */
-    export function set<T extends mat2>(out: T, m00: number, m01: number, m10: number, m11: number): ReturnType.Mat2<T>;
+    export function set<T extends Mat2>(out: T, m00: number, m01: number, m10: number, m11: number): ReturnType.Mat2<T>;
     /**
      * Transpose the values of a mat2
      *
-     * @template {mat2} T
+     * @template {Mat2} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat2} a the source matrix
      * @returns {ReturnType.Mat2<T>} out
      */
-    export function transpose<T extends mat2>(out: T, a: ReadonlyMat2): ReturnType.Mat2<T>;
+    export function transpose<T extends Mat2>(out: T, a: ReadonlyMat2): ReturnType.Mat2<T>;
     /**
      * Inverts a mat2
      *
-     * @template {mat2} T
+     * @template {Mat2} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat2} a the source matrix
      * @returns {ReturnType.Mat2<T> | null} out, or null if source matrix is not invertible
      */
-    export function invert<T extends mat2>(out: T, a: ReadonlyMat2): ReturnType.Mat2<T> | null;
+    export function invert<T extends Mat2>(out: T, a: ReadonlyMat2): ReturnType.Mat2<T> | null;
     /**
      * Calculates the adjugate of a mat2
      *
-     * @template {mat2} T
+     * @template {Mat2} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat2} a the source matrix
      * @returns {ReturnType.Mat2<T>} out
      */
-    export function adjoint<T extends mat2>(out: T, a: ReadonlyMat2): ReturnType.Mat2<T>;
+    export function adjoint<T extends Mat2>(out: T, a: ReadonlyMat2): ReturnType.Mat2<T>;
     /**
      * Calculates the determinant of a mat2
      *
@@ -278,33 +312,33 @@ export namespace mat2 {
     /**
      * Multiplies two mat2's
      *
-     * @template {mat2} T
+     * @template {Mat2} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat2} a the first operand
      * @param {ReadonlyMat2} b the second operand
      * @returns {ReturnType.Mat2<T>} out
      */
-    export function multiply<T extends mat2>(out: T, a: ReadonlyMat2, b: ReadonlyMat2): ReturnType.Mat2<T>;
+    export function multiply<T extends Mat2>(out: T, a: ReadonlyMat2, b: ReadonlyMat2): ReturnType.Mat2<T>;
     /**
      * Rotates a mat2 by the given angle
      *
-     * @template {mat2} T
+     * @template {Mat2} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat2} a the matrix to rotate
      * @param {Number} rad the angle to rotate the matrix by
      * @returns {ReturnType.Mat2<T>} out
      */
-    export function rotate<T extends mat2>(out: T, a: ReadonlyMat2, rad: number): ReturnType.Mat2<T>;
+    export function rotate<T extends Mat2>(out: T, a: ReadonlyMat2, rad: number): ReturnType.Mat2<T>;
     /**
      * Scales the mat2 by the dimensions in the given vec2
      *
-     * @template {mat2} T
+     * @template {Mat2} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat2} a the matrix to rotate
      * @param {ReadonlyVec2} v the vec2 to scale the matrix by
      * @returns {ReturnType.Mat2<T>} out
      **/
-    export function scale<T extends mat2>(out: T, a: ReadonlyMat2, v: ReadonlyVec2): ReturnType.Mat2<T>;
+    export function scale<T extends Mat2>(out: T, a: ReadonlyMat2, v: ReadonlyVec2): ReturnType.Mat2<T>;
     /**
      * Creates a matrix from a given angle
      * This is equivalent to (but much faster than):
@@ -312,12 +346,12 @@ export namespace mat2 {
      *     mat2.identity(dest);
      *     mat2.rotate(dest, dest, rad);
      *
-     * @template {mat2} T
+     * @template {Mat2} T
      * @param {T} out mat2 receiving operation result
      * @param {Number} rad the angle to rotate the matrix by
      * @returns {ReturnType.Mat2<T>} out
      */
-    export function fromRotation<T extends mat2>(out: T, rad: number): ReturnType.Mat2<T>;
+    export function fromRotation<T extends Mat2>(out: T, rad: number): ReturnType.Mat2<T>;
     /**
      * Creates a matrix from a vector scaling
      * This is equivalent to (but much faster than):
@@ -325,12 +359,12 @@ export namespace mat2 {
      *     mat2.identity(dest);
      *     mat2.scale(dest, dest, vec);
      *
-     * @template {mat2} T
+     * @template {Mat2} T
      * @param {T} out mat2 receiving operation result
      * @param {ReadonlyVec2} v Scaling vector
      * @returns {ReturnType.Mat2<T>} out
      */
-    export function fromScaling<T extends mat2>(out: T, v: ReadonlyVec2): ReturnType.Mat2<T>;
+    export function fromScaling<T extends Mat2>(out: T, v: ReadonlyVec2): ReturnType.Mat2<T>;
     /**
      * Returns a string representation of a mat2
      *
@@ -356,23 +390,23 @@ export namespace mat2 {
     /**
      * Adds two mat2's
      *
-     * @template {mat2} T
+     * @template {Mat2} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat2} a the first operand
      * @param {ReadonlyMat2} b the second operand
      * @returns {ReturnType.Mat2<T>} out
      */
-    export function add<T extends mat2>(out: T, a: ReadonlyMat2, b: ReadonlyMat2): ReturnType.Mat2<T>;
+    export function add<T extends Mat2>(out: T, a: ReadonlyMat2, b: ReadonlyMat2): ReturnType.Mat2<T>;
     /**
      * Subtracts matrix b from matrix a
      *
-     * @template {mat2} T
+     * @template {Mat2} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat2} a the first operand
      * @param {ReadonlyMat2} b the second operand
      * @returns {ReturnType.Mat2<T>} out
      */
-    export function subtract<T extends mat2>(out: T, a: ReadonlyMat2, b: ReadonlyMat2): ReturnType.Mat2<T>;
+    export function subtract<T extends Mat2>(out: T, a: ReadonlyMat2, b: ReadonlyMat2): ReturnType.Mat2<T>;
     /**
      * Returns whether or not the matrices have exactly the same elements in the same position (when compared with ===)
      *
@@ -392,44 +426,44 @@ export namespace mat2 {
     /**
      * Multiply each element of the matrix by a scalar.
      *
-     * @template {mat2} T
+     * @template {Mat2} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat2} a the matrix to scale
      * @param {Number} b amount to scale the matrix's elements by
      * @returns {ReturnType.Mat2<T>} out
      */
-    export function multiplyScalar<T extends mat2>(out: T, a: ReadonlyMat2, b: number): ReturnType.Mat2<T>;
+    export function multiplyScalar<T extends Mat2>(out: T, a: ReadonlyMat2, b: number): ReturnType.Mat2<T>;
     /**
      * Adds two mat2's after multiplying each element of the second operand by a scalar value.
      *
-     * @template {mat2} T
+     * @template {Mat2} T
      * @param {T} out the receiving vector
      * @param {ReadonlyMat2} a the first operand
      * @param {ReadonlyMat2} b the second operand
      * @param {Number} scale the amount to scale b's elements by before adding
      * @returns {ReturnType.Mat2<T>} out
      */
-    export function multiplyScalarAndAdd<T extends mat2>(out: T, a: ReadonlyMat2, b: ReadonlyMat2, scale: number): ReturnType.Mat2<T>;
+    export function multiplyScalarAndAdd<T extends Mat2>(out: T, a: ReadonlyMat2, b: ReadonlyMat2, scale: number): ReturnType.Mat2<T>;
     /**
      * Multiplies two mat2's
      *
-     * @template {mat2} T
+     * @template {Mat2} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat2} a the first operand
      * @param {ReadonlyMat2} b the second operand
      * @returns {ReturnType.Mat2<T>} out
      */
-    export function mul<T extends mat2>(out: T, a: ReadonlyMat2, b: ReadonlyMat2): ReturnType.Mat2<T>;
+    export function mul<T extends Mat2>(out: T, a: ReadonlyMat2, b: ReadonlyMat2): ReturnType.Mat2<T>;
     /**
      * Subtracts matrix b from matrix a
      *
-     * @template {mat2} T
+     * @template {Mat2} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat2} a the first operand
      * @param {ReadonlyMat2} b the second operand
      * @returns {ReturnType.Mat2<T>} out
      */
-    export function sub<T extends mat2>(out: T, a: ReadonlyMat2, b: ReadonlyMat2): ReturnType.Mat2<T>;
+    export function sub<T extends Mat2>(out: T, a: ReadonlyMat2, b: ReadonlyMat2): ReturnType.Mat2<T>;
 }
 export namespace mat2d {
     /**
@@ -466,20 +500,20 @@ export namespace mat2d {
     /**
      * Copy the values from one mat2d to another
      *
-     * @template {mat2d} T
+     * @template {Mat2d} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat2d} a the source matrix
      * @returns {ReturnType.Mat2d<T>} out
      */
-    export function copy<T extends mat2d>(out: T, a: ReadonlyMat2d): ReturnType.Mat2d<T>;
+    export function copy<T extends Mat2d>(out: T, a: ReadonlyMat2d): ReturnType.Mat2d<T>;
     /**
      * Set a mat2d to the identity matrix
      *
-     * @template {mat2d} T
+     * @template {Mat2d} T
      * @param {T} out the receiving matrix
      * @returns {ReturnType.Mat2d<T>} out
      */
-    export function identity<T extends mat2d>(out: T): ReturnType.Mat2d<T>;
+    export function identity<T extends Mat2d>(out: T): ReturnType.Mat2d<T>;
     /**
      * Create a new mat2d with the given values
      *
@@ -495,7 +529,7 @@ export namespace mat2d {
     /**
      * Set the components of a mat2d to the given values
      *
-     * @template {mat2d} T
+     * @template {Mat2d} T
      * @param {T} out the receiving matrix
      * @param {Number} a Component A (index 0)
      * @param {Number} b Component B (index 1)
@@ -505,16 +539,16 @@ export namespace mat2d {
      * @param {Number} ty Component TY (index 5)
      * @returns {ReturnType.Mat2d<T>} out
      */
-    export function set<T extends mat2d>(out: T, a: number, b: number, c: number, d: number, tx: number, ty: number): ReturnType.Mat2d<T>;
+    export function set<T extends Mat2d>(out: T, a: number, b: number, c: number, d: number, tx: number, ty: number): ReturnType.Mat2d<T>;
     /**
      * Inverts a mat2d
      *
-     * @template {mat2d} T
+     * @template {Mat2d} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat2d} a the source matrix
      * @returns {ReturnType.Mat2d<T> | null} out, or null if source matrix is not invertible
      */
-    export function invert<T extends mat2d>(out: T, a: ReadonlyMat2d): ReturnType.Mat2d<T> | null;
+    export function invert<T extends Mat2d>(out: T, a: ReadonlyMat2d): ReturnType.Mat2d<T> | null;
     /**
      * Calculates the determinant of a mat2d
      *
@@ -525,43 +559,43 @@ export namespace mat2d {
     /**
      * Multiplies two mat2d's
      *
-     * @template {mat2d} T
+     * @template {Mat2d} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat2d} a the first operand
      * @param {ReadonlyMat2d} b the second operand
      * @returns {ReturnType.Mat2d<T>} out
      */
-    export function multiply<T extends mat2d>(out: T, a: ReadonlyMat2d, b: ReadonlyMat2d): ReturnType.Mat2d<T>;
+    export function multiply<T extends Mat2d>(out: T, a: ReadonlyMat2d, b: ReadonlyMat2d): ReturnType.Mat2d<T>;
     /**
      * Rotates a mat2d by the given angle
      *
-     * @template {mat2d} T
+     * @template {Mat2d} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat2d} a the matrix to rotate
      * @param {Number} rad the angle to rotate the matrix by
      * @returns {ReturnType.Mat2d<T>} out
      */
-    export function rotate<T extends mat2d>(out: T, a: ReadonlyMat2d, rad: number): ReturnType.Mat2d<T>;
+    export function rotate<T extends Mat2d>(out: T, a: ReadonlyMat2d, rad: number): ReturnType.Mat2d<T>;
     /**
      * Scales the mat2d by the dimensions in the given vec2
      *
-     * @template {mat2d} T
+     * @template {Mat2d} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat2d} a the matrix to translate
      * @param {ReadonlyVec2} v the vec2 to scale the matrix by
      * @returns {ReturnType.Mat2d<T>} out
      **/
-    export function scale<T extends mat2d>(out: T, a: ReadonlyMat2d, v: ReadonlyVec2): ReturnType.Mat2d<T>;
+    export function scale<T extends Mat2d>(out: T, a: ReadonlyMat2d, v: ReadonlyVec2): ReturnType.Mat2d<T>;
     /**
      * Translates the mat2d by the dimensions in the given vec2
      *
-     * @template {mat2d} T
+     * @template {Mat2d} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat2d} a the matrix to translate
      * @param {ReadonlyVec2} v the vec2 to translate the matrix by
      * @returns {ReturnType.Mat2d<T>} out
      **/
-    export function translate<T extends mat2d>(out: T, a: ReadonlyMat2d, v: ReadonlyVec2): ReturnType.Mat2d<T>;
+    export function translate<T extends Mat2d>(out: T, a: ReadonlyMat2d, v: ReadonlyVec2): ReturnType.Mat2d<T>;
     /**
      * Creates a matrix from a given angle
      * This is equivalent to (but much faster than):
@@ -569,12 +603,12 @@ export namespace mat2d {
      *     mat2d.identity(dest);
      *     mat2d.rotate(dest, dest, rad);
      *
-     * @template {mat2d} T
+     * @template {Mat2d} T
      * @param {T} out mat2d receiving operation result
      * @param {Number} rad the angle to rotate the matrix by
      * @returns {ReturnType.Mat2d<T>} out
      */
-    export function fromRotation<T extends mat2d>(out: T, rad: number): ReturnType.Mat2d<T>;
+    export function fromRotation<T extends Mat2d>(out: T, rad: number): ReturnType.Mat2d<T>;
     /**
      * Creates a matrix from a vector scaling
      * This is equivalent to (but much faster than):
@@ -582,12 +616,12 @@ export namespace mat2d {
      *     mat2d.identity(dest);
      *     mat2d.scale(dest, dest, vec);
      *
-     * @template {mat2d} T
+     * @template {Mat2d} T
      * @param {T} out mat2d receiving operation result
      * @param {ReadonlyVec2} v Scaling vector
      * @returns {ReturnType.Mat2d<T>} out
      */
-    export function fromScaling<T extends mat2d>(out: T, v: ReadonlyVec2): ReturnType.Mat2d<T>;
+    export function fromScaling<T extends Mat2d>(out: T, v: ReadonlyVec2): ReturnType.Mat2d<T>;
     /**
      * Creates a matrix from a vector translation
      * This is equivalent to (but much faster than):
@@ -595,12 +629,12 @@ export namespace mat2d {
      *     mat2d.identity(dest);
      *     mat2d.translate(dest, dest, vec);
      *
-     * @template {mat2d} T
+     * @template {Mat2d} T
      * @param {T} out mat2d receiving operation result
      * @param {ReadonlyVec2} v Translation vector
      * @returns {ReturnType.Mat2d<T>} out
      */
-    export function fromTranslation<T extends mat2d>(out: T, v: ReadonlyVec2): ReturnType.Mat2d<T>;
+    export function fromTranslation<T extends Mat2d>(out: T, v: ReadonlyVec2): ReturnType.Mat2d<T>;
     /**
      * Returns a string representation of a mat2d
      *
@@ -618,44 +652,44 @@ export namespace mat2d {
     /**
      * Adds two mat2d's
      *
-     * @template {mat2d} T
+     * @template {Mat2d} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat2d} a the first operand
      * @param {ReadonlyMat2d} b the second operand
      * @returns {ReturnType.Mat2d<T>} out
      */
-    export function add<T extends mat2d>(out: T, a: ReadonlyMat2d, b: ReadonlyMat2d): ReturnType.Mat2d<T>;
+    export function add<T extends Mat2d>(out: T, a: ReadonlyMat2d, b: ReadonlyMat2d): ReturnType.Mat2d<T>;
     /**
      * Subtracts matrix b from matrix a
      *
-     * @template {mat2d} T
+     * @template {Mat2d} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat2d} a the first operand
      * @param {ReadonlyMat2d} b the second operand
      * @returns {ReturnType.Mat2d<T>} out
      */
-    export function subtract<T extends mat2d>(out: T, a: ReadonlyMat2d, b: ReadonlyMat2d): ReturnType.Mat2d<T>;
+    export function subtract<T extends Mat2d>(out: T, a: ReadonlyMat2d, b: ReadonlyMat2d): ReturnType.Mat2d<T>;
     /**
      * Multiply each element of the matrix by a scalar.
      *
-     * @template {mat2d} T
+     * @template {Mat2d} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat2d} a the matrix to scale
      * @param {Number} b amount to scale the matrix's elements by
      * @returns {ReturnType.Mat2d<T>} out
      */
-    export function multiplyScalar<T extends mat2d>(out: T, a: ReadonlyMat2d, b: number): ReturnType.Mat2d<T>;
+    export function multiplyScalar<T extends Mat2d>(out: T, a: ReadonlyMat2d, b: number): ReturnType.Mat2d<T>;
     /**
      * Adds two mat2d's after multiplying each element of the second operand by a scalar value.
      *
-     * @template {mat2d} T
+     * @template {Mat2d} T
      * @param {T} out the receiving vector
      * @param {ReadonlyMat2d} a the first operand
      * @param {ReadonlyMat2d} b the second operand
      * @param {Number} scale the amount to scale b's elements by before adding
      * @returns {ReturnType.Mat2d<T>} out
      */
-    export function multiplyScalarAndAdd<T extends mat2d>(out: T, a: ReadonlyMat2d, b: ReadonlyMat2d, scale: number): ReturnType.Mat2d<T>;
+    export function multiplyScalarAndAdd<T extends Mat2d>(out: T, a: ReadonlyMat2d, b: ReadonlyMat2d, scale: number): ReturnType.Mat2d<T>;
     /**
      * Returns whether or not the matrices have exactly the same elements in the same position (when compared with ===)
      *
@@ -675,23 +709,23 @@ export namespace mat2d {
     /**
      * Multiplies two mat2d's
      *
-     * @template {mat2d} T
+     * @template {Mat2d} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat2d} a the first operand
      * @param {ReadonlyMat2d} b the second operand
      * @returns {ReturnType.Mat2d<T>} out
      */
-    export function mul<T extends mat2d>(out: T, a: ReadonlyMat2d, b: ReadonlyMat2d): ReturnType.Mat2d<T>;
+    export function mul<T extends Mat2d>(out: T, a: ReadonlyMat2d, b: ReadonlyMat2d): ReturnType.Mat2d<T>;
     /**
      * Subtracts matrix b from matrix a
      *
-     * @template {mat2d} T
+     * @template {Mat2d} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat2d} a the first operand
      * @param {ReadonlyMat2d} b the second operand
      * @returns {ReturnType.Mat2d<T>} out
      */
-    export function sub<T extends mat2d>(out: T, a: ReadonlyMat2d, b: ReadonlyMat2d): ReturnType.Mat2d<T>;
+    export function sub<T extends Mat2d>(out: T, a: ReadonlyMat2d, b: ReadonlyMat2d): ReturnType.Mat2d<T>;
 }
 export namespace mat3 {
     /**
@@ -707,12 +741,12 @@ export namespace mat3 {
     /**
      * Copies the upper-left 3x3 values into the given mat3.
      *
-     * @template {mat3} T
+     * @template {Mat3} T
      * @param {T} out the receiving 3x3 matrix
      * @param {ReadonlyMat4} a   the source 4x4 matrix
      * @returns {ReturnType.Mat3<T>} out
      */
-    export function fromMat4<T extends mat3>(out: T, a: ReadonlyMat4): ReturnType.Mat3<T>;
+    export function fromMat4<T extends Mat3>(out: T, a: ReadonlyMat4): ReturnType.Mat3<T>;
     /**
      * Creates a new mat3 initialized with values from an existing matrix
      *
@@ -723,12 +757,12 @@ export namespace mat3 {
     /**
      * Copy the values from one mat3 to another
      *
-     * @template {mat3} T
+     * @template {Mat3} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat3} a the source matrix
      * @returns {ReturnType.Mat3<T>} out
      */
-    export function copy<T extends mat3>(out: T, a: ReadonlyMat3): ReturnType.Mat3<T>;
+    export function copy<T extends Mat3>(out: T, a: ReadonlyMat3): ReturnType.Mat3<T>;
     /**
      * Create a new mat3 with the given values
      *
@@ -747,7 +781,7 @@ export namespace mat3 {
     /**
      * Set the components of a mat3 to the given values
      *
-     * @template {mat3} T
+     * @template {Mat3} T
      * @param {T} out the receiving matrix
      * @param {Number} m00 Component in column 0, row 0 position (index 0)
      * @param {Number} m01 Component in column 0, row 1 position (index 1)
@@ -760,42 +794,42 @@ export namespace mat3 {
      * @param {Number} m22 Component in column 2, row 2 position (index 8)
      * @returns {ReturnType.Mat3<T>} out
      */
-    export function set<T extends mat3>(out: T, m00: number, m01: number, m02: number, m10: number, m11: number, m12: number, m20: number, m21: number, m22: number): ReturnType.Mat3<T>;
+    export function set<T extends Mat3>(out: T, m00: number, m01: number, m02: number, m10: number, m11: number, m12: number, m20: number, m21: number, m22: number): ReturnType.Mat3<T>;
     /**
      * Set a mat3 to the identity matrix
      *
-     * @template {mat3} T
+     * @template {Mat3} T
      * @param {T} out the receiving matrix
      * @returns {ReturnType.Mat3<T>} out
      */
-    export function identity<T extends mat3>(out: T): ReturnType.Mat3<T>;
+    export function identity<T extends Mat3>(out: T): ReturnType.Mat3<T>;
     /**
      * Transpose the values of a mat3
      *
-     * @template {mat3} T
+     * @template {Mat3} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat3} a the source matrix
      * @returns {ReturnType.Mat3<T>} out
      */
-    export function transpose<T extends mat3>(out: T, a: ReadonlyMat3): ReturnType.Mat3<T>;
+    export function transpose<T extends Mat3>(out: T, a: ReadonlyMat3): ReturnType.Mat3<T>;
     /**
      * Inverts a mat3
      *
-     * @template {mat3} T
+     * @template {Mat3} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat3} a the source matrix
      * @returns {ReturnType.Mat3<T> | null} out, or null if source matrix is not invertible
      */
-    export function invert<T extends mat3>(out: T, a: ReadonlyMat3): ReturnType.Mat3<T> | null;
+    export function invert<T extends Mat3>(out: T, a: ReadonlyMat3): ReturnType.Mat3<T> | null;
     /**
      * Calculates the adjugate of a mat3
      *
-     * @template {mat3} T
+     * @template {Mat3} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat3} a the source matrix
      * @returns {ReturnType.Mat3<T>} out
      */
-    export function adjoint<T extends mat3>(out: T, a: ReadonlyMat3): ReturnType.Mat3<T>;
+    export function adjoint<T extends Mat3>(out: T, a: ReadonlyMat3): ReturnType.Mat3<T>;
     /**
      * Calculates the determinant of a mat3
      *
@@ -806,43 +840,43 @@ export namespace mat3 {
     /**
      * Multiplies two mat3's
      *
-     * @template {mat3} T
+     * @template {Mat3} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat3} a the first operand
      * @param {ReadonlyMat3} b the second operand
      * @returns {ReturnType.Mat3<T>} out
      */
-    export function multiply<T extends mat3>(out: T, a: ReadonlyMat3, b: ReadonlyMat3): ReturnType.Mat3<T>;
+    export function multiply<T extends Mat3>(out: T, a: ReadonlyMat3, b: ReadonlyMat3): ReturnType.Mat3<T>;
     /**
      * Translate a mat3 by the given vector
      *
-     * @template {mat3} T
+     * @template {Mat3} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat3} a the matrix to translate
      * @param {ReadonlyVec2} v vector to translate by
      * @returns {ReturnType.Mat3<T>} out
      */
-    export function translate<T extends mat3>(out: T, a: ReadonlyMat3, v: ReadonlyVec2): ReturnType.Mat3<T>;
+    export function translate<T extends Mat3>(out: T, a: ReadonlyMat3, v: ReadonlyVec2): ReturnType.Mat3<T>;
     /**
      * Rotates a mat3 by the given angle
      *
-     * @template {mat3} T
+     * @template {Mat3} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat3} a the matrix to rotate
      * @param {Number} rad the angle to rotate the matrix by
      * @returns {ReturnType.Mat3<T>} out
      */
-    export function rotate<T extends mat3>(out: T, a: ReadonlyMat3, rad: number): ReturnType.Mat3<T>;
+    export function rotate<T extends Mat3>(out: T, a: ReadonlyMat3, rad: number): ReturnType.Mat3<T>;
     /**
      * Scales the mat3 by the dimensions in the given vec2
      *
-     * @template {mat3} T
+     * @template {Mat3} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat3} a the matrix to scale
      * @param {ReadonlyVec2} v the vec2 to scale the matrix by
      * @returns {ReturnType.Mat3<T>} out
      **/
-    export function scale<T extends mat3>(out: T, a: ReadonlyMat3, v: ReadonlyVec2): ReturnType.Mat3<T>;
+    export function scale<T extends Mat3>(out: T, a: ReadonlyMat3, v: ReadonlyVec2): ReturnType.Mat3<T>;
     /**
      * Creates a matrix from a vector translation
      * This is equivalent to (but much faster than):
@@ -850,12 +884,12 @@ export namespace mat3 {
      *     mat3.identity(dest);
      *     mat3.translate(dest, dest, vec);
      *
-     * @template {mat3} T
+     * @template {Mat3} T
      * @param {T} out mat3 receiving operation result
      * @param {ReadonlyVec2} v Translation vector
      * @returns {ReturnType.Mat3<T>} out
      */
-    export function fromTranslation<T extends mat3>(out: T, v: ReadonlyVec2): ReturnType.Mat3<T>;
+    export function fromTranslation<T extends Mat3>(out: T, v: ReadonlyVec2): ReturnType.Mat3<T>;
     /**
      * Creates a matrix from a given angle
      * This is equivalent to (but much faster than):
@@ -863,12 +897,12 @@ export namespace mat3 {
      *     mat3.identity(dest);
      *     mat3.rotate(dest, dest, rad);
      *
-     * @template {mat3} T
+     * @template {Mat3} T
      * @param {T} out mat3 receiving operation result
      * @param {Number} rad the angle to rotate the matrix by
      * @returns {ReturnType.Mat3<T>} out
      */
-    export function fromRotation<T extends mat3>(out: T, rad: number): ReturnType.Mat3<T>;
+    export function fromRotation<T extends Mat3>(out: T, rad: number): ReturnType.Mat3<T>;
     /**
      * Creates a matrix from a vector scaling
      * This is equivalent to (but much faster than):
@@ -876,51 +910,51 @@ export namespace mat3 {
      *     mat3.identity(dest);
      *     mat3.scale(dest, dest, vec);
      *
-     * @template {mat3} T
+     * @template {Mat3} T
      * @param {T} out mat3 receiving operation result
      * @param {ReadonlyVec2} v Scaling vector
      * @returns {ReturnType.Mat3<T>} out
      */
-    export function fromScaling<T extends mat3>(out: T, v: ReadonlyVec2): ReturnType.Mat3<T>;
+    export function fromScaling<T extends Mat3>(out: T, v: ReadonlyVec2): ReturnType.Mat3<T>;
     /**
      * Copies the values from a mat2d into a mat3
      *
-     * @template {mat3} T
+     * @template {Mat3} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat2d} a the matrix to copy
      * @returns {ReturnType.Mat3<T>} out
      **/
-    export function fromMat2d<T extends mat3>(out: T, a: ReadonlyMat2d): ReturnType.Mat3<T>;
+    export function fromMat2d<T extends Mat3>(out: T, a: ReadonlyMat2d): ReturnType.Mat3<T>;
     /**
      * Calculates a 3x3 matrix from the given quaternion
      *
-     * @template {mat3} T
+     * @template {Mat3} T
      * @param {T} out mat3 receiving operation result
      * @param {ReadonlyQuat} q Quaternion to create matrix from
      *
      * @returns {ReturnType.Mat3<T>} out
      */
-    export function fromQuat<T extends mat3>(out: T, q: ReadonlyQuat): ReturnType.Mat3<T>;
+    export function fromQuat<T extends Mat3>(out: T, q: ReadonlyQuat): ReturnType.Mat3<T>;
     /**
      * Calculates a 3x3 normal matrix (transpose inverse) from the 4x4 matrix
      *
-     * @template {mat3} T
+     * @template {Mat3} T
      * @param {T} out mat3 receiving operation result
      * @param {ReadonlyMat4} a Mat4 to derive the normal matrix from
      *
      * @returns {ReturnType.Mat3<T>} out
      */
-    export function normalFromMat4<T extends mat3>(out: T, a: ReadonlyMat4): ReturnType.Mat3<T>;
+    export function normalFromMat4<T extends Mat3>(out: T, a: ReadonlyMat4): ReturnType.Mat3<T>;
     /**
      * Generates a 2D projection matrix with the given bounds
      *
-     * @template {mat3} T
+     * @template {Mat3} T
      * @param {T} out mat3 frustum matrix will be written into
      * @param {number} width Width of your gl context
      * @param {number} height Height of gl context
      * @returns {ReturnType.Mat3<T>} out
      */
-    export function projection<T extends mat3>(out: T, width: number, height: number): ReturnType.Mat3<T>;
+    export function projection<T extends Mat3>(out: T, width: number, height: number): ReturnType.Mat3<T>;
     /**
      * Returns a string representation of a mat3
      *
@@ -938,44 +972,44 @@ export namespace mat3 {
     /**
      * Adds two mat3's
      *
-     * @template {mat3} T
+     * @template {Mat3} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat3} a the first operand
      * @param {ReadonlyMat3} b the second operand
      * @returns {ReturnType.Mat3<T>} out
      */
-    export function add<T extends mat3>(out: T, a: ReadonlyMat3, b: ReadonlyMat3): ReturnType.Mat3<T>;
+    export function add<T extends Mat3>(out: T, a: ReadonlyMat3, b: ReadonlyMat3): ReturnType.Mat3<T>;
     /**
      * Subtracts matrix b from matrix a
      *
-     * @template {mat3} T
+     * @template {Mat3} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat3} a the first operand
      * @param {ReadonlyMat3} b the second operand
      * @returns {ReturnType.Mat3<T>} out
      */
-    export function subtract<T extends mat3>(out: T, a: ReadonlyMat3, b: ReadonlyMat3): ReturnType.Mat3<T>;
+    export function subtract<T extends Mat3>(out: T, a: ReadonlyMat3, b: ReadonlyMat3): ReturnType.Mat3<T>;
     /**
      * Multiply each element of the matrix by a scalar.
      *
-     * @template {mat3} T
+     * @template {Mat3} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat3} a the matrix to scale
      * @param {Number} b amount to scale the matrix's elements by
      * @returns {ReturnType.Mat3<T>} out
      */
-    export function multiplyScalar<T extends mat3>(out: T, a: ReadonlyMat3, b: number): ReturnType.Mat3<T>;
+    export function multiplyScalar<T extends Mat3>(out: T, a: ReadonlyMat3, b: number): ReturnType.Mat3<T>;
     /**
      * Adds two mat3's after multiplying each element of the second operand by a scalar value.
      *
-     * @template {mat3} T
+     * @template {Mat3} T
      * @param {T} out the receiving vector
      * @param {ReadonlyMat3} a the first operand
      * @param {ReadonlyMat3} b the second operand
      * @param {Number} scale the amount to scale b's elements by before adding
      * @returns {ReturnType.Mat3<T>} out
      */
-    export function multiplyScalarAndAdd<T extends mat3>(out: T, a: ReadonlyMat3, b: ReadonlyMat3, scale: number): ReturnType.Mat3<T>;
+    export function multiplyScalarAndAdd<T extends Mat3>(out: T, a: ReadonlyMat3, b: ReadonlyMat3, scale: number): ReturnType.Mat3<T>;
     /**
      * Returns whether or not the matrices have exactly the same elements in the same position (when compared with ===)
      *
@@ -995,23 +1029,23 @@ export namespace mat3 {
     /**
      * Multiplies two mat3's
      *
-     * @template {mat3} T
+     * @template {Mat3} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat3} a the first operand
      * @param {ReadonlyMat3} b the second operand
      * @returns {ReturnType.Mat3<T>} out
      */
-    export function mul<T extends mat3>(out: T, a: ReadonlyMat3, b: ReadonlyMat3): ReturnType.Mat3<T>;
+    export function mul<T extends Mat3>(out: T, a: ReadonlyMat3, b: ReadonlyMat3): ReturnType.Mat3<T>;
     /**
      * Subtracts matrix b from matrix a
      *
-     * @template {mat3} T
+     * @template {Mat3} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat3} a the first operand
      * @param {ReadonlyMat3} b the second operand
      * @returns {ReturnType.Mat3<T>} out
      */
-    export function sub<T extends mat3>(out: T, a: ReadonlyMat3, b: ReadonlyMat3): ReturnType.Mat3<T>;
+    export function sub<T extends Mat3>(out: T, a: ReadonlyMat3, b: ReadonlyMat3): ReturnType.Mat3<T>;
 }
 export namespace mat4 {
     /**
@@ -1034,12 +1068,12 @@ export namespace mat4 {
     /**
      * Copy the values from one mat4 to another
      *
-     * @template {mat4} T
+     * @template {Mat4} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat4} a the source matrix
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function copy<T extends mat4>(out: T, a: ReadonlyMat4): ReturnType.Mat4<T>;
+    export function copy<T extends Mat4>(out: T, a: ReadonlyMat4): ReturnType.Mat4<T>;
     /**
      * Create a new mat4 with the given values
      *
@@ -1065,7 +1099,7 @@ export namespace mat4 {
     /**
      * Set the components of a mat4 to the given values
      *
-     * @template {mat4} T
+     * @template {Mat4} T
      * @param {T} out the receiving matrix
      * @param {Number} m00 Component in column 0, row 0 position (index 0)
      * @param {Number} m01 Component in column 0, row 1 position (index 1)
@@ -1085,42 +1119,42 @@ export namespace mat4 {
      * @param {Number} m33 Component in column 3, row 3 position (index 15)
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function set<T extends mat4>(out: T, m00: number, m01: number, m02: number, m03: number, m10: number, m11: number, m12: number, m13: number, m20: number, m21: number, m22: number, m23: number, m30: number, m31: number, m32: number, m33: number): ReturnType.Mat4<T>;
+    export function set<T extends Mat4>(out: T, m00: number, m01: number, m02: number, m03: number, m10: number, m11: number, m12: number, m13: number, m20: number, m21: number, m22: number, m23: number, m30: number, m31: number, m32: number, m33: number): ReturnType.Mat4<T>;
     /**
      * Set a mat4 to the identity matrix
      *
-     * @template {mat4} T
+     * @template {Mat4} T
      * @param {T} out the receiving matrix
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function identity<T extends mat4>(out: T): ReturnType.Mat4<T>;
+    export function identity<T extends Mat4>(out: T): ReturnType.Mat4<T>;
     /**
      * Transpose the values of a mat4
      *
-     * @template {mat4} T
+     * @template {Mat4} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat4} a the source matrix
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function transpose<T extends mat4>(out: T, a: ReadonlyMat4): ReturnType.Mat4<T>;
+    export function transpose<T extends Mat4>(out: T, a: ReadonlyMat4): ReturnType.Mat4<T>;
     /**
      * Inverts a mat4
      *
-     * @template {mat4} T
+     * @template {Mat4} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat4} a the source matrix
      * @returns {ReturnType.Mat4<T> | null} out, or null if source matrix is not invertible
      */
-    export function invert<T extends mat4>(out: T, a: ReadonlyMat4): ReturnType.Mat4<T> | null;
+    export function invert<T extends Mat4>(out: T, a: ReadonlyMat4): ReturnType.Mat4<T> | null;
     /**
      * Calculates the adjugate of a mat4
      *
-     * @template {mat4} T
+     * @template {Mat4} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat4} a the source matrix
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function adjoint<T extends mat4>(out: T, a: ReadonlyMat4): ReturnType.Mat4<T>;
+    export function adjoint<T extends Mat4>(out: T, a: ReadonlyMat4): ReturnType.Mat4<T>;
     /**
      * Calculates the determinant of a mat4
      *
@@ -1131,74 +1165,74 @@ export namespace mat4 {
     /**
      * Multiplies two mat4s
      *
-     * @template {mat4} T
+     * @template {Mat4} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat4} a the first operand
      * @param {ReadonlyMat4} b the second operand
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function multiply<T extends mat4>(out: T, a: ReadonlyMat4, b: ReadonlyMat4): ReturnType.Mat4<T>;
+    export function multiply<T extends Mat4>(out: T, a: ReadonlyMat4, b: ReadonlyMat4): ReturnType.Mat4<T>;
     /**
      * Translate a mat4 by the given vector
      *
-     * @template {mat4} T
+     * @template {Mat4} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat4} a the matrix to translate
      * @param {ReadonlyVec3} v vector to translate by
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function translate<T extends mat4>(out: T, a: ReadonlyMat4, v: ReadonlyVec3): ReturnType.Mat4<T>;
+    export function translate<T extends Mat4>(out: T, a: ReadonlyMat4, v: ReadonlyVec3): ReturnType.Mat4<T>;
     /**
      * Scales the mat4 by the dimensions in the given vec3 not using vectorization
      *
-     * @template {mat4} T
+     * @template {Mat4} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat4} a the matrix to scale
      * @param {ReadonlyVec3} v the vec3 to scale the matrix by
      * @returns {ReturnType.Mat4<T>} out
      **/
-    export function scale<T extends mat4>(out: T, a: ReadonlyMat4, v: ReadonlyVec3): ReturnType.Mat4<T>;
+    export function scale<T extends Mat4>(out: T, a: ReadonlyMat4, v: ReadonlyVec3): ReturnType.Mat4<T>;
     /**
      * Rotates a mat4 by the given angle around the given axis
      *
-     * @template {mat4} T
+     * @template {Mat4} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat4} a the matrix to rotate
      * @param {Number} rad the angle to rotate the matrix by
      * @param {ReadonlyVec3} axis the axis to rotate around
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function rotate<T extends mat4>(out: T, a: ReadonlyMat4, rad: number, axis: ReadonlyVec3): ReturnType.Mat4<T>;
+    export function rotate<T extends Mat4>(out: T, a: ReadonlyMat4, rad: number, axis: ReadonlyVec3): ReturnType.Mat4<T>;
     /**
      * Rotates a matrix by the given angle around the X axis
      *
-     * @template {mat4} T
+     * @template {Mat4} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat4} a the matrix to rotate
      * @param {Number} rad the angle to rotate the matrix by
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function rotateX<T extends mat4>(out: T, a: ReadonlyMat4, rad: number): ReturnType.Mat4<T>;
+    export function rotateX<T extends Mat4>(out: T, a: ReadonlyMat4, rad: number): ReturnType.Mat4<T>;
     /**
      * Rotates a matrix by the given angle around the Y axis
      *
-     * @template {mat4} T
+     * @template {Mat4} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat4} a the matrix to rotate
      * @param {Number} rad the angle to rotate the matrix by
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function rotateY<T extends mat4>(out: T, a: ReadonlyMat4, rad: number): ReturnType.Mat4<T>;
+    export function rotateY<T extends Mat4>(out: T, a: ReadonlyMat4, rad: number): ReturnType.Mat4<T>;
     /**
      * Rotates a matrix by the given angle around the Z axis
      *
-     * @template {mat4} T
+     * @template {Mat4} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat4} a the matrix to rotate
      * @param {Number} rad the angle to rotate the matrix by
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function rotateZ<T extends mat4>(out: T, a: ReadonlyMat4, rad: number): ReturnType.Mat4<T>;
+    export function rotateZ<T extends Mat4>(out: T, a: ReadonlyMat4, rad: number): ReturnType.Mat4<T>;
     /**
      * Creates a matrix from a vector translation
      * This is equivalent to (but much faster than):
@@ -1206,12 +1240,12 @@ export namespace mat4 {
      *     mat4.identity(dest);
      *     mat4.translate(dest, dest, vec);
      *
-     * @template {mat4} T
+     * @template {Mat4} T
      * @param {T} out mat4 receiving operation result
      * @param {ReadonlyVec3} v Translation vector
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function fromTranslation<T extends mat4>(out: T, v: ReadonlyVec3): ReturnType.Mat4<T>;
+    export function fromTranslation<T extends Mat4>(out: T, v: ReadonlyVec3): ReturnType.Mat4<T>;
     /**
      * Creates a matrix from a vector scaling
      * This is equivalent to (but much faster than):
@@ -1219,12 +1253,12 @@ export namespace mat4 {
      *     mat4.identity(dest);
      *     mat4.scale(dest, dest, vec);
      *
-     * @template {mat4} T
+     * @template {Mat4} T
      * @param {T} out mat4 receiving operation result
      * @param {ReadonlyVec3} v Scaling vector
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function fromScaling<T extends mat4>(out: T, v: ReadonlyVec3): ReturnType.Mat4<T>;
+    export function fromScaling<T extends Mat4>(out: T, v: ReadonlyVec3): ReturnType.Mat4<T>;
     /**
      * Creates a matrix from a given angle around a given axis
      * This is equivalent to (but much faster than):
@@ -1232,13 +1266,13 @@ export namespace mat4 {
      *     mat4.identity(dest);
      *     mat4.rotate(dest, dest, rad, axis);
      *
-     * @template {mat4} T
+     * @template {Mat4} T
      * @param {T} out mat4 receiving operation result
      * @param {Number} rad the angle to rotate the matrix by
      * @param {ReadonlyVec3} axis the axis to rotate around
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function fromRotation<T extends mat4>(out: T, rad: number, axis: ReadonlyVec3): ReturnType.Mat4<T>;
+    export function fromRotation<T extends Mat4>(out: T, rad: number, axis: ReadonlyVec3): ReturnType.Mat4<T>;
     /**
      * Creates a matrix from the given angle around the X axis
      * This is equivalent to (but much faster than):
@@ -1246,12 +1280,12 @@ export namespace mat4 {
      *     mat4.identity(dest);
      *     mat4.rotateX(dest, dest, rad);
      *
-     * @template {mat4} T
+     * @template {Mat4} T
      * @param {T} out mat4 receiving operation result
      * @param {Number} rad the angle to rotate the matrix by
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function fromXRotation<T extends mat4>(out: T, rad: number): ReturnType.Mat4<T>;
+    export function fromXRotation<T extends Mat4>(out: T, rad: number): ReturnType.Mat4<T>;
     /**
      * Creates a matrix from the given angle around the Y axis
      * This is equivalent to (but much faster than):
@@ -1259,12 +1293,12 @@ export namespace mat4 {
      *     mat4.identity(dest);
      *     mat4.rotateY(dest, dest, rad);
      *
-     * @template {mat4} T
+     * @template {Mat4} T
      * @param {T} out mat4 receiving operation result
      * @param {Number} rad the angle to rotate the matrix by
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function fromYRotation<T extends mat4>(out: T, rad: number): ReturnType.Mat4<T>;
+    export function fromYRotation<T extends Mat4>(out: T, rad: number): ReturnType.Mat4<T>;
     /**
      * Creates a matrix from the given angle around the Z axis
      * This is equivalent to (but much faster than):
@@ -1272,12 +1306,12 @@ export namespace mat4 {
      *     mat4.identity(dest);
      *     mat4.rotateZ(dest, dest, rad);
      *
-     * @template {mat4} T
+     * @template {Mat4} T
      * @param {T} out mat4 receiving operation result
      * @param {Number} rad the angle to rotate the matrix by
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function fromZRotation<T extends mat4>(out: T, rad: number): ReturnType.Mat4<T>;
+    export function fromZRotation<T extends Mat4>(out: T, rad: number): ReturnType.Mat4<T>;
     /**
      * Creates a matrix from a quaternion rotation and vector translation
      * This is equivalent to (but much faster than):
@@ -1288,63 +1322,63 @@ export namespace mat4 {
      *     mat4.fromQuat(quatMat, quat);
      *     mat4.multiply(dest, dest, quatMat);
      *
-     * @template {mat4} T
+     * @template {Mat4} T
      * @param {T} out mat4 receiving operation result
-     * @param {quat} q Rotation quaternion
+     * @param {Quat} q Rotation quaternion
      * @param {ReadonlyVec3} v Translation vector
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function fromRotationTranslation<T extends mat4>(out: T, q: quat, v: ReadonlyVec3): ReturnType.Mat4<T>;
+    export function fromRotationTranslation<T extends Mat4>(out: T, q: Quat, v: ReadonlyVec3): ReturnType.Mat4<T>;
     /**
      * Creates a new mat4 from a dual quat.
      *
-     * @param {mat4} out Matrix
+     * @param {Mat4} out Matrix
      * @param {ReadonlyQuat2} a Dual Quaternion
      * @returns {ArrayType} mat4 receiving operation result
      */
-    export function fromQuat2(out: mat4, a: ReadonlyQuat2): ArrayType;
+    export function fromQuat2(out: Mat4, a: ReadonlyQuat2): ArrayType;
     /**
      * Returns the translation vector component of a transformation
      *  matrix. If a matrix is built with fromRotationTranslation,
      *  the returned vector will be the same as the translation vector
      *  originally supplied.
-     * @param  {vec3} out Vector to receive translation component
+     * @param  {Vec3} out Vector to receive translation component
      * @param  {ReadonlyMat4} mat Matrix to be decomposed (input)
-     * @return {vec3} out
+     * @return {Vec3} out
      */
-    export function getTranslation(out: vec3, mat: ReadonlyMat4): vec3;
+    export function getTranslation(out: Vec3, mat: ReadonlyMat4): Vec3;
     /**
      * Returns the scaling factor component of a transformation
      *  matrix. If a matrix is built with fromRotationTranslationScale
      *  with a normalized Quaternion parameter, the returned vector will be
      *  the same as the scaling vector
      *  originally supplied.
-     * @param  {vec3} out Vector to receive scaling factor component
+     * @param  {Vec3} out Vector to receive scaling factor component
      * @param  {ReadonlyMat4} mat Matrix to be decomposed (input)
-     * @return {vec3} out
+     * @return {Vec3} out
      */
-    export function getScaling(out: vec3, mat: ReadonlyMat4): vec3;
+    export function getScaling(out: Vec3, mat: ReadonlyMat4): Vec3;
     /**
      * Returns a quaternion representing the rotational component
      *  of a transformation matrix. If a matrix is built with
      *  fromRotationTranslation, the returned quaternion will be the
      *  same as the quaternion originally supplied.
-     * @param {quat} out Quaternion to receive the rotation component
+     * @param {Quat} out Quaternion to receive the rotation component
      * @param {ReadonlyMat4} mat Matrix to be decomposed (input)
-     * @return {quat} out
+     * @return {Quat} out
      */
-    export function getRotation(out: quat, mat: ReadonlyMat4): quat;
+    export function getRotation(out: Quat, mat: ReadonlyMat4): Quat;
     /**
      * Decomposes a transformation matrix into its rotation, translation
      * and scale components. Returns only the rotation component
      *
-     * @param  {quat} out_r Quaternion to receive the rotation component
-     * @param  {vec3} out_t Vector to receive the translation vector
-     * @param  {vec3} out_s Vector to receive the scaling factor
+     * @param  {Quat} out_r Quaternion to receive the rotation component
+     * @param  {Vec3} out_t Vector to receive the translation vector
+     * @param  {Vec3} out_s Vector to receive the scaling factor
      * @param  {ReadonlyMat4} mat Matrix to be decomposed (input)
      * @returns {ArrayType} out_r
      */
-    export function decompose(out_r: quat, out_t: vec3, out_s: vec3, mat: ReadonlyMat4): ArrayType;
+    export function decompose(out_r: Quat, out_t: Vec3, out_s: Vec3, mat: ReadonlyMat4): ArrayType;
     /**
      * Creates a matrix from a quaternion rotation, vector translation and vector scale
      * This is equivalent to (but much faster than):
@@ -1356,14 +1390,14 @@ export namespace mat4 {
      *     mat4.multiply(dest, dest, quatMat);
      *     mat4.scale(dest, dest, scale)
      *
-     * @template {mat4} T
+     * @template {Mat4} T
      * @param {T} out mat4 receiving operation result
-     * @param {quat} q Rotation quaternion
+     * @param {Quat} q Rotation quaternion
      * @param {ReadonlyVec3} v Translation vector
      * @param {ReadonlyVec3} s Scaling vector
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function fromRotationTranslationScale<T extends mat4>(out: T, q: quat, v: ReadonlyVec3, s: ReadonlyVec3): ReturnType.Mat4<T>;
+    export function fromRotationTranslationScale<T extends Mat4>(out: T, q: Quat, v: ReadonlyVec3, s: ReadonlyVec3): ReturnType.Mat4<T>;
     /**
      * Creates a matrix from a quaternion rotation, vector translation and vector scale, rotating and scaling around the given origin
      * This is equivalent to (but much faster than):
@@ -1377,30 +1411,30 @@ export namespace mat4 {
      *     mat4.scale(dest, dest, scale)
      *     mat4.translate(dest, dest, negativeOrigin);
      *
-     * @template {mat4} T
+     * @template {Mat4} T
      * @param {T} out mat4 receiving operation result
-     * @param {quat} q Rotation quaternion
+     * @param {Quat} q Rotation quaternion
      * @param {ReadonlyVec3} v Translation vector
      * @param {ReadonlyVec3} s Scaling vector
      * @param {ReadonlyVec3} o The origin vector around which to scale and rotate
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function fromRotationTranslationScaleOrigin<T extends mat4>(out: T, q: quat, v: ReadonlyVec3, s: ReadonlyVec3, o: ReadonlyVec3): ReturnType.Mat4<T>;
+    export function fromRotationTranslationScaleOrigin<T extends Mat4>(out: T, q: Quat, v: ReadonlyVec3, s: ReadonlyVec3, o: ReadonlyVec3): ReturnType.Mat4<T>;
     /**
      * Calculates a 4x4 matrix from the given quaternion
      *
-     * @template {mat4} T
+     * @template {Mat4} T
      * @param {T} out mat4 receiving operation result
      * @param {ReadonlyQuat} q Quaternion to create matrix from
      *
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function fromQuat<T extends mat4>(out: T, q: ReadonlyQuat): ReturnType.Mat4<T>;
+    export function fromQuat<T extends Mat4>(out: T, q: ReadonlyQuat): ReturnType.Mat4<T>;
     /**
      * Generates a frustum matrix with the given bounds
      *
-     * @template {mat4} T
-     * @param {mat4} out mat4 frustum matrix will be written into
+     * @template {Mat4} T
+     * @param {Mat4} out mat4 frustum matrix will be written into
      * @param {Number} left Left bound of the frustum
      * @param {Number} right Right bound of the frustum
      * @param {Number} bottom Bottom bound of the frustum
@@ -1409,14 +1443,14 @@ export namespace mat4 {
      * @param {Number} far Far bound of the frustum
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function frustum<T extends mat4>(out: mat4, left: number, right: number, bottom: number, top: number, near: number, far: number): ReturnType.Mat4<T>;
+    export function frustum<T extends Mat4>(out: Mat4, left: number, right: number, bottom: number, top: number, near: number, far: number): ReturnType.Mat4<T>;
     /**
      * Generates a perspective projection matrix with the given bounds.
      * The near/far clip planes correspond to a normalized device coordinate Z range of [-1, 1],
      * which matches WebGL/OpenGL's clip volume.
      * Passing null/undefined/no value for far will generate infinite projection matrix.
      *
-     * @template {mat4} T
+     * @template {Mat4} T
      * @param {T} out mat4 frustum matrix will be written into
      * @param {number} fovy Vertical field of view in radians
      * @param {number} aspect Aspect ratio. typically viewport width/height
@@ -1424,42 +1458,42 @@ export namespace mat4 {
      * @param {number} far Far bound of the frustum, can be null or Infinity
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function perspectiveNO<T extends mat4>(out: T, fovy: number, aspect: number, near: number, far: number): ReturnType.Mat4<T>;
+    export function perspectiveNO<T extends Mat4>(out: T, fovy: number, aspect: number, near: number, far: number): ReturnType.Mat4<T>;
     /**
      * Generates a perspective projection matrix suitable for WebGPU with the given bounds.
      * The near/far clip planes correspond to a normalized device coordinate Z range of [0, 1],
      * which matches WebGPU/Vulkan/DirectX/Metal's clip volume.
      * Passing null/undefined/no value for far will generate infinite projection matrix.
      *
-     * @template {mat4} T
-     * @param {mat4} out mat4 frustum matrix will be written into
+     * @template {Mat4} T
+     * @param {Mat4} out mat4 frustum matrix will be written into
      * @param {number} fovy Vertical field of view in radians
      * @param {number} aspect Aspect ratio. typically viewport width/height
      * @param {number} near Near bound of the frustum
      * @param {number} far Far bound of the frustum, can be null or Infinity
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function perspectiveZO<T extends mat4>(out: mat4, fovy: number, aspect: number, near: number, far: number): ReturnType.Mat4<T>;
+    export function perspectiveZO<T extends Mat4>(out: Mat4, fovy: number, aspect: number, near: number, far: number): ReturnType.Mat4<T>;
     /**
      * Generates a perspective projection matrix with the given field of view.
      * This is primarily useful for generating projection matrices to be used
      * with the still experiemental WebVR API.
      *
-     * @template {mat4} T
-     * @param {mat4} out mat4 frustum matrix will be written into
+     * @template {Mat4} T
+     * @param {Mat4} out mat4 frustum matrix will be written into
      * @param {Object} fov Object containing the following values: upDegrees, downDegrees, leftDegrees, rightDegrees
      * @param {number} near Near bound of the frustum
      * @param {number} far Far bound of the frustum
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function perspectiveFromFieldOfView<T extends mat4>(out: mat4, fov: any, near: number, far: number): ReturnType.Mat4<T>;
+    export function perspectiveFromFieldOfView<T extends Mat4>(out: Mat4, fov: any, near: number, far: number): ReturnType.Mat4<T>;
     /**
      * Generates a orthogonal projection matrix with the given bounds.
      * The near/far clip planes correspond to a normalized device coordinate Z range of [-1, 1],
      * which matches WebGL/OpenGL's clip volume.
      *
-     * @template {mat4} T
-     * @param {mat4} out mat4 frustum matrix will be written into
+     * @template {Mat4} T
+     * @param {Mat4} out mat4 frustum matrix will be written into
      * @param {number} left Left bound of the frustum
      * @param {number} right Right bound of the frustum
      * @param {number} bottom Bottom bound of the frustum
@@ -1468,14 +1502,14 @@ export namespace mat4 {
      * @param {number} far Far bound of the frustum
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function orthoNO<T extends mat4>(out: mat4, left: number, right: number, bottom: number, top: number, near: number, far: number): ReturnType.Mat4<T>;
+    export function orthoNO<T extends Mat4>(out: Mat4, left: number, right: number, bottom: number, top: number, near: number, far: number): ReturnType.Mat4<T>;
     /**
      * Generates a orthogonal projection matrix with the given bounds.
      * The near/far clip planes correspond to a normalized device coordinate Z range of [0, 1],
      * which matches WebGPU/Vulkan/DirectX/Metal's clip volume.
      *
-     * @template {mat4} T
-     * @param {mat4} out mat4 frustum matrix will be written into
+     * @template {Mat4} T
+     * @param {Mat4} out mat4 frustum matrix will be written into
      * @param {number} left Left bound of the frustum
      * @param {number} right Right bound of the frustum
      * @param {number} bottom Bottom bound of the frustum
@@ -1484,30 +1518,30 @@ export namespace mat4 {
      * @param {number} far Far bound of the frustum
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function orthoZO<T extends mat4>(out: mat4, left: number, right: number, bottom: number, top: number, near: number, far: number): ReturnType.Mat4<T>;
+    export function orthoZO<T extends Mat4>(out: Mat4, left: number, right: number, bottom: number, top: number, near: number, far: number): ReturnType.Mat4<T>;
     /**
      * Generates a look-at matrix with the given eye position, focal point, and up axis.
      * If you want a matrix that actually makes an object look at another object, you should use targetTo instead.
      *
-     * @template {mat4} T
-     * @param {mat4} out mat4 frustum matrix will be written into
+     * @template {Mat4} T
+     * @param {Mat4} out mat4 frustum matrix will be written into
      * @param {ReadonlyVec3} eye Position of the viewer
      * @param {ReadonlyVec3} center Point the viewer is looking at
      * @param {ReadonlyVec3} up vec3 pointing up
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function lookAt<T extends mat4>(out: mat4, eye: ReadonlyVec3, center: ReadonlyVec3, up: ReadonlyVec3): ReturnType.Mat4<T>;
+    export function lookAt<T extends Mat4>(out: Mat4, eye: ReadonlyVec3, center: ReadonlyVec3, up: ReadonlyVec3): ReturnType.Mat4<T>;
     /**
      * Generates a matrix that makes something look at something else.
      *
-     * @template {mat4} T
-     * @param {mat4} out mat4 frustum matrix will be written into
+     * @template {Mat4} T
+     * @param {Mat4} out mat4 frustum matrix will be written into
      * @param {ReadonlyVec3} eye Position of the viewer
      * @param {ReadonlyVec3} target Point the viewer is looking at
      * @param {ReadonlyVec3} up vec3 pointing up
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function targetTo<T extends mat4>(out: mat4, eye: ReadonlyVec3, target: ReadonlyVec3, up: ReadonlyVec3): ReturnType.Mat4<T>;
+    export function targetTo<T extends Mat4>(out: Mat4, eye: ReadonlyVec3, target: ReadonlyVec3, up: ReadonlyVec3): ReturnType.Mat4<T>;
     /**
      * Returns a string representation of a mat4
      *
@@ -1525,44 +1559,44 @@ export namespace mat4 {
     /**
      * Adds two mat4's
      *
-     * @template {mat4} T
+     * @template {Mat4} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat4} a the first operand
      * @param {ReadonlyMat4} b the second operand
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function add<T extends mat4>(out: T, a: ReadonlyMat4, b: ReadonlyMat4): ReturnType.Mat4<T>;
+    export function add<T extends Mat4>(out: T, a: ReadonlyMat4, b: ReadonlyMat4): ReturnType.Mat4<T>;
     /**
      * Subtracts matrix b from matrix a
      *
-     * @template {mat4} T
+     * @template {Mat4} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat4} a the first operand
      * @param {ReadonlyMat4} b the second operand
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function subtract<T extends mat4>(out: T, a: ReadonlyMat4, b: ReadonlyMat4): ReturnType.Mat4<T>;
+    export function subtract<T extends Mat4>(out: T, a: ReadonlyMat4, b: ReadonlyMat4): ReturnType.Mat4<T>;
     /**
      * Multiply each element of the matrix by a scalar.
      *
-     * @template {mat4} T
+     * @template {Mat4} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat4} a the matrix to scale
      * @param {Number} b amount to scale the matrix's elements by
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function multiplyScalar<T extends mat4>(out: T, a: ReadonlyMat4, b: number): ReturnType.Mat4<T>;
+    export function multiplyScalar<T extends Mat4>(out: T, a: ReadonlyMat4, b: number): ReturnType.Mat4<T>;
     /**
      * Adds two mat4's after multiplying each element of the second operand by a scalar value.
      *
-     * @template {mat4} T
+     * @template {Mat4} T
      * @param {T} out the receiving vector
      * @param {ReadonlyMat4} a the first operand
      * @param {ReadonlyMat4} b the second operand
      * @param {Number} scale the amount to scale b's elements by before adding
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function multiplyScalarAndAdd<T extends mat4>(out: T, a: ReadonlyMat4, b: ReadonlyMat4, scale: number): ReturnType.Mat4<T>;
+    export function multiplyScalarAndAdd<T extends Mat4>(out: T, a: ReadonlyMat4, b: ReadonlyMat4, scale: number): ReturnType.Mat4<T>;
     /**
      * Returns whether or not the matrices have exactly the same elements in the same position (when compared with ===)
      *
@@ -1585,7 +1619,7 @@ export namespace mat4 {
      * which matches WebGL/OpenGL's clip volume.
      * Passing null/undefined/no value for far will generate infinite projection matrix.
      *
-     * @template {mat4} T
+     * @template {Mat4} T
      * @param {T} out mat4 frustum matrix will be written into
      * @param {number} fovy Vertical field of view in radians
      * @param {number} aspect Aspect ratio. typically viewport width/height
@@ -1593,14 +1627,14 @@ export namespace mat4 {
      * @param {number} far Far bound of the frustum, can be null or Infinity
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function perspective<T extends mat4>(out: T, fovy: number, aspect: number, near: number, far: number): ReturnType.Mat4<T>;
+    export function perspective<T extends Mat4>(out: T, fovy: number, aspect: number, near: number, far: number): ReturnType.Mat4<T>;
     /**
      * Generates a orthogonal projection matrix with the given bounds.
      * The near/far clip planes correspond to a normalized device coordinate Z range of [-1, 1],
      * which matches WebGL/OpenGL's clip volume.
      *
-     * @template {mat4} T
-     * @param {mat4} out mat4 frustum matrix will be written into
+     * @template {Mat4} T
+     * @param {Mat4} out mat4 frustum matrix will be written into
      * @param {number} left Left bound of the frustum
      * @param {number} right Right bound of the frustum
      * @param {number} bottom Bottom bound of the frustum
@@ -1609,27 +1643,27 @@ export namespace mat4 {
      * @param {number} far Far bound of the frustum
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function ortho<T extends mat4>(out: mat4, left: number, right: number, bottom: number, top: number, near: number, far: number): ReturnType.Mat4<T>;
+    export function ortho<T extends Mat4>(out: Mat4, left: number, right: number, bottom: number, top: number, near: number, far: number): ReturnType.Mat4<T>;
     /**
      * Multiplies two mat4s
      *
-     * @template {mat4} T
+     * @template {Mat4} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat4} a the first operand
      * @param {ReadonlyMat4} b the second operand
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function mul<T extends mat4>(out: T, a: ReadonlyMat4, b: ReadonlyMat4): ReturnType.Mat4<T>;
+    export function mul<T extends Mat4>(out: T, a: ReadonlyMat4, b: ReadonlyMat4): ReturnType.Mat4<T>;
     /**
      * Subtracts matrix b from matrix a
      *
-     * @template {mat4} T
+     * @template {Mat4} T
      * @param {T} out the receiving matrix
      * @param {ReadonlyMat4} a the first operand
      * @param {ReadonlyMat4} b the second operand
      * @returns {ReturnType.Mat4<T>} out
      */
-    export function sub<T extends mat4>(out: T, a: ReadonlyMat4, b: ReadonlyMat4): ReturnType.Mat4<T>;
+    export function sub<T extends Mat4>(out: T, a: ReadonlyMat4, b: ReadonlyMat4): ReturnType.Mat4<T>;
 }
 export namespace vec3 {
     /**
@@ -1668,131 +1702,131 @@ export namespace vec3 {
     /**
      * Copy the values from one vec3 to another
      *
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec3} a the source vector
      * @returns {ReturnType.Vec3<T>} out
      */
-    export function copy<T extends vec3>(out: T, a: ReadonlyVec3): ReturnType.Vec3<T>;
+    export function copy<T extends Vec3>(out: T, a: ReadonlyVec3): ReturnType.Vec3<T>;
     /**
      * Set the components of a vec3 to the given values
      *
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out the receiving vector
      * @param {Number} x X component
      * @param {Number} y Y component
      * @param {Number} z Z component
      * @returns {ReturnType.Vec3<T>} out
      */
-    export function set<T extends vec3>(out: T, x: number, y: number, z: number): ReturnType.Vec3<T>;
+    export function set<T extends Vec3>(out: T, x: number, y: number, z: number): ReturnType.Vec3<T>;
     /**
      * Adds two vec3's
      *
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec3} a the first operand
      * @param {ReadonlyVec3} b the second operand
      * @returns {ReturnType.Vec3<T>} out
      */
-    export function add<T extends vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3): ReturnType.Vec3<T>;
+    export function add<T extends Vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3): ReturnType.Vec3<T>;
     /**
      * Subtracts vector b from vector a
      *
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec3} a the first operand
      * @param {ReadonlyVec3} b the second operand
      * @returns {ReturnType.Vec3<T>} out
      */
-    export function subtract<T extends vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3): ReturnType.Vec3<T>;
+    export function subtract<T extends Vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3): ReturnType.Vec3<T>;
     /**
      * Multiplies two vec3's
      *
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec3} a the first operand
      * @param {ReadonlyVec3} b the second operand
      * @returns {ReturnType.Vec3<T>} out
      */
-    export function multiply<T extends vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3): ReturnType.Vec3<T>;
+    export function multiply<T extends Vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3): ReturnType.Vec3<T>;
     /**
      * Divides two vec3's
      *
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec3} a the first operand
      * @param {ReadonlyVec3} b the second operand
      * @returns {ReturnType.Vec3<T>} out
      */
-    export function divide<T extends vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3): ReturnType.Vec3<T>;
+    export function divide<T extends Vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3): ReturnType.Vec3<T>;
     /**
      * Math.ceil the components of a vec3
      *
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec3} a vector to ceil
      * @returns {ReturnType.Vec3<T>} out
      */
-    export function ceil<T extends vec3>(out: T, a: ReadonlyVec3): ReturnType.Vec3<T>;
+    export function ceil<T extends Vec3>(out: T, a: ReadonlyVec3): ReturnType.Vec3<T>;
     /**
      * Math.floor the components of a vec3
      *
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec3} a vector to floor
      * @returns {ReturnType.Vec3<T>} out
      */
-    export function floor<T extends vec3>(out: T, a: ReadonlyVec3): ReturnType.Vec3<T>;
+    export function floor<T extends Vec3>(out: T, a: ReadonlyVec3): ReturnType.Vec3<T>;
     /**
      * Returns the minimum of two vec3's
      *
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec3} a the first operand
      * @param {ReadonlyVec3} b the second operand
      * @returns {ReturnType.Vec3<T>} out
      */
-    export function min<T extends vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3): ReturnType.Vec3<T>;
+    export function min<T extends Vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3): ReturnType.Vec3<T>;
     /**
      * Returns the maximum of two vec3's
      *
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec3} a the first operand
      * @param {ReadonlyVec3} b the second operand
      * @returns {ReturnType.Vec3<T>} out
      */
-    export function max<T extends vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3): ReturnType.Vec3<T>;
+    export function max<T extends Vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3): ReturnType.Vec3<T>;
     /**
      * symmetric round the components of a vec3
      *
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec3} a vector to round
      * @returns {ReturnType.Vec3<T>} out
      */
-    export function round<T extends vec3>(out: T, a: ReadonlyVec3): ReturnType.Vec3<T>;
+    export function round<T extends Vec3>(out: T, a: ReadonlyVec3): ReturnType.Vec3<T>;
     /**
      * Scales a vec3 by a scalar number
      *
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec3} a the vector to scale
      * @param {Number} b amount to scale the vector by
      * @returns {ReturnType.Vec3<T>} out
      */
-    export function scale<T extends vec3>(out: T, a: ReadonlyVec3, b: number): ReturnType.Vec3<T>;
+    export function scale<T extends Vec3>(out: T, a: ReadonlyVec3, b: number): ReturnType.Vec3<T>;
     /**
      * Adds two vec3's after scaling the second operand by a scalar value
      *
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec3} a the first operand
      * @param {ReadonlyVec3} b the second operand
      * @param {Number} scale the amount to scale b by before adding
      * @returns {ReturnType.Vec3<T>} out
      */
-    export function scaleAndAdd<T extends vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3, scale: number): ReturnType.Vec3<T>;
+    export function scaleAndAdd<T extends Vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3, scale: number): ReturnType.Vec3<T>;
     /**
      * Calculates the euclidian distance between two vec3's
      *
@@ -1819,30 +1853,30 @@ export namespace vec3 {
     /**
      * Negates the components of a vec3
      *
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec3} a vector to negate
      * @returns {ReturnType.Vec3<T>} out
      */
-    export function negate<T extends vec3>(out: T, a: ReadonlyVec3): ReturnType.Vec3<T>;
+    export function negate<T extends Vec3>(out: T, a: ReadonlyVec3): ReturnType.Vec3<T>;
     /**
      * Returns the inverse of the components of a vec3
      *
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec3} a vector to invert
      * @returns {ReturnType.Vec3<T>} out
      */
-    export function inverse<T extends vec3>(out: T, a: ReadonlyVec3): ReturnType.Vec3<T>;
+    export function inverse<T extends Vec3>(out: T, a: ReadonlyVec3): ReturnType.Vec3<T>;
     /**
      * Normalize a vec3
      *
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec3} a vector to normalize
      * @returns {ReturnType.Vec3<T>} out
      */
-    export function normalize<T extends vec3>(out: T, a: ReadonlyVec3): ReturnType.Vec3<T>;
+    export function normalize<T extends Vec3>(out: T, a: ReadonlyVec3): ReturnType.Vec3<T>;
     /**
      * Calculates the dot product of two vec3's
      *
@@ -1854,39 +1888,39 @@ export namespace vec3 {
     /**
      * Computes the cross product of two vec3's
      *
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec3} a the first operand
      * @param {ReadonlyVec3} b the second operand
      * @returns {ReturnType.Vec3<T>} out
      */
-    export function cross<T extends vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3): ReturnType.Vec3<T>;
+    export function cross<T extends Vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3): ReturnType.Vec3<T>;
     /**
      * Performs a linear interpolation between two vec3's
      *
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec3} a the first operand
      * @param {ReadonlyVec3} b the second operand
      * @param {Number} t interpolation amount, in the range [0-1], between the two inputs
      * @returns {ReturnType.Vec3<T>} out
      */
-    export function lerp<T extends vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3, t: number): ReturnType.Vec3<T>;
+    export function lerp<T extends Vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3, t: number): ReturnType.Vec3<T>;
     /**
      * Performs a spherical linear interpolation between two vec3's
      *
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec3} a the first operand
      * @param {ReadonlyVec3} b the second operand
      * @param {Number} t interpolation amount, in the range [0-1], between the two inputs
      * @returns {ReturnType.Vec3<T>} out
      */
-    export function slerp<T extends vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3, t: number): ReturnType.Vec3<T>;
+    export function slerp<T extends Vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3, t: number): ReturnType.Vec3<T>;
     /**
      * Performs a hermite interpolation with two control points
      *
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec3} a the first operand
      * @param {ReadonlyVec3} b the second operand
@@ -1895,11 +1929,11 @@ export namespace vec3 {
      * @param {Number} t interpolation amount, in the range [0-1], between the two inputs
      * @returns {ReturnType.Vec3<T>} out
      */
-    export function hermite<T extends vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3, c: ReadonlyVec3, d: ReadonlyVec3, t: number): ReturnType.Vec3<T>;
+    export function hermite<T extends Vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3, c: ReadonlyVec3, d: ReadonlyVec3, t: number): ReturnType.Vec3<T>;
     /**
      * Performs a bezier interpolation with two control points
      *
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec3} a the first operand
      * @param {ReadonlyVec3} b the second operand
@@ -1908,78 +1942,78 @@ export namespace vec3 {
      * @param {Number} t interpolation amount, in the range [0-1], between the two inputs
      * @returns {ReturnType.Vec3<T>} out
      */
-    export function bezier<T extends vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3, c: ReadonlyVec3, d: ReadonlyVec3, t: number): ReturnType.Vec3<T>;
+    export function bezier<T extends Vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3, c: ReadonlyVec3, d: ReadonlyVec3, t: number): ReturnType.Vec3<T>;
     /**
      * Generates a random vector with the given scale
      *
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out the receiving vector
      * @param {Number} [scale] Length of the resulting vector. If omitted, a unit vector will be returned
      * @returns {ReturnType.Vec3<T>} out
      */
-    export function random<T extends vec3>(out: T, scale?: number): ReturnType.Vec3<T>;
+    export function random<T extends Vec3>(out: T, scale?: number): ReturnType.Vec3<T>;
     /**
      * Transforms the vec3 with a mat4.
      * 4th vector component is implicitly '1'
      *
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec3} a the vector to transform
      * @param {ReadonlyMat4} m matrix to transform with
      * @returns {ReturnType.Vec3<T>} out
      */
-    export function transformMat4<T extends vec3>(out: T, a: ReadonlyVec3, m: ReadonlyMat4): ReturnType.Vec3<T>;
+    export function transformMat4<T extends Vec3>(out: T, a: ReadonlyVec3, m: ReadonlyMat4): ReturnType.Vec3<T>;
     /**
      * Transforms the vec3 with a mat3.
      *
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec3} a the vector to transform
      * @param {ReadonlyMat3} m the 3x3 matrix to transform with
      * @returns {ReturnType.Vec3<T>} out
      */
-    export function transformMat3<T extends vec3>(out: T, a: ReadonlyVec3, m: ReadonlyMat3): ReturnType.Vec3<T>;
+    export function transformMat3<T extends Vec3>(out: T, a: ReadonlyVec3, m: ReadonlyMat3): ReturnType.Vec3<T>;
     /**
      * Transforms the vec3 with a quat
      * Can also be used for dual quaternions. (Multiply it with the real part)
      *
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec3} a the vector to transform
      * @param {ReadonlyQuat} q normalized quaternion to transform with
      * @returns {ReturnType.Vec3<T>} out
      */
-    export function transformQuat<T extends vec3>(out: T, a: ReadonlyVec3, q: ReadonlyQuat): ReturnType.Vec3<T>;
+    export function transformQuat<T extends Vec3>(out: T, a: ReadonlyVec3, q: ReadonlyQuat): ReturnType.Vec3<T>;
     /**
      * Rotate a 3D vector around the x-axis
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out The receiving vec3
      * @param {ReadonlyVec3} a The vec3 point to rotate
      * @param {ReadonlyVec3} b The origin of the rotation
      * @param {Number} rad The angle of rotation in radians
      * @returns {ReturnType.Vec3<T>} out
      */
-    export function rotateX<T extends vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3, rad: number): ReturnType.Vec3<T>;
+    export function rotateX<T extends Vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3, rad: number): ReturnType.Vec3<T>;
     /**
      * Rotate a 3D vector around the y-axis
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out The receiving vec3
      * @param {ReadonlyVec3} a The vec3 point to rotate
      * @param {ReadonlyVec3} b The origin of the rotation
      * @param {Number} rad The angle of rotation in radians
      * @returns {ReturnType.Vec3<T>} out
      */
-    export function rotateY<T extends vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3, rad: number): ReturnType.Vec3<T>;
+    export function rotateY<T extends Vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3, rad: number): ReturnType.Vec3<T>;
     /**
      * Rotate a 3D vector around the z-axis
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out The receiving vec3
      * @param {ReadonlyVec3} a The vec3 point to rotate
      * @param {ReadonlyVec3} b The origin of the rotation
      * @param {Number} rad The angle of rotation in radians
      * @returns {ReturnType.Vec3<T>} out
      */
-    export function rotateZ<T extends vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3, rad: number): ReturnType.Vec3<T>;
+    export function rotateZ<T extends Vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3, rad: number): ReturnType.Vec3<T>;
     /**
      * Get the angle between two 3D vectors
      * @param {ReadonlyVec3} a The first operand
@@ -1990,11 +2024,11 @@ export namespace vec3 {
     /**
      * Set the components of a vec3 to zero
      *
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out the receiving vector
      * @returns {ReturnType.Vec3<T>} out
      */
-    export function zero<T extends vec3>(out: T): ReturnType.Vec3<T>;
+    export function zero<T extends Vec3>(out: T): ReturnType.Vec3<T>;
     /**
      * Returns a string representation of a vector
      *
@@ -2021,33 +2055,33 @@ export namespace vec3 {
     /**
      * Subtracts vector b from vector a
      *
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec3} a the first operand
      * @param {ReadonlyVec3} b the second operand
      * @returns {ReturnType.Vec3<T>} out
      */
-    export function sub<T extends vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3): ReturnType.Vec3<T>;
+    export function sub<T extends Vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3): ReturnType.Vec3<T>;
     /**
      * Multiplies two vec3's
      *
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec3} a the first operand
      * @param {ReadonlyVec3} b the second operand
      * @returns {ReturnType.Vec3<T>} out
      */
-    export function mul<T extends vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3): ReturnType.Vec3<T>;
+    export function mul<T extends Vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3): ReturnType.Vec3<T>;
     /**
      * Divides two vec3's
      *
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec3} a the first operand
      * @param {ReadonlyVec3} b the second operand
      * @returns {ReturnType.Vec3<T>} out
      */
-    export function div<T extends vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3): ReturnType.Vec3<T>;
+    export function div<T extends Vec3>(out: T, a: ReadonlyVec3, b: ReadonlyVec3): ReturnType.Vec3<T>;
     /**
      * Calculates the euclidian distance between two vec3's
      *
@@ -2111,16 +2145,16 @@ export namespace vec4 {
     /**
      * Copy the values from one vec4 to another
      *
-     * @template {vec4} T
+     * @template {Vec4} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec4} a the source vector
      * @returns {ReturnType.Vec4<T>} out
      */
-    export function copy<T extends vec4>(out: T, a: ReadonlyVec4): ReturnType.Vec4<T>;
+    export function copy<T extends Vec4>(out: T, a: ReadonlyVec4): ReturnType.Vec4<T>;
     /**
      * Set the components of a vec4 to the given values
      *
-     * @template {vec4} T
+     * @template {Vec4} T
      * @param {T} out the receiving vector
      * @param {Number} x X component
      * @param {Number} y Y component
@@ -2128,115 +2162,115 @@ export namespace vec4 {
      * @param {Number} w W component
      * @returns {ReturnType.Vec4<T>} out
      */
-    export function set<T extends vec4>(out: T, x: number, y: number, z: number, w: number): ReturnType.Vec4<T>;
+    export function set<T extends Vec4>(out: T, x: number, y: number, z: number, w: number): ReturnType.Vec4<T>;
     /**
      * Adds two vec4's
      *
-     * @template {vec4} T
+     * @template {Vec4} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec4} a the first operand
      * @param {ReadonlyVec4} b the second operand
      * @returns {ReturnType.Vec4<T>} out
      */
-    export function add<T extends vec4>(out: T, a: ReadonlyVec4, b: ReadonlyVec4): ReturnType.Vec4<T>;
+    export function add<T extends Vec4>(out: T, a: ReadonlyVec4, b: ReadonlyVec4): ReturnType.Vec4<T>;
     /**
      * Subtracts vector b from vector a
      *
-     * @template {vec4} T
+     * @template {Vec4} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec4} a the first operand
      * @param {ReadonlyVec4} b the second operand
      * @returns {ReturnType.Vec4<T>} out
      */
-    export function subtract<T extends vec4>(out: T, a: ReadonlyVec4, b: ReadonlyVec4): ReturnType.Vec4<T>;
+    export function subtract<T extends Vec4>(out: T, a: ReadonlyVec4, b: ReadonlyVec4): ReturnType.Vec4<T>;
     /**
      * Multiplies two vec4's
      *
-     * @template {vec4} T
+     * @template {Vec4} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec4} a the first operand
      * @param {ReadonlyVec4} b the second operand
      * @returns {ReturnType.Vec4<T>} out
      */
-    export function multiply<T extends vec4>(out: T, a: ReadonlyVec4, b: ReadonlyVec4): ReturnType.Vec4<T>;
+    export function multiply<T extends Vec4>(out: T, a: ReadonlyVec4, b: ReadonlyVec4): ReturnType.Vec4<T>;
     /**
      * Divides two vec4's
      *
-     * @template {vec4} T
+     * @template {Vec4} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec4} a the first operand
      * @param {ReadonlyVec4} b the second operand
      * @returns {ReturnType.Vec4<T>} out
      */
-    export function divide<T extends vec4>(out: T, a: ReadonlyVec4, b: ReadonlyVec4): ReturnType.Vec4<T>;
+    export function divide<T extends Vec4>(out: T, a: ReadonlyVec4, b: ReadonlyVec4): ReturnType.Vec4<T>;
     /**
      * Math.ceil the components of a vec4
      *
-     * @template {vec4} T
+     * @template {Vec4} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec4} a vector to ceil
      * @returns {ReturnType.Vec4<T>} out
      */
-    export function ceil<T extends vec4>(out: T, a: ReadonlyVec4): ReturnType.Vec4<T>;
+    export function ceil<T extends Vec4>(out: T, a: ReadonlyVec4): ReturnType.Vec4<T>;
     /**
      * Math.floor the components of a vec4
      *
-     * @template {vec4} T
+     * @template {Vec4} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec4} a vector to floor
      * @returns {ReturnType.Vec4<T>} out
      */
-    export function floor<T extends vec4>(out: T, a: ReadonlyVec4): ReturnType.Vec4<T>;
+    export function floor<T extends Vec4>(out: T, a: ReadonlyVec4): ReturnType.Vec4<T>;
     /**
      * Returns the minimum of two vec4's
      *
-     * @template {vec4} T
+     * @template {Vec4} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec4} a the first operand
      * @param {ReadonlyVec4} b the second operand
      * @returns {ReturnType.Vec4<T>} out
      */
-    export function min<T extends vec4>(out: T, a: ReadonlyVec4, b: ReadonlyVec4): ReturnType.Vec4<T>;
+    export function min<T extends Vec4>(out: T, a: ReadonlyVec4, b: ReadonlyVec4): ReturnType.Vec4<T>;
     /**
      * Returns the maximum of two vec4's
      *
-     * @template {vec4} T
+     * @template {Vec4} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec4} a the first operand
      * @param {ReadonlyVec4} b the second operand
      * @returns {ReturnType.Vec4<T>} out
      */
-    export function max<T extends vec4>(out: T, a: ReadonlyVec4, b: ReadonlyVec4): ReturnType.Vec4<T>;
+    export function max<T extends Vec4>(out: T, a: ReadonlyVec4, b: ReadonlyVec4): ReturnType.Vec4<T>;
     /**
      * symmetric round the components of a vec4
      *
-     * @template {vec4} T
+     * @template {Vec4} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec4} a vector to round
      * @returns {ReturnType.Vec4<T>} out
      */
-    export function round<T extends vec4>(out: T, a: ReadonlyVec4): ReturnType.Vec4<T>;
+    export function round<T extends Vec4>(out: T, a: ReadonlyVec4): ReturnType.Vec4<T>;
     /**
      * Scales a vec4 by a scalar number
      *
-     * @template {vec4} T
+     * @template {Vec4} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec4} a the vector to scale
      * @param {Number} b amount to scale the vector by
      * @returns {ReturnType.Vec4<T>} out
      */
-    export function scale<T extends vec4>(out: T, a: ReadonlyVec4, b: number): ReturnType.Vec4<T>;
+    export function scale<T extends Vec4>(out: T, a: ReadonlyVec4, b: number): ReturnType.Vec4<T>;
     /**
      * Adds two vec4's after scaling the second operand by a scalar value
      *
-     * @template {vec4} T
+     * @template {Vec4} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec4} a the first operand
      * @param {ReadonlyVec4} b the second operand
      * @param {Number} scale the amount to scale b by before adding
      * @returns {ReturnType.Vec4<T>} out
      */
-    export function scaleAndAdd<T extends vec4>(out: T, a: ReadonlyVec4, b: ReadonlyVec4, scale: number): ReturnType.Vec4<T>;
+    export function scaleAndAdd<T extends Vec4>(out: T, a: ReadonlyVec4, b: ReadonlyVec4, scale: number): ReturnType.Vec4<T>;
     /**
      * Calculates the euclidian distance between two vec4's
      *
@@ -2270,30 +2304,30 @@ export namespace vec4 {
     /**
      * Negates the components of a vec4
      *
-     * @template {vec4} T
+     * @template {Vec4} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec4} a vector to negate
      * @returns {ReturnType.Vec4<T>} out
      */
-    export function negate<T extends vec4>(out: T, a: ReadonlyVec4): ReturnType.Vec4<T>;
+    export function negate<T extends Vec4>(out: T, a: ReadonlyVec4): ReturnType.Vec4<T>;
     /**
      * Returns the inverse of the components of a vec4
      *
-     * @template {vec4} T
+     * @template {Vec4} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec4} a vector to invert
      * @returns {ReturnType.Vec4<T>} out
      */
-    export function inverse<T extends vec4>(out: T, a: ReadonlyVec4): ReturnType.Vec4<T>;
+    export function inverse<T extends Vec4>(out: T, a: ReadonlyVec4): ReturnType.Vec4<T>;
     /**
      * Normalize a vec4
      *
-     * @template {vec4} T
+     * @template {Vec4} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec4} a vector to normalize
      * @returns {ReturnType.Vec4<T>} out
      */
-    export function normalize<T extends vec4>(out: T, a: ReadonlyVec4): ReturnType.Vec4<T>;
+    export function normalize<T extends Vec4>(out: T, a: ReadonlyVec4): ReturnType.Vec4<T>;
     /**
      * Calculates the dot product of two vec4's
      *
@@ -2305,62 +2339,62 @@ export namespace vec4 {
     /**
      * Returns the cross-product of three vectors in a 4-dimensional space
      *
-     * @template {vec4} T
+     * @template {Vec4} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec4} u the first vector
      * @param {ReadonlyVec4} v the second vector
      * @param {ReadonlyVec4} w the third vector
      * @returns {ReturnType.Vec4<T>} result
      */
-    export function cross<T extends vec4>(out: T, u: ReadonlyVec4, v: ReadonlyVec4, w: ReadonlyVec4): ReturnType.Vec4<T>;
+    export function cross<T extends Vec4>(out: T, u: ReadonlyVec4, v: ReadonlyVec4, w: ReadonlyVec4): ReturnType.Vec4<T>;
     /**
      * Performs a linear interpolation between two vec4's
      *
-     * @template {vec4} T
+     * @template {Vec4} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec4} a the first operand
      * @param {ReadonlyVec4} b the second operand
      * @param {Number} t interpolation amount, in the range [0-1], between the two inputs
      * @returns {ReturnType.Vec4<T>} out
      */
-    export function lerp<T extends vec4>(out: T, a: ReadonlyVec4, b: ReadonlyVec4, t: number): ReturnType.Vec4<T>;
+    export function lerp<T extends Vec4>(out: T, a: ReadonlyVec4, b: ReadonlyVec4, t: number): ReturnType.Vec4<T>;
     /**
      * Generates a random vector with the given scale
      *
-     * @template {vec4} T
+     * @template {Vec4} T
      * @param {T} out the receiving vector
      * @param {Number} [scale] Length of the resulting vector. If omitted, a unit vector will be returned
      * @returns {ReturnType.Vec4<T>} out
      */
-    export function random<T extends vec4>(out: T, scale?: number): ReturnType.Vec4<T>;
+    export function random<T extends Vec4>(out: T, scale?: number): ReturnType.Vec4<T>;
     /**
      * Transforms the vec4 with a mat4.
      *
-     * @template {vec4} T
+     * @template {Vec4} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec4} a the vector to transform
      * @param {ReadonlyMat4} m matrix to transform with
      * @returns {ReturnType.Vec4<T>} out
      */
-    export function transformMat4<T extends vec4>(out: T, a: ReadonlyVec4, m: ReadonlyMat4): ReturnType.Vec4<T>;
+    export function transformMat4<T extends Vec4>(out: T, a: ReadonlyVec4, m: ReadonlyMat4): ReturnType.Vec4<T>;
     /**
      * Transforms the vec4 with a quat
      *
-     * @template {vec4} T
+     * @template {Vec4} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec4} a the vector to transform
      * @param {ReadonlyQuat} q normalized quaternion to transform with
      * @returns {ReturnType.Vec4<T>} out
      */
-    export function transformQuat<T extends vec4>(out: T, a: ReadonlyVec4, q: ReadonlyQuat): ReturnType.Vec4<T>;
+    export function transformQuat<T extends Vec4>(out: T, a: ReadonlyVec4, q: ReadonlyQuat): ReturnType.Vec4<T>;
     /**
      * Set the components of a vec4 to zero
      *
-     * @template {vec4} T
+     * @template {Vec4} T
      * @param {T} out the receiving vector
      * @returns {ReturnType.Vec4<T>} out
      */
-    export function zero<T extends vec4>(out: T): ReturnType.Vec4<T>;
+    export function zero<T extends Vec4>(out: T): ReturnType.Vec4<T>;
     /**
      * Returns a string representation of a vector
      *
@@ -2387,33 +2421,33 @@ export namespace vec4 {
     /**
      * Subtracts vector b from vector a
      *
-     * @template {vec4} T
+     * @template {Vec4} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec4} a the first operand
      * @param {ReadonlyVec4} b the second operand
      * @returns {ReturnType.Vec4<T>} out
      */
-    export function sub<T extends vec4>(out: T, a: ReadonlyVec4, b: ReadonlyVec4): ReturnType.Vec4<T>;
+    export function sub<T extends Vec4>(out: T, a: ReadonlyVec4, b: ReadonlyVec4): ReturnType.Vec4<T>;
     /**
      * Multiplies two vec4's
      *
-     * @template {vec4} T
+     * @template {Vec4} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec4} a the first operand
      * @param {ReadonlyVec4} b the second operand
      * @returns {ReturnType.Vec4<T>} out
      */
-    export function mul<T extends vec4>(out: T, a: ReadonlyVec4, b: ReadonlyVec4): ReturnType.Vec4<T>;
+    export function mul<T extends Vec4>(out: T, a: ReadonlyVec4, b: ReadonlyVec4): ReturnType.Vec4<T>;
     /**
      * Divides two vec4's
      *
-     * @template {vec4} T
+     * @template {Vec4} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec4} a the first operand
      * @param {ReadonlyVec4} b the second operand
      * @returns {ReturnType.Vec4<T>} out
      */
-    export function div<T extends vec4>(out: T, a: ReadonlyVec4, b: ReadonlyVec4): ReturnType.Vec4<T>;
+    export function div<T extends Vec4>(out: T, a: ReadonlyVec4, b: ReadonlyVec4): ReturnType.Vec4<T>;
     /**
      * Calculates the euclidian distance between two vec4's
      *
@@ -2460,22 +2494,22 @@ export namespace quat {
     /**
      * Set a quat to the identity quaternion
      *
-     * @template {quat} T
+     * @template {Quat} T
      * @param {T} out the receiving quaternion
      * @returns {ReturnType.Quat<T>} out
      */
-    export function identity<T_1 extends quat>(out: T_1): ReturnType.Quat<T_1>;
+    export function identity<T_1 extends Quat>(out: T_1): ReturnType.Quat<T_1>;
     /**
      * Sets a quat from the given angle and rotation axis,
      * then returns it.
      *
-     * @template {quat} T
+     * @template {Quat} T
      * @param {T} out the receiving quaternion
      * @param {ReadonlyVec3} axis the axis around which to rotate
      * @param {Number} rad the angle in radians
      * @returns {ReturnType.Quat<T>} out
      **/
-    export function setAxisAngle<T_1 extends quat>(out: T_1, axis: ReadonlyVec3, rad: number): ReturnType.Quat<T_1>;
+    export function setAxisAngle<T_1 extends Quat>(out: T_1, axis: ReadonlyVec3, rad: number): ReturnType.Quat<T_1>;
     /**
      * Gets the rotation axis and angle for a given
      *  quaternion. If a quaternion is created with
@@ -2485,11 +2519,11 @@ export namespace quat {
      * Example: The quaternion formed by axis [0, 0, 1] and
      *  angle -90 is the same as the quaternion formed by
      *  [0, 0, 1] and 270. This method favors the latter.
-     * @param  {vec3} out_axis  Vector receiving the axis of rotation
+     * @param  {Vec3} out_axis  Vector receiving the axis of rotation
      * @param  {ReadonlyQuat} q     Quaternion to be decomposed
      * @return {Number}     Angle, in radians, of the rotation
      */
-    export function getAxisAngle(out_axis: vec3, q: ReadonlyQuat): number;
+    export function getAxisAngle(out_axis: Vec3, q: ReadonlyQuat): number;
     /**
      * Gets the angular distance between two unit quaternions
      *
@@ -2501,137 +2535,137 @@ export namespace quat {
     /**
      * Multiplies two quat's
      *
-     * @template {quat} T
+     * @template {Quat} T
      * @param {T} out the receiving quaternion
      * @param {ReadonlyQuat} a the first operand
      * @param {ReadonlyQuat} b the second operand
      * @returns {ReturnType.Quat<T>} out
      */
-    export function multiply<T_1 extends quat>(out: T_1, a: ReadonlyQuat, b: ReadonlyQuat): ReturnType.Quat<T_1>;
+    export function multiply<T_1 extends Quat>(out: T_1, a: ReadonlyQuat, b: ReadonlyQuat): ReturnType.Quat<T_1>;
     /**
      * Rotates a quaternion by the given angle about the X axis
      *
-     * @template {quat} T
+     * @template {Quat} T
      * @param {T} out quat receiving operation result
      * @param {ReadonlyQuat} a quat to rotate
      * @param {number} rad angle (in radians) to rotate
      * @returns {ReturnType.Quat<T>} out
      */
-    export function rotateX<T_1 extends quat>(out: T_1, a: ReadonlyQuat, rad: number): ReturnType.Quat<T_1>;
+    export function rotateX<T_1 extends Quat>(out: T_1, a: ReadonlyQuat, rad: number): ReturnType.Quat<T_1>;
     /**
      * Rotates a quaternion by the given angle about the Y axis
      *
-     * @template {quat} T
+     * @template {Quat} T
      * @param {T} out quat receiving operation result
      * @param {ReadonlyQuat} a quat to rotate
      * @param {number} rad angle (in radians) to rotate
      * @returns {ReturnType.Quat<T>} out
      */
-    export function rotateY<T_1 extends quat>(out: T_1, a: ReadonlyQuat, rad: number): ReturnType.Quat<T_1>;
+    export function rotateY<T_1 extends Quat>(out: T_1, a: ReadonlyQuat, rad: number): ReturnType.Quat<T_1>;
     /**
      * Rotates a quaternion by the given angle about the Z axis
      *
-     * @template {quat} T
+     * @template {Quat} T
      * @param {T} out quat receiving operation result
      * @param {ReadonlyQuat} a quat to rotate
      * @param {number} rad angle (in radians) to rotate
      * @returns {ReturnType.Quat<T>} out
      */
-    export function rotateZ<T_1 extends quat>(out: T_1, a: ReadonlyQuat, rad: number): ReturnType.Quat<T_1>;
+    export function rotateZ<T_1 extends Quat>(out: T_1, a: ReadonlyQuat, rad: number): ReturnType.Quat<T_1>;
     /**
      * Calculates the W component of a quat from the X, Y, and Z components.
      * Assumes that quaternion is 1 unit in length.
      * Any existing W component will be ignored.
      *
-     * @template {quat} T
+     * @template {Quat} T
      * @param {T} out the receiving quaternion
      * @param {ReadonlyQuat} a quat to calculate W component of
      * @returns {ReturnType.Quat<T>} out
      */
-    export function calculateW<T_1 extends quat>(out: T_1, a: ReadonlyQuat): ReturnType.Quat<T_1>;
+    export function calculateW<T_1 extends Quat>(out: T_1, a: ReadonlyQuat): ReturnType.Quat<T_1>;
     /**
      * Calculate the exponential of a unit quaternion.
      *
-     * @template {quat} T
+     * @template {Quat} T
      * @param {T} out the receiving quaternion
      * @param {ReadonlyQuat} a quat to calculate the exponential of
      * @returns {ReturnType.Quat<T>} out
      */
-    export function exp<T_1 extends quat>(out: T_1, a: ReadonlyQuat): ReturnType.Quat<T_1>;
+    export function exp<T_1 extends Quat>(out: T_1, a: ReadonlyQuat): ReturnType.Quat<T_1>;
     /**
      * Calculate the natural logarithm of a unit quaternion.
      *
-     * @template {quat} T
+     * @template {Quat} T
      * @param {T} out the receiving quaternion
      * @param {ReadonlyQuat} a quat to calculate the exponential of
      * @returns {ReturnType.Quat<T>} out
      */
-    export function ln<T_1 extends quat>(out: T_1, a: ReadonlyQuat): ReturnType.Quat<T_1>;
+    export function ln<T_1 extends Quat>(out: T_1, a: ReadonlyQuat): ReturnType.Quat<T_1>;
     /**
      * Calculate the scalar power of a unit quaternion.
      *
-     * @template {quat} T
+     * @template {Quat} T
      * @param {T} out the receiving quaternion
      * @param {ReadonlyQuat} a quat to calculate the exponential of
      * @param {Number} b amount to scale the quaternion by
      * @returns {ReturnType.Quat<T>} out
      */
-    export function pow<T_1 extends quat>(out: T_1, a: ReadonlyQuat, b: number): ReturnType.Quat<T_1>;
+    export function pow<T_1 extends Quat>(out: T_1, a: ReadonlyQuat, b: number): ReturnType.Quat<T_1>;
     /**
      * Performs a spherical linear interpolation between two quat
      *
-     * @template {quat} T
+     * @template {Quat} T
      * @param {T} out the receiving quaternion
      * @param {ReadonlyQuat} a the first operand
      * @param {ReadonlyQuat} b the second operand
      * @param {Number} t interpolation amount, in the range [0-1], between the two inputs
      * @returns {ReturnType.Quat<T>} out
      */
-    export function slerp<T_1 extends quat>(out: T_1, a: ReadonlyQuat, b: ReadonlyQuat, t: number): ReturnType.Quat<T_1>;
+    export function slerp<T_1 extends Quat>(out: T_1, a: ReadonlyQuat, b: ReadonlyQuat, t: number): ReturnType.Quat<T_1>;
     /**
      * Generates a random unit quaternion
      *
-     * @template {quat} T
+     * @template {Quat} T
      * @param {T} out the receiving quaternion
      * @returns {ReturnType.Quat<T>} out
      */
-    export function random<T_1 extends quat>(out: T_1): ReturnType.Quat<T_1>;
+    export function random<T_1 extends Quat>(out: T_1): ReturnType.Quat<T_1>;
     /**
      * Calculates the inverse of a quat
      *
-     * @template {quat} T
+     * @template {Quat} T
      * @param {T} out the receiving quaternion
      * @param {ReadonlyQuat} a quat to calculate inverse of
      * @returns {ReturnType.Quat<T>} out
      */
-    export function invert<T_1 extends quat>(out: T_1, a: ReadonlyQuat): ReturnType.Quat<T_1>;
+    export function invert<T_1 extends Quat>(out: T_1, a: ReadonlyQuat): ReturnType.Quat<T_1>;
     /**
      * Calculates the conjugate of a quat
      * If the quaternion is normalized, this function is faster than quat.inverse and produces the same result.
      *
-     * @template {quat} T
+     * @template {Quat} T
      * @param {T} out the receiving quaternion
      * @param {ReadonlyQuat} a quat to calculate conjugate of
      * @returns {ReturnType.Quat<T>} out
      */
-    export function conjugate<T_1 extends quat>(out: T_1, a: ReadonlyQuat): ReturnType.Quat<T_1>;
+    export function conjugate<T_1 extends Quat>(out: T_1, a: ReadonlyQuat): ReturnType.Quat<T_1>;
     /**
      * Creates a quaternion from the given 3x3 rotation matrix.
      *
      * NOTE: The resultant quaternion is not normalized, so you should be sure
      * to renormalize the quaternion yourself where necessary.
      *
-     * @template {quat} T
+     * @template {Quat} T
      * @param {T} out the receiving quaternion
      * @param {ReadonlyMat3} m rotation matrix
      * @returns {ReturnType.Quat<T>} out
      * @function
      */
-    export function fromMat3<T_1 extends quat>(out: T_1, m: ReadonlyMat3): ReturnType.Quat<T_1>;
+    export function fromMat3<T_1 extends Quat>(out: T_1, m: ReadonlyMat3): ReturnType.Quat<T_1>;
     /**
      * Creates a quaternion from the given euler angle x, y, z using the provided intrinsic order for the conversion.
      *
-     * @template {quat} T
+     * @template {Quat} T
      * @param {T} out the receiving quaternion
      * @param {Number} x Angle to rotate around X axis in degrees.
      * @param {Number} y Angle to rotate around Y axis in degrees.
@@ -2640,7 +2674,7 @@ export namespace quat {
      * @returns {ReturnType.Quat<T>} out
      * @function
      */
-    export function fromEuler<T_1 extends quat>(out: T_1, x: number, y: number, z: number, order?: "xyz" | "xzy" | "yxz" | "yzx" | "zxy" | "zyx"): ReturnType.Quat<T_1>;
+    export function fromEuler<T_1 extends Quat>(out: T_1, x: number, y: number, z: number, order?: "xyz" | "xzy" | "yxz" | "yzx" | "zxy" | "zyx"): ReturnType.Quat<T_1>;
     /**
      * Returns a string representation of a quaternion
      *
@@ -2680,7 +2714,7 @@ export namespace quat {
     /**
      * Copy the values from one quat to another
      *
-     * @template {quat} T
+     * @template {Quat} T
      * @param {T} out the receiving quaternion
      * @param {ReadonlyQuat} a the source quaternion
      * @returns {ReturnType.Quat<T>} out
@@ -2690,7 +2724,7 @@ export namespace quat {
     /**
      * Set the components of a quat to the given values
      *
-     * @template {quat} T
+     * @template {Quat} T
      * @param {T} out the receiving quaternion
      * @param {Number} x X component
      * @param {Number} y Y component
@@ -2703,7 +2737,7 @@ export namespace quat {
     /**
      * Adds two quat's
      *
-     * @template {quat} T
+     * @template {Quat} T
      * @param {T} out the receiving quaternion
      * @param {ReadonlyQuat} a the first operand
      * @param {ReadonlyQuat} b the second operand
@@ -2714,17 +2748,17 @@ export namespace quat {
     /**
      * Multiplies two quat's
      *
-     * @template {quat} T
+     * @template {Quat} T
      * @param {T} out the receiving quaternion
      * @param {ReadonlyQuat} a the first operand
      * @param {ReadonlyQuat} b the second operand
      * @returns {ReturnType.Quat<T>} out
      */
-    export function mul<T_1 extends quat>(out: T_1, a: ReadonlyQuat, b: ReadonlyQuat): ReturnType.Quat<T_1>;
+    export function mul<T_1 extends Quat>(out: T_1, a: ReadonlyQuat, b: ReadonlyQuat): ReturnType.Quat<T_1>;
     /**
      * Scales a quat by a scalar number
      *
-     * @template {quat} T
+     * @template {Quat} T
      * @param {T} out the receiving vector
      * @param {ReadonlyQuat} a the vector to scale
      * @param {Number} b amount to scale the vector by
@@ -2744,7 +2778,7 @@ export namespace quat {
     /**
      * Performs a linear interpolation between two quat's
      *
-     * @template {quat} T
+     * @template {Quat} T
      * @param {T} out the receiving quaternion
      * @param {ReadonlyQuat} a the first operand
      * @param {ReadonlyQuat} b the second operand
@@ -2781,7 +2815,7 @@ export namespace quat {
     /**
      * Normalize a quat
      *
-     * @template {quat} T
+     * @template {Quat} T
      * @param {T} out the receiving quaternion
      * @param {ReadonlyQuat} a quaternion to normalize
      * @returns {ReturnType.Quat<T>} out
@@ -2855,66 +2889,66 @@ export namespace quat2 {
     /**
      * Creates a dual quat from a quaternion and a translation
      *
-     * @template {quat2} T
+     * @template {Quat2} T
      * @param {T} out dual quaternion receiving operation result
      * @param {ReadonlyQuat} q a normalized quaternion
      * @param {ReadonlyVec3} t translation vector
      * @returns {ReturnType.Quat2<T>} dual quaternion receiving operation result
      * @function
      */
-    export function fromRotationTranslation<T_1 extends quat2>(out: T_1, q: ReadonlyQuat, t: ReadonlyVec3): ReturnType.Quat2<T_1>;
+    export function fromRotationTranslation<T_1 extends Quat2>(out: T_1, q: ReadonlyQuat, t: ReadonlyVec3): ReturnType.Quat2<T_1>;
     /**
      * Creates a dual quat from a translation
      *
-     * @template {quat2} T
+     * @template {Quat2} T
      * @param {T} out dual quaternion receiving operation result
      * @param {ReadonlyVec3} t translation vector
      * @returns {ReturnType.Quat2<T>} dual quaternion receiving operation result
      * @function
      */
-    export function fromTranslation<T_1 extends quat2>(out: T_1, t: ReadonlyVec3): ReturnType.Quat2<T_1>;
+    export function fromTranslation<T_1 extends Quat2>(out: T_1, t: ReadonlyVec3): ReturnType.Quat2<T_1>;
     /**
      * Creates a dual quat from a quaternion
      *
-     * @template {quat2} T
+     * @template {Quat2} T
      * @param {T} out dual quaternion receiving operation result
      * @param {ReadonlyQuat} q the quaternion
      * @returns {ReturnType.Quat2<T>} dual quaternion receiving operation result
      * @function
      */
-    export function fromRotation<T_1 extends quat2>(out: T_1, q: ReadonlyQuat): ReturnType.Quat2<T_1>;
+    export function fromRotation<T_1 extends Quat2>(out: T_1, q: ReadonlyQuat): ReturnType.Quat2<T_1>;
     /**
      * Creates a new dual quat from a matrix (4x4)
      *
-     * @template {quat2} T
+     * @template {Quat2} T
      * @param {T} out the dual quaternion
      * @param {ReadonlyMat4} a the matrix
      * @returns {ReturnType.Quat2<T>} dual quat receiving operation result
      * @function
      */
-    export function fromMat4<T_1 extends quat2>(out: T_1, a: ReadonlyMat4): ReturnType.Quat2<T_1>;
+    export function fromMat4<T_1 extends Quat2>(out: T_1, a: ReadonlyMat4): ReturnType.Quat2<T_1>;
     /**
      * Copy the values from one dual quat to another
      *
-     * @template {quat2} T
+     * @template {Quat2} T
      * @param {T} out the receiving dual quaternion
      * @param {ReadonlyQuat2} a the source dual quaternion
      * @returns {ReturnType.Quat2<T>} out
      * @function
      */
-    export function copy<T_1 extends quat2>(out: T_1, a: ReadonlyQuat2): ReturnType.Quat2<T_1>;
+    export function copy<T_1 extends Quat2>(out: T_1, a: ReadonlyQuat2): ReturnType.Quat2<T_1>;
     /**
      * Set a dual quat to the identity dual quaternion
      *
-     * @template {quat2} T
+     * @template {Quat2} T
      * @param {T} out the receiving quaternion
      * @returns {ReturnType.Quat2<T>} out
      */
-    export function identity<T_1 extends quat2>(out: T_1): ReturnType.Quat2<T_1>;
+    export function identity<T_1 extends Quat2>(out: T_1): ReturnType.Quat2<T_1>;
     /**
      * Set the components of a dual quat to the given values
      *
-     * @template {quat2} T
+     * @template {Quat2} T
      * @param {T} out the receiving quaternion
      * @param {Number} x1 X component
      * @param {Number} y1 Y component
@@ -2927,175 +2961,175 @@ export namespace quat2 {
      * @returns {ReturnType.Quat2<T>} out
      * @function
      */
-    export function set<T_1 extends quat2>(out: T_1, x1: number, y1: number, z1: number, w1: number, x2: number, y2: number, z2: number, w2: number): ReturnType.Quat2<T_1>;
+    export function set<T_1 extends Quat2>(out: T_1, x1: number, y1: number, z1: number, w1: number, x2: number, y2: number, z2: number, w2: number): ReturnType.Quat2<T_1>;
     /**
      * Gets the dual part of a dual quat
-     * @param  {quat} out dual part
+     * @param  {Quat} out dual part
      * @param  {ReadonlyQuat2} a Dual Quaternion
-     * @return {quat} dual part
+     * @return {Quat} dual part
      */
-    export function getDual(out: quat, a: ReadonlyQuat2): quat;
+    export function getDual(out: Quat, a: ReadonlyQuat2): Quat;
     /**
      * Set the dual component of a dual quat to the given quaternion
      *
-     * @template {quat2} T
+     * @template {Quat2} T
      * @param {T} out the receiving quaternion
      * @param {ReadonlyQuat} q a quaternion representing the dual part
      * @returns {ReturnType.Quat2<T>} out
      * @function
      */
-    export function setDual<T_1 extends quat2>(out: T_1, q: ReadonlyQuat): ReturnType.Quat2<T_1>;
+    export function setDual<T_1 extends Quat2>(out: T_1, q: ReadonlyQuat): ReturnType.Quat2<T_1>;
     /**
      * Gets the translation of a normalized dual quat
-     * @param  {vec3} out translation
+     * @param  {Vec3} out translation
      * @param  {ReadonlyQuat2} a Dual Quaternion to be decomposed
-     * @return {vec3} translation
+     * @return {Vec3} translation
      */
-    export function getTranslation(out: vec3, a: ReadonlyQuat2): vec3;
+    export function getTranslation(out: Vec3, a: ReadonlyQuat2): Vec3;
     /**
      * Translates a dual quat by the given vector
      *
-     * @template {quat2} T
+     * @template {Quat2} T
      * @param {T} out the receiving dual quaternion
      * @param {ReadonlyQuat2} a the dual quaternion to translate
      * @param {ReadonlyVec3} v vector to translate by
      * @returns {ReturnType.Quat2<T>} out
      */
-    export function translate<T_1 extends quat2>(out: T_1, a: ReadonlyQuat2, v: ReadonlyVec3): ReturnType.Quat2<T_1>;
+    export function translate<T_1 extends Quat2>(out: T_1, a: ReadonlyQuat2, v: ReadonlyVec3): ReturnType.Quat2<T_1>;
     /**
      * Rotates a dual quat around the X axis
      *
-     * @template {quat2} T
+     * @template {Quat2} T
      * @param {T} out the receiving dual quaternion
      * @param {ReadonlyQuat2} a the dual quaternion to rotate
      * @param {number} rad how far should the rotation be
      * @returns {ReturnType.Quat2<T>} out
      */
-    export function rotateX<T_1 extends quat2>(out: T_1, a: ReadonlyQuat2, rad: number): ReturnType.Quat2<T_1>;
+    export function rotateX<T_1 extends Quat2>(out: T_1, a: ReadonlyQuat2, rad: number): ReturnType.Quat2<T_1>;
     /**
      * Rotates a dual quat around the Y axis
      *
-     * @template {quat2} T
+     * @template {Quat2} T
      * @param {T} out the receiving dual quaternion
      * @param {ReadonlyQuat2} a the dual quaternion to rotate
      * @param {number} rad how far should the rotation be
      * @returns {ReturnType.Quat2<T>} out
      */
-    export function rotateY<T_1 extends quat2>(out: T_1, a: ReadonlyQuat2, rad: number): ReturnType.Quat2<T_1>;
+    export function rotateY<T_1 extends Quat2>(out: T_1, a: ReadonlyQuat2, rad: number): ReturnType.Quat2<T_1>;
     /**
      * Rotates a dual quat around the Z axis
      *
-     * @template {quat2} T
+     * @template {Quat2} T
      * @param {T} out the receiving dual quaternion
      * @param {ReadonlyQuat2} a the dual quaternion to rotate
      * @param {number} rad how far should the rotation be
      * @returns {ReturnType.Quat2<T>} out
      */
-    export function rotateZ<T_1 extends quat2>(out: T_1, a: ReadonlyQuat2, rad: number): ReturnType.Quat2<T_1>;
+    export function rotateZ<T_1 extends Quat2>(out: T_1, a: ReadonlyQuat2, rad: number): ReturnType.Quat2<T_1>;
     /**
      * Rotates a dual quat by a given quaternion (a * q)
      *
-     * @template {quat2} T
+     * @template {Quat2} T
      * @param {T} out the receiving dual quaternion
      * @param {ReadonlyQuat2} a the dual quaternion to rotate
      * @param {ReadonlyQuat} q quaternion to rotate by
      * @returns {ReturnType.Quat2<T>} out
      */
-    export function rotateByQuatAppend<T_1 extends quat2>(out: T_1, a: ReadonlyQuat2, q: ReadonlyQuat): ReturnType.Quat2<T_1>;
+    export function rotateByQuatAppend<T_1 extends Quat2>(out: T_1, a: ReadonlyQuat2, q: ReadonlyQuat): ReturnType.Quat2<T_1>;
     /**
      * Rotates a dual quat by a given quaternion (q * a)
      *
-     * @template {quat2} T
+     * @template {Quat2} T
      * @param {T} out the receiving dual quaternion
      * @param {ReadonlyQuat} q quaternion to rotate by
      * @param {ReadonlyQuat2} a the dual quaternion to rotate
      * @returns {ReturnType.Quat2<T>} out
      */
-    export function rotateByQuatPrepend<T_1 extends quat2>(out: T_1, q: ReadonlyQuat, a: ReadonlyQuat2): ReturnType.Quat2<T_1>;
+    export function rotateByQuatPrepend<T_1 extends Quat2>(out: T_1, q: ReadonlyQuat, a: ReadonlyQuat2): ReturnType.Quat2<T_1>;
     /**
      * Rotates a dual quat around a given axis. Does the normalisation automatically
      *
-     * @template {quat2} T
+     * @template {Quat2} T
      * @param {T} out the receiving dual quaternion
      * @param {ReadonlyQuat2} a the dual quaternion to rotate
      * @param {ReadonlyVec3} axis the axis to rotate around
      * @param {Number} rad how far the rotation should be
      * @returns {ReturnType.Quat2<T>} out
      */
-    export function rotateAroundAxis<T_1 extends quat2>(out: T_1, a: ReadonlyQuat2, axis: ReadonlyVec3, rad: number): ReturnType.Quat2<T_1>;
+    export function rotateAroundAxis<T_1 extends Quat2>(out: T_1, a: ReadonlyQuat2, axis: ReadonlyVec3, rad: number): ReturnType.Quat2<T_1>;
     /**
      * Adds two dual quat's
      *
-     * @template {quat2} T
+     * @template {Quat2} T
      * @param {T} out the receiving dual quaternion
      * @param {ReadonlyQuat2} a the first operand
      * @param {ReadonlyQuat2} b the second operand
      * @returns {ReturnType.Quat2<T>} out
      * @function
      */
-    export function add<T_1 extends quat2>(out: T_1, a: ReadonlyQuat2, b: ReadonlyQuat2): ReturnType.Quat2<T_1>;
+    export function add<T_1 extends Quat2>(out: T_1, a: ReadonlyQuat2, b: ReadonlyQuat2): ReturnType.Quat2<T_1>;
     /**
      * Multiplies two dual quat's
      *
-     * @template {quat2} T
+     * @template {Quat2} T
      * @param {T} out the receiving dual quaternion
      * @param {ReadonlyQuat2} a the first operand
      * @param {ReadonlyQuat2} b the second operand
      * @returns {ReturnType.Quat2<T>} out
      */
-    export function multiply<T_1 extends quat2>(out: T_1, a: ReadonlyQuat2, b: ReadonlyQuat2): ReturnType.Quat2<T_1>;
+    export function multiply<T_1 extends Quat2>(out: T_1, a: ReadonlyQuat2, b: ReadonlyQuat2): ReturnType.Quat2<T_1>;
     /**
      * Scales a dual quat by a scalar number
      *
-     * @template {quat2} T
+     * @template {Quat2} T
      * @param {T} out the receiving dual quat
      * @param {ReadonlyQuat2} a the dual quat to scale
      * @param {Number} b amount to scale the dual quat by
      * @returns {ReturnType.Quat2<T>} out
      * @function
      */
-    export function scale<T_1 extends quat2>(out: T_1, a: ReadonlyQuat2, b: number): ReturnType.Quat2<T_1>;
+    export function scale<T_1 extends Quat2>(out: T_1, a: ReadonlyQuat2, b: number): ReturnType.Quat2<T_1>;
     /**
      * Performs a linear interpolation between two dual quats's
      * NOTE: The resulting dual quaternions won't always be normalized (The error is most noticeable when t = 0.5)
      *
-     * @template {quat2} T
+     * @template {Quat2} T
      * @param {T} out the receiving dual quat
      * @param {ReadonlyQuat2} a the first operand
      * @param {ReadonlyQuat2} b the second operand
      * @param {Number} t interpolation amount, in the range [0-1], between the two inputs
      * @returns {ReturnType.Quat2<T>} out
      */
-    export function lerp<T_1 extends quat2>(out: T_1, a: ReadonlyQuat2, b: ReadonlyQuat2, t: number): ReturnType.Quat2<T_1>;
+    export function lerp<T_1 extends Quat2>(out: T_1, a: ReadonlyQuat2, b: ReadonlyQuat2, t: number): ReturnType.Quat2<T_1>;
     /**
      * Calculates the inverse of a dual quat. If they are normalized, conjugate is cheaper
      *
-     * @template {quat2} T
+     * @template {Quat2} T
      * @param {T} out the receiving dual quaternion
      * @param {ReadonlyQuat2} a dual quat to calculate inverse of
      * @returns {ReturnType.Quat2<T>} out
      */
-    export function invert<T_1 extends quat2>(out: T_1, a: ReadonlyQuat2): ReturnType.Quat2<T_1>;
+    export function invert<T_1 extends Quat2>(out: T_1, a: ReadonlyQuat2): ReturnType.Quat2<T_1>;
     /**
      * Calculates the conjugate of a dual quat
      * If the dual quaternion is normalized, this function is faster than quat2.inverse and produces the same result.
      *
-     * @template {quat2} T
+     * @template {Quat2} T
      * @param {T} out the receiving quaternion
      * @param {ReadonlyQuat2} a quat to calculate conjugate of
      * @returns {ReturnType.Quat2<T>} out
      */
-    export function conjugate<T_1 extends quat2>(out: T_1, a: ReadonlyQuat2): ReturnType.Quat2<T_1>;
+    export function conjugate<T_1 extends Quat2>(out: T_1, a: ReadonlyQuat2): ReturnType.Quat2<T_1>;
     /**
      * Normalize a dual quat
      *
-     * @template {quat2} T
+     * @template {Quat2} T
      * @param {T} out the receiving dual quaternion
      * @param {ReadonlyQuat2} a dual quaternion to normalize
      * @returns {ReturnType.Quat2<T>} out
      * @function
      */
-    export function normalize<T_1 extends quat2>(out: T_1, a: ReadonlyQuat2): ReturnType.Quat2<T_1>;
+    export function normalize<T_1 extends Quat2>(out: T_1, a: ReadonlyQuat2): ReturnType.Quat2<T_1>;
     /**
      * Returns a string representation of a dual quaternion
      *
@@ -3121,15 +3155,15 @@ export namespace quat2 {
     export function equals(a: ReadonlyQuat2, b: ReadonlyQuat2): boolean;
     /**
      * Gets the real part of a dual quat
-     * @param  {quat} out real part
+     * @param  {Quat} out real part
      * @param  {ReadonlyQuat2} a Dual Quaternion
-     * @return {quat} real part
+     * @return {Quat} real part
      */
     export const getReal: typeof vec4.copy;
     /**
      * Set the real component of a dual quat to the given quaternion
      *
-     * @template {quat2} T
+     * @template {Quat2} T
      * @param {T} out the receiving quaternion
      * @param {ReadonlyQuat} q a quaternion representing the real part
      * @returns {ReturnType.Quat2<T>} out
@@ -3139,13 +3173,13 @@ export namespace quat2 {
     /**
      * Multiplies two dual quat's
      *
-     * @template {quat2} T
+     * @template {Quat2} T
      * @param {T} out the receiving dual quaternion
      * @param {ReadonlyQuat2} a the first operand
      * @param {ReadonlyQuat2} b the second operand
      * @returns {ReturnType.Quat2<T>} out
      */
-    export function mul<T_1 extends quat2>(out: T_1, a: ReadonlyQuat2, b: ReadonlyQuat2): ReturnType.Quat2<T_1>;
+    export function mul<T_1 extends Quat2>(out: T_1, a: ReadonlyQuat2, b: ReadonlyQuat2): ReturnType.Quat2<T_1>;
     /**
      * Calculates the dot product of two dual quat's (The dot product of the real parts)
      *
@@ -3211,130 +3245,130 @@ export namespace vec2 {
     /**
      * Copy the values from one vec2 to another
      *
-     * @template {vec2} T
+     * @template {Vec2} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec2} a the source vector
      * @returns {ReturnType.Vec2<T>} out
      */
-    export function copy<T extends vec2>(out: T, a: ReadonlyVec2): ReturnType.Vec2<T>;
+    export function copy<T extends Vec2>(out: T, a: ReadonlyVec2): ReturnType.Vec2<T>;
     /**
      * Set the components of a vec2 to the given values
      *
-     * @template {vec2} T
+     * @template {Vec2} T
      * @param {T} out the receiving vector
      * @param {Number} x X component
      * @param {Number} y Y component
      * @returns {ReturnType.Vec2<T>} out
      */
-    export function set<T extends vec2>(out: T, x: number, y: number): ReturnType.Vec2<T>;
+    export function set<T extends Vec2>(out: T, x: number, y: number): ReturnType.Vec2<T>;
     /**
      * Adds two vec2's
      *
-     * @template {vec2} T
+     * @template {Vec2} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec2} a the first operand
      * @param {ReadonlyVec2} b the second operand
      * @returns {ReturnType.Vec2<T>} out
      */
-    export function add<T extends vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2): ReturnType.Vec2<T>;
+    export function add<T extends Vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2): ReturnType.Vec2<T>;
     /**
      * Subtracts vector b from vector a
      *
-     * @template {vec2} T
+     * @template {Vec2} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec2} a the first operand
      * @param {ReadonlyVec2} b the second operand
      * @returns {ReturnType.Vec2<T>} out
      */
-    export function subtract<T extends vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2): ReturnType.Vec2<T>;
+    export function subtract<T extends Vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2): ReturnType.Vec2<T>;
     /**
      * Multiplies two vec2's
      *
-     * @template {vec2} T
+     * @template {Vec2} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec2} a the first operand
      * @param {ReadonlyVec2} b the second operand
      * @returns {ReturnType.Vec2<T>} out
      */
-    export function multiply<T extends vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2): ReturnType.Vec2<T>;
+    export function multiply<T extends Vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2): ReturnType.Vec2<T>;
     /**
      * Divides two vec2's
      *
-     * @template {vec2} T
+     * @template {Vec2} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec2} a the first operand
      * @param {ReadonlyVec2} b the second operand
      * @returns {ReturnType.Vec2<T>} out
      */
-    export function divide<T extends vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2): ReturnType.Vec2<T>;
+    export function divide<T extends Vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2): ReturnType.Vec2<T>;
     /**
      * Math.ceil the components of a vec2
      *
-     * @template {vec2} T
+     * @template {Vec2} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec2} a vector to ceil
      * @returns {ReturnType.Vec2<T>} out
      */
-    export function ceil<T extends vec2>(out: T, a: ReadonlyVec2): ReturnType.Vec2<T>;
+    export function ceil<T extends Vec2>(out: T, a: ReadonlyVec2): ReturnType.Vec2<T>;
     /**
      * Math.floor the components of a vec2
      *
-     * @template {vec2} T
+     * @template {Vec2} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec2} a vector to floor
      * @returns {ReturnType.Vec2<T>} out
      */
-    export function floor<T extends vec2>(out: T, a: ReadonlyVec2): ReturnType.Vec2<T>;
+    export function floor<T extends Vec2>(out: T, a: ReadonlyVec2): ReturnType.Vec2<T>;
     /**
      * Returns the minimum of two vec2's
      *
-     * @template {vec2} T
+     * @template {Vec2} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec2} a the first operand
      * @param {ReadonlyVec2} b the second operand
      * @returns {ReturnType.Vec2<T>} out
      */
-    export function min<T extends vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2): ReturnType.Vec2<T>;
+    export function min<T extends Vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2): ReturnType.Vec2<T>;
     /**
      * Returns the maximum of two vec2's
      *
-     * @template {vec2} T
+     * @template {Vec2} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec2} a the first operand
      * @param {ReadonlyVec2} b the second operand
      * @returns {ReturnType.Vec2<T>} out
      */
-    export function max<T extends vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2): ReturnType.Vec2<T>;
+    export function max<T extends Vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2): ReturnType.Vec2<T>;
     /**
      * symmetric round the components of a vec2
      *
-     * @template {vec2} T
+     * @template {Vec2} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec2} a vector to round
      * @returns {ReturnType.Vec2<T>} out
      */
-    export function round<T extends vec2>(out: T, a: ReadonlyVec2): ReturnType.Vec2<T>;
+    export function round<T extends Vec2>(out: T, a: ReadonlyVec2): ReturnType.Vec2<T>;
     /**
      * Scales a vec2 by a scalar number
      *
-     * @template {vec2} T
+     * @template {Vec2} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec2} a the vector to scale
      * @param {Number} b amount to scale the vector by
      * @returns {ReturnType.Vec2<T>} out
      */
-    export function scale<T extends vec2>(out: T, a: ReadonlyVec2, b: number): ReturnType.Vec2<T>;
+    export function scale<T extends Vec2>(out: T, a: ReadonlyVec2, b: number): ReturnType.Vec2<T>;
     /**
      * Adds two vec2's after scaling the second operand by a scalar value
      *
-     * @template {vec2} T
+     * @template {Vec2} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec2} a the first operand
      * @param {ReadonlyVec2} b the second operand
      * @param {Number} scale the amount to scale b by before adding
      * @returns {ReturnType.Vec2<T>} out
      */
-    export function scaleAndAdd<T extends vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2, scale: number): ReturnType.Vec2<T>;
+    export function scaleAndAdd<T extends Vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2, scale: number): ReturnType.Vec2<T>;
     /**
      * Calculates the euclidian distance between two vec2's
      *
@@ -3368,30 +3402,30 @@ export namespace vec2 {
     /**
      * Negates the components of a vec2
      *
-     * @template {vec2} T
+     * @template {Vec2} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec2} a vector to negate
      * @returns {ReturnType.Vec2<T>} out
      */
-    export function negate<T extends vec2>(out: T, a: ReadonlyVec2): ReturnType.Vec2<T>;
+    export function negate<T extends Vec2>(out: T, a: ReadonlyVec2): ReturnType.Vec2<T>;
     /**
      * Returns the inverse of the components of a vec2
      *
-     * @template {vec2} T
+     * @template {Vec2} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec2} a vector to invert
      * @returns {ReturnType.Vec2<T>} out
      */
-    export function inverse<T extends vec2>(out: T, a: ReadonlyVec2): ReturnType.Vec2<T>;
+    export function inverse<T extends Vec2>(out: T, a: ReadonlyVec2): ReturnType.Vec2<T>;
     /**
      * Normalize a vec2
      *
-     * @template {vec2} T
+     * @template {Vec2} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec2} a vector to normalize
      * @returns {ReturnType.Vec2<T>} out
      */
-    export function normalize<T extends vec2>(out: T, a: ReadonlyVec2): ReturnType.Vec2<T>;
+    export function normalize<T extends Vec2>(out: T, a: ReadonlyVec2): ReturnType.Vec2<T>;
     /**
      * Calculates the dot product of two vec2's
      *
@@ -3404,86 +3438,86 @@ export namespace vec2 {
      * Computes the cross product of two vec2's
      * Note that the cross product must by definition produce a 3D vector
      *
-     * @template {vec3} T
+     * @template {Vec3} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec2} a the first operand
      * @param {ReadonlyVec2} b the second operand
      * @returns {ReturnType.Vec2<T>} out
      */
-    export function cross<T extends vec3>(out: T, a: ReadonlyVec2, b: ReadonlyVec2): ReturnType.Vec2<T>;
+    export function cross<T extends Vec3>(out: T, a: ReadonlyVec2, b: ReadonlyVec2): ReturnType.Vec2<T>;
     /**
      * Performs a linear interpolation between two vec2's
      *
-     * @template {vec2} T
+     * @template {Vec2} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec2} a the first operand
      * @param {ReadonlyVec2} b the second operand
      * @param {Number} t interpolation amount, in the range [0-1], between the two inputs
      * @returns {ReturnType.Vec2<T>} out
      */
-    export function lerp<T extends vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2, t: number): ReturnType.Vec2<T>;
+    export function lerp<T extends Vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2, t: number): ReturnType.Vec2<T>;
     /**
      * Generates a random vector with the given scale
      *
-     * @template {vec2} T
+     * @template {Vec2} T
      * @param {T} out the receiving vector
      * @param {Number} [scale] Length of the resulting vector. If omitted, a unit vector will be returned
      * @returns {ReturnType.Vec2<T>} out
      */
-    export function random<T extends vec2>(out: T, scale?: number): ReturnType.Vec2<T>;
+    export function random<T extends Vec2>(out: T, scale?: number): ReturnType.Vec2<T>;
     /**
      * Transforms the vec2 with a mat2
      *
-     * @template {vec2} T
+     * @template {Vec2} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec2} a the vector to transform
      * @param {ReadonlyMat2} m matrix to transform with
      * @returns {ReturnType.Vec2<T>} out
      */
-    export function transformMat2<T extends vec2>(out: T, a: ReadonlyVec2, m: ReadonlyMat2): ReturnType.Vec2<T>;
+    export function transformMat2<T extends Vec2>(out: T, a: ReadonlyVec2, m: ReadonlyMat2): ReturnType.Vec2<T>;
     /**
      * Transforms the vec2 with a mat2d
      *
-     * @template {vec2} T
+     * @template {Vec2} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec2} a the vector to transform
      * @param {ReadonlyMat2d} m matrix to transform with
      * @returns {ReturnType.Vec2<T>} out
      */
-    export function transformMat2d<T extends vec2>(out: T, a: ReadonlyVec2, m: ReadonlyMat2d): ReturnType.Vec2<T>;
+    export function transformMat2d<T extends Vec2>(out: T, a: ReadonlyVec2, m: ReadonlyMat2d): ReturnType.Vec2<T>;
     /**
      * Transforms the vec2 with a mat3
      * 3rd vector component is implicitly '1'
      *
-     * @template {vec2} T
+     * @template {Vec2} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec2} a the vector to transform
      * @param {ReadonlyMat3} m matrix to transform with
      * @returns {ReturnType.Vec2<T>} out
      */
-    export function transformMat3<T extends vec2>(out: T, a: ReadonlyVec2, m: ReadonlyMat3): ReturnType.Vec2<T>;
+    export function transformMat3<T extends Vec2>(out: T, a: ReadonlyVec2, m: ReadonlyMat3): ReturnType.Vec2<T>;
     /**
      * Transforms the vec2 with a mat4
      * 3rd vector component is implicitly '0'
      * 4th vector component is implicitly '1'
      *
-     * @template {vec2} T
+     * @template {Vec2} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec2} a the vector to transform
      * @param {ReadonlyMat4} m matrix to transform with
      * @returns {ReturnType.Vec2<T>} out
      */
-    export function transformMat4<T extends vec2>(out: T, a: ReadonlyVec2, m: ReadonlyMat4): ReturnType.Vec2<T>;
+    export function transformMat4<T extends Vec2>(out: T, a: ReadonlyVec2, m: ReadonlyMat4): ReturnType.Vec2<T>;
     /**
      * Rotate a 2D vector
-     * @template {vec2} T
+     * @template {Vec2} T
      * @param {T} out The receiving vec2
      * @param {ReadonlyVec2} a The vec2 point to rotate
      * @param {ReadonlyVec2} b The origin of the rotation
      * @param {Number} rad The angle of rotation in radians
      * @returns {ReturnType.Vec2<T>} out
      */
-    export function rotate<T extends vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2, rad: number): ReturnType.Vec2<T>;
+    export function rotate<T extends Vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2, rad: number): ReturnType.Vec2<T>;
     /**
      * Get the smallest angle between two 2D vectors
      * @param {ReadonlyVec2} a The first operand
@@ -3502,11 +3536,11 @@ export namespace vec2 {
     /**
      * Set the components of a vec2 to zero
      *
-     * @template {vec2} T
+     * @template {Vec2} T
      * @param {T} out the receiving vector
      * @returns {ReturnType.Vec2<T>} out
      */
-    export function zero<T extends vec2>(out: T): ReturnType.Vec2<T>;
+    export function zero<T extends Vec2>(out: T): ReturnType.Vec2<T>;
     /**
      * Returns a string representation of a vector
      *
@@ -3540,33 +3574,33 @@ export namespace vec2 {
     /**
      * Subtracts vector b from vector a
      *
-     * @template {vec2} T
+     * @template {Vec2} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec2} a the first operand
      * @param {ReadonlyVec2} b the second operand
      * @returns {ReturnType.Vec2<T>} out
      */
-    export function sub<T extends vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2): ReturnType.Vec2<T>;
+    export function sub<T extends Vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2): ReturnType.Vec2<T>;
     /**
      * Multiplies two vec2's
      *
-     * @template {vec2} T
+     * @template {Vec2} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec2} a the first operand
      * @param {ReadonlyVec2} b the second operand
      * @returns {ReturnType.Vec2<T>} out
      */
-    export function mul<T extends vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2): ReturnType.Vec2<T>;
+    export function mul<T extends Vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2): ReturnType.Vec2<T>;
     /**
      * Divides two vec2's
      *
-     * @template {vec2} T
+     * @template {Vec2} T
      * @param {T} out the receiving vector
      * @param {ReadonlyVec2} a the first operand
      * @param {ReadonlyVec2} b the second operand
      * @returns {ReturnType.Vec2<T>} out
      */
-    export function div<T extends vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2): ReturnType.Vec2<T>;
+    export function div<T extends Vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2): ReturnType.Vec2<T>;
     /**
      * Calculates the euclidian distance between two vec2's
      *

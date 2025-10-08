@@ -1,41 +1,22 @@
-import * as glMatrix from "./common.js";
+import type { ArrayType, Mat2, Mat2d, Mat3, Mat4, Quat, Quat2, Vec2, Vec3, Vec4, ReadonlyMat2, ReadonlyMat2d, ReadonlyMat3, ReadonlyMat4, ReadonlyQuat, ReadonlyQuat2, ReadonlyVec2, ReadonlyVec3, ReadonlyVec4, ReturnType } from "./types.js";
 
 /**
  * 2x2 Matrix
  * @module mat2
  */
-
 /**
  * Creates a new identity mat2
  *
  * @returns {ArrayType} a new 2x2 matrix
  */
-export function create() {
-  var out = new glMatrix.ARRAY_TYPE(4);
-  if (glMatrix.ARRAY_TYPE != Float32Array) {
-    out[1] = 0;
-    out[2] = 0;
-  }
-  out[0] = 1;
-  out[3] = 1;
-  return out;
-}
-
+export function create(): ArrayType;
 /**
  * Creates a new mat2 initialized with values from an existing matrix
  *
  * @param {ReadonlyMat2} a matrix to clone
  * @returns {ArrayType} a new 2x2 matrix
  */
-export function clone(a) {
-  var out = new glMatrix.ARRAY_TYPE(4);
-  out[0] = a[0];
-  out[1] = a[1];
-  out[2] = a[2];
-  out[3] = a[3];
-  return out;
-}
-
+export function clone(a: ReadonlyMat2): ArrayType;
 /**
  * Copy the values from one mat2 to another
  *
@@ -44,14 +25,7 @@ export function clone(a) {
  * @param {ReadonlyMat2} a the source matrix
  * @returns {ReturnType.Mat2<T>} out
  */
-export function copy(out, a) {
-  out[0] = a[0];
-  out[1] = a[1];
-  out[2] = a[2];
-  out[3] = a[3];
-  return out;
-}
-
+export function copy<T extends Mat2>(out: T, a: ReadonlyMat2): ReturnType.Mat2<T>;
 /**
  * Set a mat2 to the identity matrix
  *
@@ -59,14 +33,7 @@ export function copy(out, a) {
  * @param {T} out the receiving matrix
  * @returns {ReturnType.Mat2<T>} out
  */
-export function identity(out) {
-  out[0] = 1;
-  out[1] = 0;
-  out[2] = 0;
-  out[3] = 1;
-  return out;
-}
-
+export function identity<T extends Mat2>(out: T): ReturnType.Mat2<T>;
 /**
  * Create a new mat2 with the given values
  *
@@ -76,15 +43,7 @@ export function identity(out) {
  * @param {Number} m11 Component in column 1, row 1 position (index 3)
  * @returns {ArrayType} out A new 2x2 matrix
  */
-export function fromValues(m00, m01, m10, m11) {
-  var out = new glMatrix.ARRAY_TYPE(4);
-  out[0] = m00;
-  out[1] = m01;
-  out[2] = m10;
-  out[3] = m11;
-  return out;
-}
-
+export function fromValues(m00: number, m01: number, m10: number, m11: number): ArrayType;
 /**
  * Set the components of a mat2 to the given values
  *
@@ -96,14 +55,7 @@ export function fromValues(m00, m01, m10, m11) {
  * @param {Number} m11 Component in column 1, row 1 position (index 3)
  * @returns {ReturnType.Mat2<T>} out
  */
-export function set(out, m00, m01, m10, m11) {
-  out[0] = m00;
-  out[1] = m01;
-  out[2] = m10;
-  out[3] = m11;
-  return out;
-}
-
+export function set<T extends Mat2>(out: T, m00: number, m01: number, m10: number, m11: number): ReturnType.Mat2<T>;
 /**
  * Transpose the values of a mat2
  *
@@ -112,22 +64,7 @@ export function set(out, m00, m01, m10, m11) {
  * @param {ReadonlyMat2} a the source matrix
  * @returns {ReturnType.Mat2<T>} out
  */
-export function transpose(out, a) {
-  // If we are transposing ourselves we can skip a few steps but have to cache
-  // some values
-  if (out === a) {
-    var a1 = a[1];
-    out[1] = a[2];
-    out[2] = a1;
-  } else {
-    out[0] = a[0];
-    out[1] = a[2];
-    out[2] = a[1];
-    out[3] = a[3];
-  }
-  return out;
-}
-
+export function transpose<T extends Mat2>(out: T, a: ReadonlyMat2): ReturnType.Mat2<T>;
 /**
  * Inverts a mat2
  *
@@ -136,25 +73,7 @@ export function transpose(out, a) {
  * @param {ReadonlyMat2} a the source matrix
  * @returns {ReturnType.Mat2<T> | null} out, or null if source matrix is not invertible
  */
-export function invert(out, a) {
-  var a0 = a[0],
-    a1 = a[1],
-    a2 = a[2],
-    a3 = a[3];
-
-  // Calculate the determinant
-  var det = a0 * a3 - a2 * a1;
-  if (!det) {
-    return null;
-  }
-  det = 1.0 / det;
-  out[0] = a3 * det;
-  out[1] = -a1 * det;
-  out[2] = -a2 * det;
-  out[3] = a0 * det;
-  return out;
-}
-
+export function invert<T extends Mat2>(out: T, a: ReadonlyMat2): ReturnType.Mat2<T> | null;
 /**
  * Calculates the adjugate of a mat2
  *
@@ -163,26 +82,14 @@ export function invert(out, a) {
  * @param {ReadonlyMat2} a the source matrix
  * @returns {ReturnType.Mat2<T>} out
  */
-export function adjoint(out, a) {
-  // Caching this value is necessary if out == a
-  var a0 = a[0];
-  out[0] = a[3];
-  out[1] = -a[1];
-  out[2] = -a[2];
-  out[3] = a0;
-  return out;
-}
-
+export function adjoint<T extends Mat2>(out: T, a: ReadonlyMat2): ReturnType.Mat2<T>;
 /**
  * Calculates the determinant of a mat2
  *
  * @param {ReadonlyMat2} a the source matrix
  * @returns {Number} determinant of a
  */
-export function determinant(a) {
-  return a[0] * a[3] - a[2] * a[1];
-}
-
+export function determinant(a: ReadonlyMat2): number;
 /**
  * Multiplies two mat2's
  *
@@ -192,22 +99,7 @@ export function determinant(a) {
  * @param {ReadonlyMat2} b the second operand
  * @returns {ReturnType.Mat2<T>} out
  */
-export function multiply(out, a, b) {
-  var a0 = a[0],
-    a1 = a[1],
-    a2 = a[2],
-    a3 = a[3];
-  var b0 = b[0],
-    b1 = b[1],
-    b2 = b[2],
-    b3 = b[3];
-  out[0] = a0 * b0 + a2 * b1;
-  out[1] = a1 * b0 + a3 * b1;
-  out[2] = a0 * b2 + a2 * b3;
-  out[3] = a1 * b2 + a3 * b3;
-  return out;
-}
-
+export function multiply<T extends Mat2>(out: T, a: ReadonlyMat2, b: ReadonlyMat2): ReturnType.Mat2<T>;
 /**
  * Rotates a mat2 by the given angle
  *
@@ -217,20 +109,7 @@ export function multiply(out, a, b) {
  * @param {Number} rad the angle to rotate the matrix by
  * @returns {ReturnType.Mat2<T>} out
  */
-export function rotate(out, a, rad) {
-  var a0 = a[0],
-    a1 = a[1],
-    a2 = a[2],
-    a3 = a[3];
-  var s = Math.sin(rad);
-  var c = Math.cos(rad);
-  out[0] = a0 * c + a2 * s;
-  out[1] = a1 * c + a3 * s;
-  out[2] = a0 * -s + a2 * c;
-  out[3] = a1 * -s + a3 * c;
-  return out;
-}
-
+export function rotate<T extends Mat2>(out: T, a: ReadonlyMat2, rad: number): ReturnType.Mat2<T>;
 /**
  * Scales the mat2 by the dimensions in the given vec2
  *
@@ -240,20 +119,7 @@ export function rotate(out, a, rad) {
  * @param {ReadonlyVec2} v the vec2 to scale the matrix by
  * @returns {ReturnType.Mat2<T>} out
  **/
-export function scale(out, a, v) {
-  var a0 = a[0],
-    a1 = a[1],
-    a2 = a[2],
-    a3 = a[3];
-  var v0 = v[0],
-    v1 = v[1];
-  out[0] = a0 * v0;
-  out[1] = a1 * v0;
-  out[2] = a2 * v1;
-  out[3] = a3 * v1;
-  return out;
-}
-
+export function scale<T extends Mat2>(out: T, a: ReadonlyMat2, v: ReadonlyVec2): ReturnType.Mat2<T>;
 /**
  * Creates a matrix from a given angle
  * This is equivalent to (but much faster than):
@@ -266,16 +132,7 @@ export function scale(out, a, v) {
  * @param {Number} rad the angle to rotate the matrix by
  * @returns {ReturnType.Mat2<T>} out
  */
-export function fromRotation(out, rad) {
-  var s = Math.sin(rad);
-  var c = Math.cos(rad);
-  out[0] = c;
-  out[1] = s;
-  out[2] = -s;
-  out[3] = c;
-  return out;
-}
-
+export function fromRotation<T extends Mat2>(out: T, rad: number): ReturnType.Mat2<T>;
 /**
  * Creates a matrix from a vector scaling
  * This is equivalent to (but much faster than):
@@ -288,34 +145,21 @@ export function fromRotation(out, rad) {
  * @param {ReadonlyVec2} v Scaling vector
  * @returns {ReturnType.Mat2<T>} out
  */
-export function fromScaling(out, v) {
-  out[0] = v[0];
-  out[1] = 0;
-  out[2] = 0;
-  out[3] = v[1];
-  return out;
-}
-
+export function fromScaling<T extends Mat2>(out: T, v: ReadonlyVec2): ReturnType.Mat2<T>;
 /**
  * Returns a string representation of a mat2
  *
  * @param {ReadonlyMat2} a matrix to represent as a string
  * @returns {String} string representation of the matrix
  */
-export function str(a) {
-  return "mat2(" + a[0] + ", " + a[1] + ", " + a[2] + ", " + a[3] + ")";
-}
-
+export function str(a: ReadonlyMat2): string;
 /**
  * Returns Frobenius norm of a mat2
  *
  * @param {ReadonlyMat2} a the matrix to calculate Frobenius norm of
  * @returns {Number} Frobenius norm
  */
-export function frob(a) {
-  return Math.sqrt(a[0] * a[0] + a[1] * a[1] + a[2] * a[2] + a[3] * a[3]);
-}
-
+export function frob(a: ReadonlyMat2): number;
 /**
  * Returns L, D and U matrices (Lower triangular, Diagonal and Upper triangular) by factorizing the input matrix
  * @param {ReadonlyMat2} L the lower triangular matrix
@@ -323,15 +167,7 @@ export function frob(a) {
  * @param {ReadonlyMat2} U the upper triangular matrix
  * @param {ReadonlyMat2} a the input matrix to factorize
  */
-
-export function LDU(L, D, U, a) {
-  L[2] = a[2] / a[0];
-  U[0] = a[0];
-  U[1] = a[1];
-  U[3] = a[3] - L[2] * U[1];
-  return [L, D, U];
-}
-
+export function LDU(L: ReadonlyMat2, D: ReadonlyMat2, U: ReadonlyMat2, a: ReadonlyMat2): ReadonlyMat2[];
 /**
  * Adds two mat2's
  *
@@ -341,14 +177,7 @@ export function LDU(L, D, U, a) {
  * @param {ReadonlyMat2} b the second operand
  * @returns {ReturnType.Mat2<T>} out
  */
-export function add(out, a, b) {
-  out[0] = a[0] + b[0];
-  out[1] = a[1] + b[1];
-  out[2] = a[2] + b[2];
-  out[3] = a[3] + b[3];
-  return out;
-}
-
+export function add<T extends Mat2>(out: T, a: ReadonlyMat2, b: ReadonlyMat2): ReturnType.Mat2<T>;
 /**
  * Subtracts matrix b from matrix a
  *
@@ -358,14 +187,7 @@ export function add(out, a, b) {
  * @param {ReadonlyMat2} b the second operand
  * @returns {ReturnType.Mat2<T>} out
  */
-export function subtract(out, a, b) {
-  out[0] = a[0] - b[0];
-  out[1] = a[1] - b[1];
-  out[2] = a[2] - b[2];
-  out[3] = a[3] - b[3];
-  return out;
-}
-
+export function subtract<T extends Mat2>(out: T, a: ReadonlyMat2, b: ReadonlyMat2): ReturnType.Mat2<T>;
 /**
  * Returns whether or not the matrices have exactly the same elements in the same position (when compared with ===)
  *
@@ -373,10 +195,7 @@ export function subtract(out, a, b) {
  * @param {ReadonlyMat2} b The second matrix.
  * @returns {Boolean} True if the matrices are equal, false otherwise.
  */
-export function exactEquals(a, b) {
-  return a[0] === b[0] && a[1] === b[1] && a[2] === b[2] && a[3] === b[3];
-}
-
+export function exactEquals(a: ReadonlyMat2, b: ReadonlyMat2): boolean;
 /**
  * Returns whether or not the matrices have approximately the same elements in the same position.
  *
@@ -384,18 +203,7 @@ export function exactEquals(a, b) {
  * @param {ReadonlyMat2} b The second matrix.
  * @returns {Boolean} True if the matrices are equal, false otherwise.
  */
-export function equals(a, b) {
-  var a0 = a[0],
-    a1 = a[1],
-    a2 = a[2],
-    a3 = a[3];
-  var b0 = b[0],
-    b1 = b[1],
-    b2 = b[2],
-    b3 = b[3];
-  return Math.abs(a0 - b0) <= glMatrix.EPSILON * Math.max(1.0, Math.abs(a0), Math.abs(b0)) && Math.abs(a1 - b1) <= glMatrix.EPSILON * Math.max(1.0, Math.abs(a1), Math.abs(b1)) && Math.abs(a2 - b2) <= glMatrix.EPSILON * Math.max(1.0, Math.abs(a2), Math.abs(b2)) && Math.abs(a3 - b3) <= glMatrix.EPSILON * Math.max(1.0, Math.abs(a3), Math.abs(b3));
-}
-
+export function equals(a: ReadonlyMat2, b: ReadonlyMat2): boolean;
 /**
  * Multiply each element of the matrix by a scalar.
  *
@@ -405,14 +213,7 @@ export function equals(a, b) {
  * @param {Number} b amount to scale the matrix's elements by
  * @returns {ReturnType.Mat2<T>} out
  */
-export function multiplyScalar(out, a, b) {
-  out[0] = a[0] * b;
-  out[1] = a[1] * b;
-  out[2] = a[2] * b;
-  out[3] = a[3] * b;
-  return out;
-}
-
+export function multiplyScalar<T extends Mat2>(out: T, a: ReadonlyMat2, b: number): ReturnType.Mat2<T>;
 /**
  * Adds two mat2's after multiplying each element of the second operand by a scalar value.
  *
@@ -423,22 +224,24 @@ export function multiplyScalar(out, a, b) {
  * @param {Number} scale the amount to scale b's elements by before adding
  * @returns {ReturnType.Mat2<T>} out
  */
-export function multiplyScalarAndAdd(out, a, b, scale) {
-  out[0] = a[0] + b[0] * scale;
-  out[1] = a[1] + b[1] * scale;
-  out[2] = a[2] + b[2] * scale;
-  out[3] = a[3] + b[3] * scale;
-  return out;
-}
-
+export function multiplyScalarAndAdd<T extends Mat2>(out: T, a: ReadonlyMat2, b: ReadonlyMat2, scale: number): ReturnType.Mat2<T>;
 /**
- * Alias for {@link mat2.multiply}
- * @function
+ * Multiplies two mat2's
+ *
+ * @template {Mat2} T
+ * @param {T} out the receiving matrix
+ * @param {ReadonlyMat2} a the first operand
+ * @param {ReadonlyMat2} b the second operand
+ * @returns {ReturnType.Mat2<T>} out
  */
-export var mul = multiply;
-
+export function mul<T extends Mat2>(out: T, a: ReadonlyMat2, b: ReadonlyMat2): ReturnType.Mat2<T>;
 /**
- * Alias for {@link mat2.subtract}
- * @function
+ * Subtracts matrix b from matrix a
+ *
+ * @template {Mat2} T
+ * @param {T} out the receiving matrix
+ * @param {ReadonlyMat2} a the first operand
+ * @param {ReadonlyMat2} b the second operand
+ * @returns {ReturnType.Mat2<T>} out
  */
-export var sub = subtract;
+export function sub<T extends Mat2>(out: T, a: ReadonlyMat2, b: ReadonlyMat2): ReturnType.Mat2<T>;

@@ -150,7 +150,7 @@ THE SOFTWARE.
   /**
    * Copy the values from one mat2 to another
    *
-   * @template {mat2} T
+   * @template {Mat2} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat2} a the source matrix
    * @returns {ReturnType.Mat2<T>} out
@@ -166,7 +166,7 @@ THE SOFTWARE.
   /**
    * Set a mat2 to the identity matrix
    *
-   * @template {mat2} T
+   * @template {Mat2} T
    * @param {T} out the receiving matrix
    * @returns {ReturnType.Mat2<T>} out
    */
@@ -199,7 +199,7 @@ THE SOFTWARE.
   /**
    * Set the components of a mat2 to the given values
    *
-   * @template {mat2} T
+   * @template {Mat2} T
    * @param {T} out the receiving matrix
    * @param {Number} m00 Component in column 0, row 0 position (index 0)
    * @param {Number} m01 Component in column 0, row 1 position (index 1)
@@ -218,7 +218,7 @@ THE SOFTWARE.
   /**
    * Transpose the values of a mat2
    *
-   * @template {mat2} T
+   * @template {Mat2} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat2} a the source matrix
    * @returns {ReturnType.Mat2<T>} out
@@ -242,7 +242,7 @@ THE SOFTWARE.
   /**
    * Inverts a mat2
    *
-   * @template {mat2} T
+   * @template {Mat2} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat2} a the source matrix
    * @returns {ReturnType.Mat2<T> | null} out, or null if source matrix is not invertible
@@ -269,7 +269,7 @@ THE SOFTWARE.
   /**
    * Calculates the adjugate of a mat2
    *
-   * @template {mat2} T
+   * @template {Mat2} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat2} a the source matrix
    * @returns {ReturnType.Mat2<T>} out
@@ -297,7 +297,7 @@ THE SOFTWARE.
   /**
    * Multiplies two mat2's
    *
-   * @template {mat2} T
+   * @template {Mat2} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat2} a the first operand
    * @param {ReadonlyMat2} b the second operand
@@ -322,7 +322,7 @@ THE SOFTWARE.
   /**
    * Rotates a mat2 by the given angle
    *
-   * @template {mat2} T
+   * @template {Mat2} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat2} a the matrix to rotate
    * @param {Number} rad the angle to rotate the matrix by
@@ -345,7 +345,7 @@ THE SOFTWARE.
   /**
    * Scales the mat2 by the dimensions in the given vec2
    *
-   * @template {mat2} T
+   * @template {Mat2} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat2} a the matrix to rotate
    * @param {ReadonlyVec2} v the vec2 to scale the matrix by
@@ -372,7 +372,7 @@ THE SOFTWARE.
    *     mat2.identity(dest);
    *     mat2.rotate(dest, dest, rad);
    *
-   * @template {mat2} T
+   * @template {Mat2} T
    * @param {T} out mat2 receiving operation result
    * @param {Number} rad the angle to rotate the matrix by
    * @returns {ReturnType.Mat2<T>} out
@@ -394,7 +394,7 @@ THE SOFTWARE.
    *     mat2.identity(dest);
    *     mat2.scale(dest, dest, vec);
    *
-   * @template {mat2} T
+   * @template {Mat2} T
    * @param {T} out mat2 receiving operation result
    * @param {ReadonlyVec2} v Scaling vector
    * @returns {ReturnType.Mat2<T>} out
@@ -446,7 +446,7 @@ THE SOFTWARE.
   /**
    * Adds two mat2's
    *
-   * @template {mat2} T
+   * @template {Mat2} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat2} a the first operand
    * @param {ReadonlyMat2} b the second operand
@@ -463,7 +463,7 @@ THE SOFTWARE.
   /**
    * Subtracts matrix b from matrix a
    *
-   * @template {mat2} T
+   * @template {Mat2} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat2} a the first operand
    * @param {ReadonlyMat2} b the second operand
@@ -510,7 +510,7 @@ THE SOFTWARE.
   /**
    * Multiply each element of the matrix by a scalar.
    *
-   * @template {mat2} T
+   * @template {Mat2} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat2} a the matrix to scale
    * @param {Number} b amount to scale the matrix's elements by
@@ -527,7 +527,7 @@ THE SOFTWARE.
   /**
    * Adds two mat2's after multiplying each element of the second operand by a scalar value.
    *
-   * @template {mat2} T
+   * @template {Mat2} T
    * @param {T} out the receiving vector
    * @param {ReadonlyMat2} a the first operand
    * @param {ReadonlyMat2} b the second operand
@@ -641,7 +641,7 @@ THE SOFTWARE.
   /**
    * Copy the values from one mat2d to another
    *
-   * @template {mat2d} T
+   * @template {Mat2d} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat2d} a the source matrix
    * @returns {ReturnType.Mat2d<T>} out
@@ -659,7 +659,7 @@ THE SOFTWARE.
   /**
    * Set a mat2d to the identity matrix
    *
-   * @template {mat2d} T
+   * @template {Mat2d} T
    * @param {T} out the receiving matrix
    * @returns {ReturnType.Mat2d<T>} out
    */
@@ -698,7 +698,7 @@ THE SOFTWARE.
   /**
    * Set the components of a mat2d to the given values
    *
-   * @template {mat2d} T
+   * @template {Mat2d} T
    * @param {T} out the receiving matrix
    * @param {Number} a Component A (index 0)
    * @param {Number} b Component B (index 1)
@@ -721,7 +721,7 @@ THE SOFTWARE.
   /**
    * Inverts a mat2d
    *
-   * @template {mat2d} T
+   * @template {Mat2d} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat2d} a the source matrix
    * @returns {ReturnType.Mat2d<T> | null} out, or null if source matrix is not invertible
@@ -760,7 +760,7 @@ THE SOFTWARE.
   /**
    * Multiplies two mat2d's
    *
-   * @template {mat2d} T
+   * @template {Mat2d} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat2d} a the first operand
    * @param {ReadonlyMat2d} b the second operand
@@ -791,7 +791,7 @@ THE SOFTWARE.
   /**
    * Rotates a mat2d by the given angle
    *
-   * @template {mat2d} T
+   * @template {Mat2d} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat2d} a the matrix to rotate
    * @param {Number} rad the angle to rotate the matrix by
@@ -818,7 +818,7 @@ THE SOFTWARE.
   /**
    * Scales the mat2d by the dimensions in the given vec2
    *
-   * @template {mat2d} T
+   * @template {Mat2d} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat2d} a the matrix to translate
    * @param {ReadonlyVec2} v the vec2 to scale the matrix by
@@ -845,7 +845,7 @@ THE SOFTWARE.
   /**
    * Translates the mat2d by the dimensions in the given vec2
    *
-   * @template {mat2d} T
+   * @template {Mat2d} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat2d} a the matrix to translate
    * @param {ReadonlyVec2} v the vec2 to translate the matrix by
@@ -876,7 +876,7 @@ THE SOFTWARE.
    *     mat2d.identity(dest);
    *     mat2d.rotate(dest, dest, rad);
    *
-   * @template {mat2d} T
+   * @template {Mat2d} T
    * @param {T} out mat2d receiving operation result
    * @param {Number} rad the angle to rotate the matrix by
    * @returns {ReturnType.Mat2d<T>} out
@@ -900,7 +900,7 @@ THE SOFTWARE.
    *     mat2d.identity(dest);
    *     mat2d.scale(dest, dest, vec);
    *
-   * @template {mat2d} T
+   * @template {Mat2d} T
    * @param {T} out mat2d receiving operation result
    * @param {ReadonlyVec2} v Scaling vector
    * @returns {ReturnType.Mat2d<T>} out
@@ -922,7 +922,7 @@ THE SOFTWARE.
    *     mat2d.identity(dest);
    *     mat2d.translate(dest, dest, vec);
    *
-   * @template {mat2d} T
+   * @template {Mat2d} T
    * @param {T} out mat2d receiving operation result
    * @param {ReadonlyVec2} v Translation vector
    * @returns {ReturnType.Mat2d<T>} out
@@ -960,7 +960,7 @@ THE SOFTWARE.
   /**
    * Adds two mat2d's
    *
-   * @template {mat2d} T
+   * @template {Mat2d} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat2d} a the first operand
    * @param {ReadonlyMat2d} b the second operand
@@ -979,7 +979,7 @@ THE SOFTWARE.
   /**
    * Subtracts matrix b from matrix a
    *
-   * @template {mat2d} T
+   * @template {Mat2d} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat2d} a the first operand
    * @param {ReadonlyMat2d} b the second operand
@@ -998,7 +998,7 @@ THE SOFTWARE.
   /**
    * Multiply each element of the matrix by a scalar.
    *
-   * @template {mat2d} T
+   * @template {Mat2d} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat2d} a the matrix to scale
    * @param {Number} b amount to scale the matrix's elements by
@@ -1017,7 +1017,7 @@ THE SOFTWARE.
   /**
    * Adds two mat2d's after multiplying each element of the second operand by a scalar value.
    *
-   * @template {mat2d} T
+   * @template {Mat2d} T
    * @param {T} out the receiving vector
    * @param {ReadonlyMat2d} a the first operand
    * @param {ReadonlyMat2d} b the second operand
@@ -1138,7 +1138,7 @@ THE SOFTWARE.
   /**
    * Copies the upper-left 3x3 values into the given mat3.
    *
-   * @template {mat3} T
+   * @template {Mat3} T
    * @param {T} out the receiving 3x3 matrix
    * @param {ReadonlyMat4} a   the source 4x4 matrix
    * @returns {ReturnType.Mat3<T>} out
@@ -1179,7 +1179,7 @@ THE SOFTWARE.
   /**
    * Copy the values from one mat3 to another
    *
-   * @template {mat3} T
+   * @template {Mat3} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat3} a the source matrix
    * @returns {ReturnType.Mat3<T>} out
@@ -1228,7 +1228,7 @@ THE SOFTWARE.
   /**
    * Set the components of a mat3 to the given values
    *
-   * @template {mat3} T
+   * @template {Mat3} T
    * @param {T} out the receiving matrix
    * @param {Number} m00 Component in column 0, row 0 position (index 0)
    * @param {Number} m01 Component in column 0, row 1 position (index 1)
@@ -1257,7 +1257,7 @@ THE SOFTWARE.
   /**
    * Set a mat3 to the identity matrix
    *
-   * @template {mat3} T
+   * @template {Mat3} T
    * @param {T} out the receiving matrix
    * @returns {ReturnType.Mat3<T>} out
    */
@@ -1277,7 +1277,7 @@ THE SOFTWARE.
   /**
    * Transpose the values of a mat3
    *
-   * @template {mat3} T
+   * @template {Mat3} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat3} a the source matrix
    * @returns {ReturnType.Mat3<T>} out
@@ -1311,7 +1311,7 @@ THE SOFTWARE.
   /**
    * Inverts a mat3
    *
-   * @template {mat3} T
+   * @template {Mat3} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat3} a the source matrix
    * @returns {ReturnType.Mat3<T> | null} out, or null if source matrix is not invertible
@@ -1351,7 +1351,7 @@ THE SOFTWARE.
   /**
    * Calculates the adjugate of a mat3
    *
-   * @template {mat3} T
+   * @template {Mat3} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat3} a the source matrix
    * @returns {ReturnType.Mat3<T>} out
@@ -1400,7 +1400,7 @@ THE SOFTWARE.
   /**
    * Multiplies two mat3's
    *
-   * @template {mat3} T
+   * @template {Mat3} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat3} a the first operand
    * @param {ReadonlyMat3} b the second operand
@@ -1440,7 +1440,7 @@ THE SOFTWARE.
   /**
    * Translate a mat3 by the given vector
    *
-   * @template {mat3} T
+   * @template {Mat3} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat3} a the matrix to translate
    * @param {ReadonlyVec2} v vector to translate by
@@ -1473,7 +1473,7 @@ THE SOFTWARE.
   /**
    * Rotates a mat3 by the given angle
    *
-   * @template {mat3} T
+   * @template {Mat3} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat3} a the matrix to rotate
    * @param {Number} rad the angle to rotate the matrix by
@@ -1506,7 +1506,7 @@ THE SOFTWARE.
   /**
    * Scales the mat3 by the dimensions in the given vec2
    *
-   * @template {mat3} T
+   * @template {Mat3} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat3} a the matrix to scale
    * @param {ReadonlyVec2} v the vec2 to scale the matrix by
@@ -1534,7 +1534,7 @@ THE SOFTWARE.
    *     mat3.identity(dest);
    *     mat3.translate(dest, dest, vec);
    *
-   * @template {mat3} T
+   * @template {Mat3} T
    * @param {T} out mat3 receiving operation result
    * @param {ReadonlyVec2} v Translation vector
    * @returns {ReturnType.Mat3<T>} out
@@ -1559,7 +1559,7 @@ THE SOFTWARE.
    *     mat3.identity(dest);
    *     mat3.rotate(dest, dest, rad);
    *
-   * @template {mat3} T
+   * @template {Mat3} T
    * @param {T} out mat3 receiving operation result
    * @param {Number} rad the angle to rotate the matrix by
    * @returns {ReturnType.Mat3<T>} out
@@ -1586,7 +1586,7 @@ THE SOFTWARE.
    *     mat3.identity(dest);
    *     mat3.scale(dest, dest, vec);
    *
-   * @template {mat3} T
+   * @template {Mat3} T
    * @param {T} out mat3 receiving operation result
    * @param {ReadonlyVec2} v Scaling vector
    * @returns {ReturnType.Mat3<T>} out
@@ -1607,7 +1607,7 @@ THE SOFTWARE.
   /**
    * Copies the values from a mat2d into a mat3
    *
-   * @template {mat3} T
+   * @template {Mat3} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat2d} a the matrix to copy
    * @returns {ReturnType.Mat3<T>} out
@@ -1628,7 +1628,7 @@ THE SOFTWARE.
   /**
    * Calculates a 3x3 matrix from the given quaternion
    *
-   * @template {mat3} T
+   * @template {Mat3} T
    * @param {T} out mat3 receiving operation result
    * @param {ReadonlyQuat} q Quaternion to create matrix from
    *
@@ -1666,7 +1666,7 @@ THE SOFTWARE.
   /**
    * Calculates a 3x3 normal matrix (transpose inverse) from the 4x4 matrix
    *
-   * @template {mat3} T
+   * @template {Mat3} T
    * @param {T} out mat3 receiving operation result
    * @param {ReadonlyMat4} a Mat4 to derive the normal matrix from
    *
@@ -1723,7 +1723,7 @@ THE SOFTWARE.
   /**
    * Generates a 2D projection matrix with the given bounds
    *
-   * @template {mat3} T
+   * @template {Mat3} T
    * @param {T} out mat3 frustum matrix will be written into
    * @param {number} width Width of your gl context
    * @param {number} height Height of gl context
@@ -1765,7 +1765,7 @@ THE SOFTWARE.
   /**
    * Adds two mat3's
    *
-   * @template {mat3} T
+   * @template {Mat3} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat3} a the first operand
    * @param {ReadonlyMat3} b the second operand
@@ -1787,7 +1787,7 @@ THE SOFTWARE.
   /**
    * Subtracts matrix b from matrix a
    *
-   * @template {mat3} T
+   * @template {Mat3} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat3} a the first operand
    * @param {ReadonlyMat3} b the second operand
@@ -1809,7 +1809,7 @@ THE SOFTWARE.
   /**
    * Multiply each element of the matrix by a scalar.
    *
-   * @template {mat3} T
+   * @template {Mat3} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat3} a the matrix to scale
    * @param {Number} b amount to scale the matrix's elements by
@@ -1831,7 +1831,7 @@ THE SOFTWARE.
   /**
    * Adds two mat3's after multiplying each element of the second operand by a scalar value.
    *
-   * @template {mat3} T
+   * @template {Mat3} T
    * @param {T} out the receiving vector
    * @param {ReadonlyMat3} a the first operand
    * @param {ReadonlyMat3} b the second operand
@@ -2002,7 +2002,7 @@ THE SOFTWARE.
   /**
    * Copy the values from one mat4 to another
    *
-   * @template {mat4} T
+   * @template {Mat4} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat4} a the source matrix
    * @returns {ReturnType.Mat4<T>} out
@@ -2072,7 +2072,7 @@ THE SOFTWARE.
   /**
    * Set the components of a mat4 to the given values
    *
-   * @template {mat4} T
+   * @template {Mat4} T
    * @param {T} out the receiving matrix
    * @param {Number} m00 Component in column 0, row 0 position (index 0)
    * @param {Number} m01 Component in column 0, row 1 position (index 1)
@@ -2115,7 +2115,7 @@ THE SOFTWARE.
   /**
    * Set a mat4 to the identity matrix
    *
-   * @template {mat4} T
+   * @template {Mat4} T
    * @param {T} out the receiving matrix
    * @returns {ReturnType.Mat4<T>} out
    */
@@ -2142,7 +2142,7 @@ THE SOFTWARE.
   /**
    * Transpose the values of a mat4
    *
-   * @template {mat4} T
+   * @template {Mat4} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat4} a the source matrix
    * @returns {ReturnType.Mat4<T>} out
@@ -2192,7 +2192,7 @@ THE SOFTWARE.
   /**
    * Inverts a mat4
    *
-   * @template {mat4} T
+   * @template {Mat4} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat4} a the source matrix
    * @returns {ReturnType.Mat4<T> | null} out, or null if source matrix is not invertible
@@ -2255,7 +2255,7 @@ THE SOFTWARE.
   /**
    * Calculates the adjugate of a mat4
    *
-   * @template {mat4} T
+   * @template {Mat4} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat4} a the source matrix
    * @returns {ReturnType.Mat4<T>} out
@@ -2349,7 +2349,7 @@ THE SOFTWARE.
   /**
    * Multiplies two mat4s
    *
-   * @template {mat4} T
+   * @template {Mat4} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat4} a the first operand
    * @param {ReadonlyMat4} b the second operand
@@ -2412,7 +2412,7 @@ THE SOFTWARE.
   /**
    * Translate a mat4 by the given vector
    *
-   * @template {mat4} T
+   * @template {Mat4} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat4} a the matrix to translate
    * @param {ReadonlyVec3} v vector to translate by
@@ -2466,7 +2466,7 @@ THE SOFTWARE.
   /**
    * Scales the mat4 by the dimensions in the given vec3 not using vectorization
    *
-   * @template {mat4} T
+   * @template {Mat4} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat4} a the matrix to scale
    * @param {ReadonlyVec3} v the vec3 to scale the matrix by
@@ -2498,7 +2498,7 @@ THE SOFTWARE.
   /**
    * Rotates a mat4 by the given angle around the given axis
    *
-   * @template {mat4} T
+   * @template {Mat4} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat4} a the matrix to rotate
    * @param {Number} rad the angle to rotate the matrix by
@@ -2577,7 +2577,7 @@ THE SOFTWARE.
   /**
    * Rotates a matrix by the given angle around the X axis
    *
-   * @template {mat4} T
+   * @template {Mat4} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat4} a the matrix to rotate
    * @param {Number} rad the angle to rotate the matrix by
@@ -2621,7 +2621,7 @@ THE SOFTWARE.
   /**
    * Rotates a matrix by the given angle around the Y axis
    *
-   * @template {mat4} T
+   * @template {Mat4} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat4} a the matrix to rotate
    * @param {Number} rad the angle to rotate the matrix by
@@ -2665,7 +2665,7 @@ THE SOFTWARE.
   /**
    * Rotates a matrix by the given angle around the Z axis
    *
-   * @template {mat4} T
+   * @template {Mat4} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat4} a the matrix to rotate
    * @param {Number} rad the angle to rotate the matrix by
@@ -2713,7 +2713,7 @@ THE SOFTWARE.
    *     mat4.identity(dest);
    *     mat4.translate(dest, dest, vec);
    *
-   * @template {mat4} T
+   * @template {Mat4} T
    * @param {T} out mat4 receiving operation result
    * @param {ReadonlyVec3} v Translation vector
    * @returns {ReturnType.Mat4<T>} out
@@ -2745,7 +2745,7 @@ THE SOFTWARE.
    *     mat4.identity(dest);
    *     mat4.scale(dest, dest, vec);
    *
-   * @template {mat4} T
+   * @template {Mat4} T
    * @param {T} out mat4 receiving operation result
    * @param {ReadonlyVec3} v Scaling vector
    * @returns {ReturnType.Mat4<T>} out
@@ -2777,7 +2777,7 @@ THE SOFTWARE.
    *     mat4.identity(dest);
    *     mat4.rotate(dest, dest, rad, axis);
    *
-   * @template {mat4} T
+   * @template {Mat4} T
    * @param {T} out mat4 receiving operation result
    * @param {Number} rad the angle to rotate the matrix by
    * @param {ReadonlyVec3} axis the axis to rotate around
@@ -2827,7 +2827,7 @@ THE SOFTWARE.
    *     mat4.identity(dest);
    *     mat4.rotateX(dest, dest, rad);
    *
-   * @template {mat4} T
+   * @template {Mat4} T
    * @param {T} out mat4 receiving operation result
    * @param {Number} rad the angle to rotate the matrix by
    * @returns {ReturnType.Mat4<T>} out
@@ -2863,7 +2863,7 @@ THE SOFTWARE.
    *     mat4.identity(dest);
    *     mat4.rotateY(dest, dest, rad);
    *
-   * @template {mat4} T
+   * @template {Mat4} T
    * @param {T} out mat4 receiving operation result
    * @param {Number} rad the angle to rotate the matrix by
    * @returns {ReturnType.Mat4<T>} out
@@ -2899,7 +2899,7 @@ THE SOFTWARE.
    *     mat4.identity(dest);
    *     mat4.rotateZ(dest, dest, rad);
    *
-   * @template {mat4} T
+   * @template {Mat4} T
    * @param {T} out mat4 receiving operation result
    * @param {Number} rad the angle to rotate the matrix by
    * @returns {ReturnType.Mat4<T>} out
@@ -2938,9 +2938,9 @@ THE SOFTWARE.
    *     mat4.fromQuat(quatMat, quat);
    *     mat4.multiply(dest, dest, quatMat);
    *
-   * @template {mat4} T
+   * @template {Mat4} T
    * @param {T} out mat4 receiving operation result
-   * @param {quat} q Rotation quaternion
+   * @param {Quat} q Rotation quaternion
    * @param {ReadonlyVec3} v Translation vector
    * @returns {ReturnType.Mat4<T>} out
    */
@@ -2984,7 +2984,7 @@ THE SOFTWARE.
   /**
    * Creates a new mat4 from a dual quat.
    *
-   * @param {mat4} out Matrix
+   * @param {Mat4} out Matrix
    * @param {ReadonlyQuat2} a Dual Quaternion
    * @returns {ArrayType} mat4 receiving operation result
    */
@@ -3018,9 +3018,9 @@ THE SOFTWARE.
    *  matrix. If a matrix is built with fromRotationTranslation,
    *  the returned vector will be the same as the translation vector
    *  originally supplied.
-   * @param  {vec3} out Vector to receive translation component
+   * @param  {Vec3} out Vector to receive translation component
    * @param  {ReadonlyMat4} mat Matrix to be decomposed (input)
-   * @return {vec3} out
+   * @return {Vec3} out
    */
   function getTranslation$1(out, mat) {
     out[0] = mat[12];
@@ -3035,9 +3035,9 @@ THE SOFTWARE.
    *  with a normalized Quaternion parameter, the returned vector will be
    *  the same as the scaling vector
    *  originally supplied.
-   * @param  {vec3} out Vector to receive scaling factor component
+   * @param  {Vec3} out Vector to receive scaling factor component
    * @param  {ReadonlyMat4} mat Matrix to be decomposed (input)
-   * @return {vec3} out
+   * @return {Vec3} out
    */
   function getScaling(out, mat) {
     var m11 = mat[0];
@@ -3060,9 +3060,9 @@ THE SOFTWARE.
    *  of a transformation matrix. If a matrix is built with
    *  fromRotationTranslation, the returned quaternion will be the
    *  same as the quaternion originally supplied.
-   * @param {quat} out Quaternion to receive the rotation component
+   * @param {Quat} out Quaternion to receive the rotation component
    * @param {ReadonlyMat4} mat Matrix to be decomposed (input)
-   * @return {quat} out
+   * @return {Quat} out
    */
   function getRotation(out, mat) {
     var scaling = new ARRAY_TYPE(3);
@@ -3113,9 +3113,9 @@ THE SOFTWARE.
    * Decomposes a transformation matrix into its rotation, translation
    * and scale components. Returns only the rotation component
    * 
-   * @param  {quat} out_r Quaternion to receive the rotation component
-   * @param  {vec3} out_t Vector to receive the translation vector
-   * @param  {vec3} out_s Vector to receive the scaling factor
+   * @param  {Quat} out_r Quaternion to receive the rotation component
+   * @param  {Vec3} out_t Vector to receive the translation vector
+   * @param  {Vec3} out_s Vector to receive the scaling factor
    * @param  {ReadonlyMat4} mat Matrix to be decomposed (input)
    * @returns {ArrayType} out_r
    */
@@ -3188,9 +3188,9 @@ THE SOFTWARE.
    *     mat4.multiply(dest, dest, quatMat);
    *     mat4.scale(dest, dest, scale)
    *
-   * @template {mat4} T
+   * @template {Mat4} T
    * @param {T} out mat4 receiving operation result
-   * @param {quat} q Rotation quaternion
+   * @param {Quat} q Rotation quaternion
    * @param {ReadonlyVec3} v Translation vector
    * @param {ReadonlyVec3} s Scaling vector
    * @returns {ReturnType.Mat4<T>} out
@@ -3248,9 +3248,9 @@ THE SOFTWARE.
    *     mat4.scale(dest, dest, scale)
    *     mat4.translate(dest, dest, negativeOrigin);
    *
-   * @template {mat4} T
+   * @template {Mat4} T
    * @param {T} out mat4 receiving operation result
-   * @param {quat} q Rotation quaternion
+   * @param {Quat} q Rotation quaternion
    * @param {ReadonlyVec3} v Translation vector
    * @param {ReadonlyVec3} s Scaling vector
    * @param {ReadonlyVec3} o The origin vector around which to scale and rotate
@@ -3311,7 +3311,7 @@ THE SOFTWARE.
   /**
    * Calculates a 4x4 matrix from the given quaternion
    *
-   * @template {mat4} T
+   * @template {Mat4} T
    * @param {T} out mat4 receiving operation result
    * @param {ReadonlyQuat} q Quaternion to create matrix from
    *
@@ -3356,8 +3356,8 @@ THE SOFTWARE.
   /**
    * Generates a frustum matrix with the given bounds
    *
-   * @template {mat4} T
-   * @param {mat4} out mat4 frustum matrix will be written into
+   * @template {Mat4} T
+   * @param {Mat4} out mat4 frustum matrix will be written into
    * @param {Number} left Left bound of the frustum
    * @param {Number} right Right bound of the frustum
    * @param {Number} bottom Bottom bound of the frustum
@@ -3395,7 +3395,7 @@ THE SOFTWARE.
    * which matches WebGL/OpenGL's clip volume.
    * Passing null/undefined/no value for far will generate infinite projection matrix.
    *
-   * @template {mat4} T
+   * @template {Mat4} T
    * @param {T} out mat4 frustum matrix will be written into
    * @param {number} fovy Vertical field of view in radians
    * @param {number} aspect Aspect ratio. typically viewport width/height
@@ -3442,8 +3442,8 @@ THE SOFTWARE.
    * which matches WebGPU/Vulkan/DirectX/Metal's clip volume.
    * Passing null/undefined/no value for far will generate infinite projection matrix.
    *
-   * @template {mat4} T
-   * @param {mat4} out mat4 frustum matrix will be written into
+   * @template {Mat4} T
+   * @param {Mat4} out mat4 frustum matrix will be written into
    * @param {number} fovy Vertical field of view in radians
    * @param {number} aspect Aspect ratio. typically viewport width/height
    * @param {number} near Near bound of the frustum
@@ -3482,8 +3482,8 @@ THE SOFTWARE.
    * This is primarily useful for generating projection matrices to be used
    * with the still experiemental WebVR API.
    *
-   * @template {mat4} T
-   * @param {mat4} out mat4 frustum matrix will be written into
+   * @template {Mat4} T
+   * @param {Mat4} out mat4 frustum matrix will be written into
    * @param {Object} fov Object containing the following values: upDegrees, downDegrees, leftDegrees, rightDegrees
    * @param {number} near Near bound of the frustum
    * @param {number} far Far bound of the frustum
@@ -3520,8 +3520,8 @@ THE SOFTWARE.
    * The near/far clip planes correspond to a normalized device coordinate Z range of [-1, 1],
    * which matches WebGL/OpenGL's clip volume.
    *
-   * @template {mat4} T
-   * @param {mat4} out mat4 frustum matrix will be written into
+   * @template {Mat4} T
+   * @param {Mat4} out mat4 frustum matrix will be written into
    * @param {number} left Left bound of the frustum
    * @param {number} right Right bound of the frustum
    * @param {number} bottom Bottom bound of the frustum
@@ -3564,8 +3564,8 @@ THE SOFTWARE.
    * The near/far clip planes correspond to a normalized device coordinate Z range of [0, 1],
    * which matches WebGPU/Vulkan/DirectX/Metal's clip volume.
    *
-   * @template {mat4} T
-   * @param {mat4} out mat4 frustum matrix will be written into
+   * @template {Mat4} T
+   * @param {Mat4} out mat4 frustum matrix will be written into
    * @param {number} left Left bound of the frustum
    * @param {number} right Right bound of the frustum
    * @param {number} bottom Bottom bound of the frustum
@@ -3601,8 +3601,8 @@ THE SOFTWARE.
    * Generates a look-at matrix with the given eye position, focal point, and up axis.
    * If you want a matrix that actually makes an object look at another object, you should use targetTo instead.
    *
-   * @template {mat4} T
-   * @param {mat4} out mat4 frustum matrix will be written into
+   * @template {Mat4} T
+   * @param {Mat4} out mat4 frustum matrix will be written into
    * @param {ReadonlyVec3} eye Position of the viewer
    * @param {ReadonlyVec3} center Point the viewer is looking at
    * @param {ReadonlyVec3} up vec3 pointing up
@@ -3679,8 +3679,8 @@ THE SOFTWARE.
   /**
    * Generates a matrix that makes something look at something else.
    *
-   * @template {mat4} T
-   * @param {mat4} out mat4 frustum matrix will be written into
+   * @template {Mat4} T
+   * @param {Mat4} out mat4 frustum matrix will be written into
    * @param {ReadonlyVec3} eye Position of the viewer
    * @param {ReadonlyVec3} target Point the viewer is looking at
    * @param {ReadonlyVec3} up vec3 pointing up
@@ -3755,7 +3755,7 @@ THE SOFTWARE.
   /**
    * Adds two mat4's
    *
-   * @template {mat4} T
+   * @template {Mat4} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat4} a the first operand
    * @param {ReadonlyMat4} b the second operand
@@ -3784,7 +3784,7 @@ THE SOFTWARE.
   /**
    * Subtracts matrix b from matrix a
    *
-   * @template {mat4} T
+   * @template {Mat4} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat4} a the first operand
    * @param {ReadonlyMat4} b the second operand
@@ -3813,7 +3813,7 @@ THE SOFTWARE.
   /**
    * Multiply each element of the matrix by a scalar.
    *
-   * @template {mat4} T
+   * @template {Mat4} T
    * @param {T} out the receiving matrix
    * @param {ReadonlyMat4} a the matrix to scale
    * @param {Number} b amount to scale the matrix's elements by
@@ -3842,7 +3842,7 @@ THE SOFTWARE.
   /**
    * Adds two mat4's after multiplying each element of the second operand by a scalar value.
    *
-   * @template {mat4} T
+   * @template {Mat4} T
    * @param {T} out the receiving vector
    * @param {ReadonlyMat4} a the first operand
    * @param {ReadonlyMat4} b the second operand
@@ -4057,7 +4057,7 @@ THE SOFTWARE.
   /**
    * Copy the values from one vec3 to another
    *
-   * @template {vec3} T
+   * @template {Vec3} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec3} a the source vector
    * @returns {ReturnType.Vec3<T>} out
@@ -4072,7 +4072,7 @@ THE SOFTWARE.
   /**
    * Set the components of a vec3 to the given values
    *
-   * @template {vec3} T
+   * @template {Vec3} T
    * @param {T} out the receiving vector
    * @param {Number} x X component
    * @param {Number} y Y component
@@ -4089,7 +4089,7 @@ THE SOFTWARE.
   /**
    * Adds two vec3's
    *
-   * @template {vec3} T
+   * @template {Vec3} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec3} a the first operand
    * @param {ReadonlyVec3} b the second operand
@@ -4105,7 +4105,7 @@ THE SOFTWARE.
   /**
    * Subtracts vector b from vector a
    *
-   * @template {vec3} T
+   * @template {Vec3} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec3} a the first operand
    * @param {ReadonlyVec3} b the second operand
@@ -4121,7 +4121,7 @@ THE SOFTWARE.
   /**
    * Multiplies two vec3's
    *
-   * @template {vec3} T
+   * @template {Vec3} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec3} a the first operand
    * @param {ReadonlyVec3} b the second operand
@@ -4137,7 +4137,7 @@ THE SOFTWARE.
   /**
    * Divides two vec3's
    *
-   * @template {vec3} T
+   * @template {Vec3} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec3} a the first operand
    * @param {ReadonlyVec3} b the second operand
@@ -4153,7 +4153,7 @@ THE SOFTWARE.
   /**
    * Math.ceil the components of a vec3
    *
-   * @template {vec3} T
+   * @template {Vec3} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec3} a vector to ceil
    * @returns {ReturnType.Vec3<T>} out
@@ -4168,7 +4168,7 @@ THE SOFTWARE.
   /**
    * Math.floor the components of a vec3
    *
-   * @template {vec3} T
+   * @template {Vec3} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec3} a vector to floor
    * @returns {ReturnType.Vec3<T>} out
@@ -4183,7 +4183,7 @@ THE SOFTWARE.
   /**
    * Returns the minimum of two vec3's
    *
-   * @template {vec3} T
+   * @template {Vec3} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec3} a the first operand
    * @param {ReadonlyVec3} b the second operand
@@ -4199,7 +4199,7 @@ THE SOFTWARE.
   /**
    * Returns the maximum of two vec3's
    *
-   * @template {vec3} T
+   * @template {Vec3} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec3} a the first operand
    * @param {ReadonlyVec3} b the second operand
@@ -4215,7 +4215,7 @@ THE SOFTWARE.
   /**
    * symmetric round the components of a vec3
    *
-   * @template {vec3} T
+   * @template {Vec3} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec3} a vector to round
    * @returns {ReturnType.Vec3<T>} out
@@ -4230,7 +4230,7 @@ THE SOFTWARE.
   /**
    * Scales a vec3 by a scalar number
    *
-   * @template {vec3} T
+   * @template {Vec3} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec3} a the vector to scale
    * @param {Number} b amount to scale the vector by
@@ -4246,7 +4246,7 @@ THE SOFTWARE.
   /**
    * Adds two vec3's after scaling the second operand by a scalar value
    *
-   * @template {vec3} T
+   * @template {Vec3} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec3} a the first operand
    * @param {ReadonlyVec3} b the second operand
@@ -4304,7 +4304,7 @@ THE SOFTWARE.
   /**
    * Negates the components of a vec3
    *
-   * @template {vec3} T
+   * @template {Vec3} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec3} a vector to negate
    * @returns {ReturnType.Vec3<T>} out
@@ -4319,7 +4319,7 @@ THE SOFTWARE.
   /**
    * Returns the inverse of the components of a vec3
    *
-   * @template {vec3} T
+   * @template {Vec3} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec3} a vector to invert
    * @returns {ReturnType.Vec3<T>} out
@@ -4334,7 +4334,7 @@ THE SOFTWARE.
   /**
    * Normalize a vec3
    *
-   * @template {vec3} T
+   * @template {Vec3} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec3} a vector to normalize
    * @returns {ReturnType.Vec3<T>} out
@@ -4368,7 +4368,7 @@ THE SOFTWARE.
   /**
    * Computes the cross product of two vec3's
    *
-   * @template {vec3} T
+   * @template {Vec3} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec3} a the first operand
    * @param {ReadonlyVec3} b the second operand
@@ -4390,7 +4390,7 @@ THE SOFTWARE.
   /**
    * Performs a linear interpolation between two vec3's
    *
-   * @template {vec3} T
+   * @template {Vec3} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec3} a the first operand
    * @param {ReadonlyVec3} b the second operand
@@ -4410,7 +4410,7 @@ THE SOFTWARE.
   /**
    * Performs a spherical linear interpolation between two vec3's
    *
-   * @template {vec3} T
+   * @template {Vec3} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec3} a the first operand
    * @param {ReadonlyVec3} b the second operand
@@ -4431,7 +4431,7 @@ THE SOFTWARE.
   /**
    * Performs a hermite interpolation with two control points
    *
-   * @template {vec3} T
+   * @template {Vec3} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec3} a the first operand
    * @param {ReadonlyVec3} b the second operand
@@ -4455,7 +4455,7 @@ THE SOFTWARE.
   /**
    * Performs a bezier interpolation with two control points
    *
-   * @template {vec3} T
+   * @template {Vec3} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec3} a the first operand
    * @param {ReadonlyVec3} b the second operand
@@ -4481,7 +4481,7 @@ THE SOFTWARE.
   /**
    * Generates a random vector with the given scale
    *
-   * @template {vec3} T
+   * @template {Vec3} T
    * @param {T} out the receiving vector
    * @param {Number} [scale] Length of the resulting vector. If omitted, a unit vector will be returned
    * @returns {ReturnType.Vec3<T>} out
@@ -4501,7 +4501,7 @@ THE SOFTWARE.
    * Transforms the vec3 with a mat4.
    * 4th vector component is implicitly '1'
    *
-   * @template {vec3} T
+   * @template {Vec3} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec3} a the vector to transform
    * @param {ReadonlyMat4} m matrix to transform with
@@ -4522,7 +4522,7 @@ THE SOFTWARE.
   /**
    * Transforms the vec3 with a mat3.
    *
-   * @template {vec3} T
+   * @template {Vec3} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec3} a the vector to transform
    * @param {ReadonlyMat3} m the 3x3 matrix to transform with
@@ -4542,7 +4542,7 @@ THE SOFTWARE.
    * Transforms the vec3 with a quat
    * Can also be used for dual quaternions. (Multiply it with the real part)
    *
-   * @template {vec3} T
+   * @template {Vec3} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec3} a the vector to transform
    * @param {ReadonlyQuat} q normalized quaternion to transform with
@@ -4579,7 +4579,7 @@ THE SOFTWARE.
 
   /**
    * Rotate a 3D vector around the x-axis
-   * @template {vec3} T
+   * @template {Vec3} T
    * @param {T} out The receiving vec3
    * @param {ReadonlyVec3} a The vec3 point to rotate
    * @param {ReadonlyVec3} b The origin of the rotation
@@ -4608,7 +4608,7 @@ THE SOFTWARE.
 
   /**
    * Rotate a 3D vector around the y-axis
-   * @template {vec3} T
+   * @template {Vec3} T
    * @param {T} out The receiving vec3
    * @param {ReadonlyVec3} a The vec3 point to rotate
    * @param {ReadonlyVec3} b The origin of the rotation
@@ -4637,7 +4637,7 @@ THE SOFTWARE.
 
   /**
    * Rotate a 3D vector around the z-axis
-   * @template {vec3} T
+   * @template {Vec3} T
    * @param {T} out The receiving vec3
    * @param {ReadonlyVec3} a The vec3 point to rotate
    * @param {ReadonlyVec3} b The origin of the rotation
@@ -4685,7 +4685,7 @@ THE SOFTWARE.
   /**
    * Set the components of a vec3 to zero
    *
-   * @template {vec3} T
+   * @template {Vec3} T
    * @param {T} out the receiving vector
    * @returns {ReturnType.Vec3<T>} out
    */
@@ -4926,7 +4926,7 @@ THE SOFTWARE.
   /**
    * Copy the values from one vec4 to another
    *
-   * @template {vec4} T
+   * @template {Vec4} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec4} a the source vector
    * @returns {ReturnType.Vec4<T>} out
@@ -4942,7 +4942,7 @@ THE SOFTWARE.
   /**
    * Set the components of a vec4 to the given values
    *
-   * @template {vec4} T
+   * @template {Vec4} T
    * @param {T} out the receiving vector
    * @param {Number} x X component
    * @param {Number} y Y component
@@ -4961,7 +4961,7 @@ THE SOFTWARE.
   /**
    * Adds two vec4's
    *
-   * @template {vec4} T
+   * @template {Vec4} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec4} a the first operand
    * @param {ReadonlyVec4} b the second operand
@@ -4978,7 +4978,7 @@ THE SOFTWARE.
   /**
    * Subtracts vector b from vector a
    *
-   * @template {vec4} T
+   * @template {Vec4} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec4} a the first operand
    * @param {ReadonlyVec4} b the second operand
@@ -4995,7 +4995,7 @@ THE SOFTWARE.
   /**
    * Multiplies two vec4's
    *
-   * @template {vec4} T
+   * @template {Vec4} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec4} a the first operand
    * @param {ReadonlyVec4} b the second operand
@@ -5012,7 +5012,7 @@ THE SOFTWARE.
   /**
    * Divides two vec4's
    *
-   * @template {vec4} T
+   * @template {Vec4} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec4} a the first operand
    * @param {ReadonlyVec4} b the second operand
@@ -5029,7 +5029,7 @@ THE SOFTWARE.
   /**
    * Math.ceil the components of a vec4
    *
-   * @template {vec4} T
+   * @template {Vec4} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec4} a vector to ceil
    * @returns {ReturnType.Vec4<T>} out
@@ -5045,7 +5045,7 @@ THE SOFTWARE.
   /**
    * Math.floor the components of a vec4
    *
-   * @template {vec4} T
+   * @template {Vec4} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec4} a vector to floor
    * @returns {ReturnType.Vec4<T>} out
@@ -5061,7 +5061,7 @@ THE SOFTWARE.
   /**
    * Returns the minimum of two vec4's
    *
-   * @template {vec4} T
+   * @template {Vec4} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec4} a the first operand
    * @param {ReadonlyVec4} b the second operand
@@ -5078,7 +5078,7 @@ THE SOFTWARE.
   /**
    * Returns the maximum of two vec4's
    *
-   * @template {vec4} T
+   * @template {Vec4} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec4} a the first operand
    * @param {ReadonlyVec4} b the second operand
@@ -5095,7 +5095,7 @@ THE SOFTWARE.
   /**
    * symmetric round the components of a vec4
    *
-   * @template {vec4} T
+   * @template {Vec4} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec4} a vector to round
    * @returns {ReturnType.Vec4<T>} out
@@ -5111,7 +5111,7 @@ THE SOFTWARE.
   /**
    * Scales a vec4 by a scalar number
    *
-   * @template {vec4} T
+   * @template {Vec4} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec4} a the vector to scale
    * @param {Number} b amount to scale the vector by
@@ -5128,7 +5128,7 @@ THE SOFTWARE.
   /**
    * Adds two vec4's after scaling the second operand by a scalar value
    *
-   * @template {vec4} T
+   * @template {Vec4} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec4} a the first operand
    * @param {ReadonlyVec4} b the second operand
@@ -5204,7 +5204,7 @@ THE SOFTWARE.
   /**
    * Negates the components of a vec4
    *
-   * @template {vec4} T
+   * @template {Vec4} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec4} a vector to negate
    * @returns {ReturnType.Vec4<T>} out
@@ -5220,7 +5220,7 @@ THE SOFTWARE.
   /**
    * Returns the inverse of the components of a vec4
    *
-   * @template {vec4} T
+   * @template {Vec4} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec4} a vector to invert
    * @returns {ReturnType.Vec4<T>} out
@@ -5236,7 +5236,7 @@ THE SOFTWARE.
   /**
    * Normalize a vec4
    *
-   * @template {vec4} T
+   * @template {Vec4} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec4} a vector to normalize
    * @returns {ReturnType.Vec4<T>} out
@@ -5271,7 +5271,7 @@ THE SOFTWARE.
   /**
    * Returns the cross-product of three vectors in a 4-dimensional space
    *
-   * @template {vec4} T
+   * @template {Vec4} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec4} u the first vector
    * @param {ReadonlyVec4} v the second vector
@@ -5299,7 +5299,7 @@ THE SOFTWARE.
   /**
    * Performs a linear interpolation between two vec4's
    *
-   * @template {vec4} T
+   * @template {Vec4} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec4} a the first operand
    * @param {ReadonlyVec4} b the second operand
@@ -5321,7 +5321,7 @@ THE SOFTWARE.
   /**
    * Generates a random vector with the given scale
    *
-   * @template {vec4} T
+   * @template {Vec4} T
    * @param {T} out the receiving vector
    * @param {Number} [scale] Length of the resulting vector. If omitted, a unit vector will be returned
    * @returns {ReturnType.Vec4<T>} out
@@ -5354,7 +5354,7 @@ THE SOFTWARE.
   /**
    * Transforms the vec4 with a mat4.
    *
-   * @template {vec4} T
+   * @template {Vec4} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec4} a the vector to transform
    * @param {ReadonlyMat4} m matrix to transform with
@@ -5375,7 +5375,7 @@ THE SOFTWARE.
   /**
    * Transforms the vec4 with a quat
    *
-   * @template {vec4} T
+   * @template {Vec4} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec4} a the vector to transform
    * @param {ReadonlyQuat} q normalized quaternion to transform with
@@ -5414,7 +5414,7 @@ THE SOFTWARE.
   /**
    * Set the components of a vec4 to zero
    *
-   * @template {vec4} T
+   * @template {Vec4} T
    * @param {T} out the receiving vector
    * @returns {ReturnType.Vec4<T>} out
    */
@@ -5619,7 +5619,7 @@ THE SOFTWARE.
   /**
    * Set a quat to the identity quaternion
    *
-   * @template {quat} T
+   * @template {Quat} T
    * @param {T} out the receiving quaternion
    * @returns {ReturnType.Quat<T>} out
    */
@@ -5635,7 +5635,7 @@ THE SOFTWARE.
    * Sets a quat from the given angle and rotation axis,
    * then returns it.
    *
-   * @template {quat} T
+   * @template {Quat} T
    * @param {T} out the receiving quaternion
    * @param {ReadonlyVec3} axis the axis around which to rotate
    * @param {Number} rad the angle in radians
@@ -5660,7 +5660,7 @@ THE SOFTWARE.
    * Example: The quaternion formed by axis [0, 0, 1] and
    *  angle -90 is the same as the quaternion formed by
    *  [0, 0, 1] and 270. This method favors the latter.
-   * @param  {vec3} out_axis  Vector receiving the axis of rotation
+   * @param  {Vec3} out_axis  Vector receiving the axis of rotation
    * @param  {ReadonlyQuat} q     Quaternion to be decomposed
    * @return {Number}     Angle, in radians, of the rotation
    */
@@ -5695,7 +5695,7 @@ THE SOFTWARE.
   /**
    * Multiplies two quat's
    *
-   * @template {quat} T
+   * @template {Quat} T
    * @param {T} out the receiving quaternion
    * @param {ReadonlyQuat} a the first operand
    * @param {ReadonlyQuat} b the second operand
@@ -5720,7 +5720,7 @@ THE SOFTWARE.
   /**
    * Rotates a quaternion by the given angle about the X axis
    *
-   * @template {quat} T
+   * @template {Quat} T
    * @param {T} out quat receiving operation result
    * @param {ReadonlyQuat} a quat to rotate
    * @param {number} rad angle (in radians) to rotate
@@ -5744,7 +5744,7 @@ THE SOFTWARE.
   /**
    * Rotates a quaternion by the given angle about the Y axis
    *
-   * @template {quat} T
+   * @template {Quat} T
    * @param {T} out quat receiving operation result
    * @param {ReadonlyQuat} a quat to rotate
    * @param {number} rad angle (in radians) to rotate
@@ -5768,7 +5768,7 @@ THE SOFTWARE.
   /**
    * Rotates a quaternion by the given angle about the Z axis
    *
-   * @template {quat} T
+   * @template {Quat} T
    * @param {T} out quat receiving operation result
    * @param {ReadonlyQuat} a quat to rotate
    * @param {number} rad angle (in radians) to rotate
@@ -5794,7 +5794,7 @@ THE SOFTWARE.
    * Assumes that quaternion is 1 unit in length.
    * Any existing W component will be ignored.
    *
-   * @template {quat} T
+   * @template {Quat} T
    * @param {T} out the receiving quaternion
    * @param {ReadonlyQuat} a quat to calculate W component of
    * @returns {ReturnType.Quat<T>} out
@@ -5813,7 +5813,7 @@ THE SOFTWARE.
   /**
    * Calculate the exponential of a unit quaternion.
    *
-   * @template {quat} T
+   * @template {Quat} T
    * @param {T} out the receiving quaternion
    * @param {ReadonlyQuat} a quat to calculate the exponential of
    * @returns {ReturnType.Quat<T>} out
@@ -5836,7 +5836,7 @@ THE SOFTWARE.
   /**
    * Calculate the natural logarithm of a unit quaternion.
    *
-   * @template {quat} T
+   * @template {Quat} T
    * @param {T} out the receiving quaternion
    * @param {ReadonlyQuat} a quat to calculate the exponential of
    * @returns {ReturnType.Quat<T>} out
@@ -5858,7 +5858,7 @@ THE SOFTWARE.
   /**
    * Calculate the scalar power of a unit quaternion.
    *
-   * @template {quat} T
+   * @template {Quat} T
    * @param {T} out the receiving quaternion
    * @param {ReadonlyQuat} a quat to calculate the exponential of
    * @param {Number} b amount to scale the quaternion by
@@ -5874,7 +5874,7 @@ THE SOFTWARE.
   /**
    * Performs a spherical linear interpolation between two quat
    *
-   * @template {quat} T
+   * @template {Quat} T
    * @param {T} out the receiving quaternion
    * @param {ReadonlyQuat} a the first operand
    * @param {ReadonlyQuat} b the second operand
@@ -5928,7 +5928,7 @@ THE SOFTWARE.
   /**
    * Generates a random unit quaternion
    *
-   * @template {quat} T
+   * @template {Quat} T
    * @param {T} out the receiving quaternion
    * @returns {ReturnType.Quat<T>} out
    */
@@ -5950,7 +5950,7 @@ THE SOFTWARE.
   /**
    * Calculates the inverse of a quat
    *
-   * @template {quat} T
+   * @template {Quat} T
    * @param {T} out the receiving quaternion
    * @param {ReadonlyQuat} a quat to calculate inverse of
    * @returns {ReturnType.Quat<T>} out
@@ -5976,7 +5976,7 @@ THE SOFTWARE.
    * Calculates the conjugate of a quat
    * If the quaternion is normalized, this function is faster than quat.inverse and produces the same result.
    *
-   * @template {quat} T
+   * @template {Quat} T
    * @param {T} out the receiving quaternion
    * @param {ReadonlyQuat} a quat to calculate conjugate of
    * @returns {ReturnType.Quat<T>} out
@@ -5995,7 +5995,7 @@ THE SOFTWARE.
    * NOTE: The resultant quaternion is not normalized, so you should be sure
    * to renormalize the quaternion yourself where necessary.
    *
-   * @template {quat} T
+   * @template {Quat} T
    * @param {T} out the receiving quaternion
    * @param {ReadonlyMat3} m rotation matrix
    * @returns {ReturnType.Quat<T>} out
@@ -6034,7 +6034,7 @@ THE SOFTWARE.
   /**
    * Creates a quaternion from the given euler angle x, y, z using the provided intrinsic order for the conversion.
    *
-   * @template {quat} T
+   * @template {Quat} T
    * @param {T} out the receiving quaternion
    * @param {Number} x Angle to rotate around X axis in degrees.
    * @param {Number} y Angle to rotate around Y axis in degrees.
@@ -6132,7 +6132,7 @@ THE SOFTWARE.
   /**
    * Copy the values from one quat to another
    *
-   * @template {quat} T
+   * @template {Quat} T
    * @param {T} out the receiving quaternion
    * @param {ReadonlyQuat} a the source quaternion
    * @returns {ReturnType.Quat<T>} out
@@ -6143,7 +6143,7 @@ THE SOFTWARE.
   /**
    * Set the components of a quat to the given values
    *
-   * @template {quat} T
+   * @template {Quat} T
    * @param {T} out the receiving quaternion
    * @param {Number} x X component
    * @param {Number} y Y component
@@ -6157,7 +6157,7 @@ THE SOFTWARE.
   /**
    * Adds two quat's
    *
-   * @template {quat} T
+   * @template {Quat} T
    * @param {T} out the receiving quaternion
    * @param {ReadonlyQuat} a the first operand
    * @param {ReadonlyQuat} b the second operand
@@ -6175,7 +6175,7 @@ THE SOFTWARE.
   /**
    * Scales a quat by a scalar number
    *
-   * @template {quat} T
+   * @template {Quat} T
    * @param {T} out the receiving vector
    * @param {ReadonlyQuat} a the vector to scale
    * @param {Number} b amount to scale the vector by
@@ -6197,7 +6197,7 @@ THE SOFTWARE.
   /**
    * Performs a linear interpolation between two quat's
    *
-   * @template {quat} T
+   * @template {Quat} T
    * @param {T} out the receiving quaternion
    * @param {ReadonlyQuat} a the first operand
    * @param {ReadonlyQuat} b the second operand
@@ -6239,7 +6239,7 @@ THE SOFTWARE.
   /**
    * Normalize a quat
    *
-   * @template {quat} T
+   * @template {Quat} T
    * @param {T} out the receiving quaternion
    * @param {ReadonlyQuat} a quaternion to normalize
    * @returns {ReturnType.Quat<T>} out
@@ -6275,7 +6275,7 @@ THE SOFTWARE.
    *
    * Both vectors are assumed to be unit length.
    *
-   * @template {quat} T
+   * @template {Quat} T
    * @param {T} out the receiving quaternion.
    * @param {ReadonlyVec3} a the initial vector
    * @param {ReadonlyVec3} b the destination vector
@@ -6313,7 +6313,7 @@ THE SOFTWARE.
   /**
    * Performs a spherical linear interpolation with two control points
    *
-   * @template {quat} T
+   * @template {Quat} T
    * @param {T} out the receiving quaternion
    * @param {ReadonlyQuat} a the first operand
    * @param {ReadonlyQuat} b the second operand
@@ -6338,7 +6338,7 @@ THE SOFTWARE.
    * axes. Each axis is a vec3 and is expected to be unit length and
    * perpendicular to all other specified axes.
    *
-   * @template {quat} T
+   * @template {Quat} T
    * @param {T} out the receiving quaternion
    * @param {ReadonlyVec3} view  the vector representing the viewing direction
    * @param {ReadonlyVec3} right the vector representing the local "right" direction
@@ -6511,7 +6511,7 @@ THE SOFTWARE.
   /**
    * Creates a dual quat from a quaternion and a translation
    *
-   * @template {quat2} T
+   * @template {Quat2} T
    * @param {T} out dual quaternion receiving operation result
    * @param {ReadonlyQuat} q a normalized quaternion
    * @param {ReadonlyVec3} t translation vector
@@ -6540,7 +6540,7 @@ THE SOFTWARE.
   /**
    * Creates a dual quat from a translation
    *
-   * @template {quat2} T
+   * @template {Quat2} T
    * @param {T} out dual quaternion receiving operation result
    * @param {ReadonlyVec3} t translation vector
    * @returns {ReturnType.Quat2<T>} dual quaternion receiving operation result
@@ -6561,7 +6561,7 @@ THE SOFTWARE.
   /**
    * Creates a dual quat from a quaternion
    *
-   * @template {quat2} T
+   * @template {Quat2} T
    * @param {T} out dual quaternion receiving operation result
    * @param {ReadonlyQuat} q the quaternion
    * @returns {ReturnType.Quat2<T>} dual quaternion receiving operation result
@@ -6582,7 +6582,7 @@ THE SOFTWARE.
   /**
    * Creates a new dual quat from a matrix (4x4)
    *
-   * @template {quat2} T
+   * @template {Quat2} T
    * @param {T} out the dual quaternion
    * @param {ReadonlyMat4} a the matrix
    * @returns {ReturnType.Quat2<T>} dual quat receiving operation result
@@ -6601,7 +6601,7 @@ THE SOFTWARE.
   /**
    * Copy the values from one dual quat to another
    *
-   * @template {quat2} T
+   * @template {Quat2} T
    * @param {T} out the receiving dual quaternion
    * @param {ReadonlyQuat2} a the source dual quaternion
    * @returns {ReturnType.Quat2<T>} out
@@ -6622,7 +6622,7 @@ THE SOFTWARE.
   /**
    * Set a dual quat to the identity dual quaternion
    *
-   * @template {quat2} T
+   * @template {Quat2} T
    * @param {T} out the receiving quaternion
    * @returns {ReturnType.Quat2<T>} out
    */
@@ -6641,7 +6641,7 @@ THE SOFTWARE.
   /**
    * Set the components of a dual quat to the given values
    *
-   * @template {quat2} T
+   * @template {Quat2} T
    * @param {T} out the receiving quaternion
    * @param {Number} x1 X component
    * @param {Number} y1 Y component
@@ -6668,17 +6668,17 @@ THE SOFTWARE.
 
   /**
    * Gets the real part of a dual quat
-   * @param  {quat} out real part
+   * @param  {Quat} out real part
    * @param  {ReadonlyQuat2} a Dual Quaternion
-   * @return {quat} real part
+   * @return {Quat} real part
    */
   var getReal = copy$2;
 
   /**
    * Gets the dual part of a dual quat
-   * @param  {quat} out dual part
+   * @param  {Quat} out dual part
    * @param  {ReadonlyQuat2} a Dual Quaternion
-   * @return {quat} dual part
+   * @return {Quat} dual part
    */
   function getDual(out, a) {
     out[0] = a[4];
@@ -6691,7 +6691,7 @@ THE SOFTWARE.
   /**
    * Set the real component of a dual quat to the given quaternion
    *
-   * @template {quat2} T
+   * @template {Quat2} T
    * @param {T} out the receiving quaternion
    * @param {ReadonlyQuat} q a quaternion representing the real part
    * @returns {ReturnType.Quat2<T>} out
@@ -6702,7 +6702,7 @@ THE SOFTWARE.
   /**
    * Set the dual component of a dual quat to the given quaternion
    *
-   * @template {quat2} T
+   * @template {Quat2} T
    * @param {T} out the receiving quaternion
    * @param {ReadonlyQuat} q a quaternion representing the dual part
    * @returns {ReturnType.Quat2<T>} out
@@ -6718,9 +6718,9 @@ THE SOFTWARE.
 
   /**
    * Gets the translation of a normalized dual quat
-   * @param  {vec3} out translation
+   * @param  {Vec3} out translation
    * @param  {ReadonlyQuat2} a Dual Quaternion to be decomposed
-   * @return {vec3} translation
+   * @return {Vec3} translation
    */
   function getTranslation(out, a) {
     var ax = a[4],
@@ -6740,7 +6740,7 @@ THE SOFTWARE.
   /**
    * Translates a dual quat by the given vector
    *
-   * @template {quat2} T
+   * @template {Quat2} T
    * @param {T} out the receiving dual quaternion
    * @param {ReadonlyQuat2} a the dual quaternion to translate
    * @param {ReadonlyVec3} v vector to translate by
@@ -6772,7 +6772,7 @@ THE SOFTWARE.
   /**
    * Rotates a dual quat around the X axis
    *
-   * @template {quat2} T
+   * @template {Quat2} T
    * @param {T} out the receiving dual quaternion
    * @param {ReadonlyQuat2} a the dual quaternion to rotate
    * @param {number} rad how far should the rotation be
@@ -6806,7 +6806,7 @@ THE SOFTWARE.
   /**
    * Rotates a dual quat around the Y axis
    *
-   * @template {quat2} T
+   * @template {Quat2} T
    * @param {T} out the receiving dual quaternion
    * @param {ReadonlyQuat2} a the dual quaternion to rotate
    * @param {number} rad how far should the rotation be
@@ -6840,7 +6840,7 @@ THE SOFTWARE.
   /**
    * Rotates a dual quat around the Z axis
    *
-   * @template {quat2} T
+   * @template {Quat2} T
    * @param {T} out the receiving dual quaternion
    * @param {ReadonlyQuat2} a the dual quaternion to rotate
    * @param {number} rad how far should the rotation be
@@ -6874,7 +6874,7 @@ THE SOFTWARE.
   /**
    * Rotates a dual quat by a given quaternion (a * q)
    *
-   * @template {quat2} T
+   * @template {Quat2} T
    * @param {T} out the receiving dual quaternion
    * @param {ReadonlyQuat2} a the dual quaternion to rotate
    * @param {ReadonlyQuat} q quaternion to rotate by
@@ -6907,7 +6907,7 @@ THE SOFTWARE.
   /**
    * Rotates a dual quat by a given quaternion (q * a)
    *
-   * @template {quat2} T
+   * @template {Quat2} T
    * @param {T} out the receiving dual quaternion
    * @param {ReadonlyQuat} q quaternion to rotate by
    * @param {ReadonlyQuat2} a the dual quaternion to rotate
@@ -6940,7 +6940,7 @@ THE SOFTWARE.
   /**
    * Rotates a dual quat around a given axis. Does the normalisation automatically
    *
-   * @template {quat2} T
+   * @template {Quat2} T
    * @param {T} out the receiving dual quaternion
    * @param {ReadonlyQuat2} a the dual quaternion to rotate
    * @param {ReadonlyVec3} axis the axis to rotate around
@@ -6981,7 +6981,7 @@ THE SOFTWARE.
   /**
    * Adds two dual quat's
    *
-   * @template {quat2} T
+   * @template {Quat2} T
    * @param {T} out the receiving dual quaternion
    * @param {ReadonlyQuat2} a the first operand
    * @param {ReadonlyQuat2} b the second operand
@@ -7003,7 +7003,7 @@ THE SOFTWARE.
   /**
    * Multiplies two dual quat's
    *
-   * @template {quat2} T
+   * @template {Quat2} T
    * @param {T} out the receiving dual quaternion
    * @param {ReadonlyQuat2} a the first operand
    * @param {ReadonlyQuat2} b the second operand
@@ -7046,7 +7046,7 @@ THE SOFTWARE.
   /**
    * Scales a dual quat by a scalar number
    *
-   * @template {quat2} T
+   * @template {Quat2} T
    * @param {T} out the receiving dual quat
    * @param {ReadonlyQuat2} a the dual quat to scale
    * @param {Number} b amount to scale the dual quat by
@@ -7079,7 +7079,7 @@ THE SOFTWARE.
    * Performs a linear interpolation between two dual quats's
    * NOTE: The resulting dual quaternions won't always be normalized (The error is most noticeable when t = 0.5)
    *
-   * @template {quat2} T
+   * @template {Quat2} T
    * @param {T} out the receiving dual quat
    * @param {ReadonlyQuat2} a the first operand
    * @param {ReadonlyQuat2} b the second operand
@@ -7103,7 +7103,7 @@ THE SOFTWARE.
   /**
    * Calculates the inverse of a dual quat. If they are normalized, conjugate is cheaper
    *
-   * @template {quat2} T
+   * @template {Quat2} T
    * @param {T} out the receiving dual quaternion
    * @param {ReadonlyQuat2} a dual quat to calculate inverse of
    * @returns {ReturnType.Quat2<T>} out
@@ -7125,7 +7125,7 @@ THE SOFTWARE.
    * Calculates the conjugate of a dual quat
    * If the dual quaternion is normalized, this function is faster than quat2.inverse and produces the same result.
    *
-   * @template {quat2} T
+   * @template {Quat2} T
    * @param {T} out the receiving quaternion
    * @param {ReadonlyQuat2} a quat to calculate conjugate of
    * @returns {ReturnType.Quat2<T>} out
@@ -7175,7 +7175,7 @@ THE SOFTWARE.
   /**
    * Normalize a dual quat
    *
-   * @template {quat2} T
+   * @template {Quat2} T
    * @param {T} out the receiving dual quaternion
    * @param {ReadonlyQuat2} a dual quaternion to normalize
    * @returns {ReturnType.Quat2<T>} out
@@ -7346,7 +7346,7 @@ THE SOFTWARE.
   /**
    * Copy the values from one vec2 to another
    *
-   * @template {vec2} T
+   * @template {Vec2} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec2} a the source vector
    * @returns {ReturnType.Vec2<T>} out
@@ -7360,7 +7360,7 @@ THE SOFTWARE.
   /**
    * Set the components of a vec2 to the given values
    *
-   * @template {vec2} T
+   * @template {Vec2} T
    * @param {T} out the receiving vector
    * @param {Number} x X component
    * @param {Number} y Y component
@@ -7375,7 +7375,7 @@ THE SOFTWARE.
   /**
    * Adds two vec2's
    *
-   * @template {vec2} T
+   * @template {Vec2} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec2} a the first operand
    * @param {ReadonlyVec2} b the second operand
@@ -7390,7 +7390,7 @@ THE SOFTWARE.
   /**
    * Subtracts vector b from vector a
    *
-   * @template {vec2} T
+   * @template {Vec2} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec2} a the first operand
    * @param {ReadonlyVec2} b the second operand
@@ -7405,7 +7405,7 @@ THE SOFTWARE.
   /**
    * Multiplies two vec2's
    *
-   * @template {vec2} T
+   * @template {Vec2} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec2} a the first operand
    * @param {ReadonlyVec2} b the second operand
@@ -7420,7 +7420,7 @@ THE SOFTWARE.
   /**
    * Divides two vec2's
    *
-   * @template {vec2} T
+   * @template {Vec2} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec2} a the first operand
    * @param {ReadonlyVec2} b the second operand
@@ -7435,7 +7435,7 @@ THE SOFTWARE.
   /**
    * Math.ceil the components of a vec2
    *
-   * @template {vec2} T
+   * @template {Vec2} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec2} a vector to ceil
    * @returns {ReturnType.Vec2<T>} out
@@ -7449,7 +7449,7 @@ THE SOFTWARE.
   /**
    * Math.floor the components of a vec2
    *
-   * @template {vec2} T
+   * @template {Vec2} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec2} a vector to floor
    * @returns {ReturnType.Vec2<T>} out
@@ -7463,7 +7463,7 @@ THE SOFTWARE.
   /**
    * Returns the minimum of two vec2's
    *
-   * @template {vec2} T
+   * @template {Vec2} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec2} a the first operand
    * @param {ReadonlyVec2} b the second operand
@@ -7478,7 +7478,7 @@ THE SOFTWARE.
   /**
    * Returns the maximum of two vec2's
    *
-   * @template {vec2} T
+   * @template {Vec2} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec2} a the first operand
    * @param {ReadonlyVec2} b the second operand
@@ -7493,7 +7493,7 @@ THE SOFTWARE.
   /**
    * symmetric round the components of a vec2
    *
-   * @template {vec2} T
+   * @template {Vec2} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec2} a vector to round
    * @returns {ReturnType.Vec2<T>} out
@@ -7507,7 +7507,7 @@ THE SOFTWARE.
   /**
    * Scales a vec2 by a scalar number
    *
-   * @template {vec2} T
+   * @template {Vec2} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec2} a the vector to scale
    * @param {Number} b amount to scale the vector by
@@ -7522,7 +7522,7 @@ THE SOFTWARE.
   /**
    * Adds two vec2's after scaling the second operand by a scalar value
    *
-   * @template {vec2} T
+   * @template {Vec2} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec2} a the first operand
    * @param {ReadonlyVec2} b the second operand
@@ -7588,7 +7588,7 @@ THE SOFTWARE.
   /**
    * Negates the components of a vec2
    *
-   * @template {vec2} T
+   * @template {Vec2} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec2} a vector to negate
    * @returns {ReturnType.Vec2<T>} out
@@ -7602,7 +7602,7 @@ THE SOFTWARE.
   /**
    * Returns the inverse of the components of a vec2
    *
-   * @template {vec2} T
+   * @template {Vec2} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec2} a vector to invert
    * @returns {ReturnType.Vec2<T>} out
@@ -7616,7 +7616,7 @@ THE SOFTWARE.
   /**
    * Normalize a vec2
    *
-   * @template {vec2} T
+   * @template {Vec2} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec2} a vector to normalize
    * @returns {ReturnType.Vec2<T>} out
@@ -7649,7 +7649,7 @@ THE SOFTWARE.
    * Computes the cross product of two vec2's
    * Note that the cross product must by definition produce a 3D vector
    *
-   * @template {vec3} T
+   * @template {Vec3} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec2} a the first operand
    * @param {ReadonlyVec2} b the second operand
@@ -7665,7 +7665,7 @@ THE SOFTWARE.
   /**
    * Performs a linear interpolation between two vec2's
    *
-   * @template {vec2} T
+   * @template {Vec2} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec2} a the first operand
    * @param {ReadonlyVec2} b the second operand
@@ -7683,7 +7683,7 @@ THE SOFTWARE.
   /**
    * Generates a random vector with the given scale
    *
-   * @template {vec2} T
+   * @template {Vec2} T
    * @param {T} out the receiving vector
    * @param {Number} [scale] Length of the resulting vector. If omitted, a unit vector will be returned
    * @returns {ReturnType.Vec2<T>} out
@@ -7699,7 +7699,7 @@ THE SOFTWARE.
   /**
    * Transforms the vec2 with a mat2
    *
-   * @template {vec2} T
+   * @template {Vec2} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec2} a the vector to transform
    * @param {ReadonlyMat2} m matrix to transform with
@@ -7716,7 +7716,7 @@ THE SOFTWARE.
   /**
    * Transforms the vec2 with a mat2d
    *
-   * @template {vec2} T
+   * @template {Vec2} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec2} a the vector to transform
    * @param {ReadonlyMat2d} m matrix to transform with
@@ -7734,7 +7734,7 @@ THE SOFTWARE.
    * Transforms the vec2 with a mat3
    * 3rd vector component is implicitly '1'
    *
-   * @template {vec2} T
+   * @template {Vec2} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec2} a the vector to transform
    * @param {ReadonlyMat3} m matrix to transform with
@@ -7753,7 +7753,7 @@ THE SOFTWARE.
    * 3rd vector component is implicitly '0'
    * 4th vector component is implicitly '1'
    *
-   * @template {vec2} T
+   * @template {Vec2} T
    * @param {T} out the receiving vector
    * @param {ReadonlyVec2} a the vector to transform
    * @param {ReadonlyMat4} m matrix to transform with
@@ -7769,7 +7769,7 @@ THE SOFTWARE.
 
   /**
    * Rotate a 2D vector
-   * @template {vec2} T
+   * @template {Vec2} T
    * @param {T} out The receiving vec2
    * @param {ReadonlyVec2} a The vec2 point to rotate
    * @param {ReadonlyVec2} b The origin of the rotation
@@ -7821,7 +7821,7 @@ THE SOFTWARE.
   /**
    * Set the components of a vec2 to zero
    *
-   * @template {vec2} T
+   * @template {Vec2} T
    * @param {T} out the receiving vector
    * @returns {ReturnType.Vec2<T>} out
    */

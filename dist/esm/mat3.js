@@ -29,7 +29,7 @@ export function create() {
 /**
  * Copies the upper-left 3x3 values into the given mat3.
  *
- * @template {mat3} T
+ * @template {Mat3} T
  * @param {T} out the receiving 3x3 matrix
  * @param {ReadonlyMat4} a   the source 4x4 matrix
  * @returns {ReturnType.Mat3<T>} out
@@ -70,7 +70,7 @@ export function clone(a) {
 /**
  * Copy the values from one mat3 to another
  *
- * @template {mat3} T
+ * @template {Mat3} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat3} a the source matrix
  * @returns {ReturnType.Mat3<T>} out
@@ -119,7 +119,7 @@ export function fromValues(m00, m01, m02, m10, m11, m12, m20, m21, m22) {
 /**
  * Set the components of a mat3 to the given values
  *
- * @template {mat3} T
+ * @template {Mat3} T
  * @param {T} out the receiving matrix
  * @param {Number} m00 Component in column 0, row 0 position (index 0)
  * @param {Number} m01 Component in column 0, row 1 position (index 1)
@@ -148,7 +148,7 @@ export function set(out, m00, m01, m02, m10, m11, m12, m20, m21, m22) {
 /**
  * Set a mat3 to the identity matrix
  *
- * @template {mat3} T
+ * @template {Mat3} T
  * @param {T} out the receiving matrix
  * @returns {ReturnType.Mat3<T>} out
  */
@@ -168,7 +168,7 @@ export function identity(out) {
 /**
  * Transpose the values of a mat3
  *
- * @template {mat3} T
+ * @template {Mat3} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat3} a the source matrix
  * @returns {ReturnType.Mat3<T>} out
@@ -202,7 +202,7 @@ export function transpose(out, a) {
 /**
  * Inverts a mat3
  *
- * @template {mat3} T
+ * @template {Mat3} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat3} a the source matrix
  * @returns {ReturnType.Mat3<T> | null} out, or null if source matrix is not invertible
@@ -242,7 +242,7 @@ export function invert(out, a) {
 /**
  * Calculates the adjugate of a mat3
  *
- * @template {mat3} T
+ * @template {Mat3} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat3} a the source matrix
  * @returns {ReturnType.Mat3<T>} out
@@ -291,7 +291,7 @@ export function determinant(a) {
 /**
  * Multiplies two mat3's
  *
- * @template {mat3} T
+ * @template {Mat3} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat3} a the first operand
  * @param {ReadonlyMat3} b the second operand
@@ -331,7 +331,7 @@ export function multiply(out, a, b) {
 /**
  * Translate a mat3 by the given vector
  *
- * @template {mat3} T
+ * @template {Mat3} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat3} a the matrix to translate
  * @param {ReadonlyVec2} v vector to translate by
@@ -364,7 +364,7 @@ export function translate(out, a, v) {
 /**
  * Rotates a mat3 by the given angle
  *
- * @template {mat3} T
+ * @template {Mat3} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat3} a the matrix to rotate
  * @param {Number} rad the angle to rotate the matrix by
@@ -397,7 +397,7 @@ export function rotate(out, a, rad) {
 /**
  * Scales the mat3 by the dimensions in the given vec2
  *
- * @template {mat3} T
+ * @template {Mat3} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat3} a the matrix to scale
  * @param {ReadonlyVec2} v the vec2 to scale the matrix by
@@ -425,7 +425,7 @@ export function scale(out, a, v) {
  *     mat3.identity(dest);
  *     mat3.translate(dest, dest, vec);
  *
- * @template {mat3} T
+ * @template {Mat3} T
  * @param {T} out mat3 receiving operation result
  * @param {ReadonlyVec2} v Translation vector
  * @returns {ReturnType.Mat3<T>} out
@@ -450,7 +450,7 @@ export function fromTranslation(out, v) {
  *     mat3.identity(dest);
  *     mat3.rotate(dest, dest, rad);
  *
- * @template {mat3} T
+ * @template {Mat3} T
  * @param {T} out mat3 receiving operation result
  * @param {Number} rad the angle to rotate the matrix by
  * @returns {ReturnType.Mat3<T>} out
@@ -477,7 +477,7 @@ export function fromRotation(out, rad) {
  *     mat3.identity(dest);
  *     mat3.scale(dest, dest, vec);
  *
- * @template {mat3} T
+ * @template {Mat3} T
  * @param {T} out mat3 receiving operation result
  * @param {ReadonlyVec2} v Scaling vector
  * @returns {ReturnType.Mat3<T>} out
@@ -498,7 +498,7 @@ export function fromScaling(out, v) {
 /**
  * Copies the values from a mat2d into a mat3
  *
- * @template {mat3} T
+ * @template {Mat3} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat2d} a the matrix to copy
  * @returns {ReturnType.Mat3<T>} out
@@ -519,7 +519,7 @@ export function fromMat2d(out, a) {
 /**
  * Calculates a 3x3 matrix from the given quaternion
  *
- * @template {mat3} T
+ * @template {Mat3} T
  * @param {T} out mat3 receiving operation result
  * @param {ReadonlyQuat} q Quaternion to create matrix from
  *
@@ -557,7 +557,7 @@ export function fromQuat(out, q) {
 /**
  * Calculates a 3x3 normal matrix (transpose inverse) from the 4x4 matrix
  *
- * @template {mat3} T
+ * @template {Mat3} T
  * @param {T} out mat3 receiving operation result
  * @param {ReadonlyMat4} a Mat4 to derive the normal matrix from
  *
@@ -614,7 +614,7 @@ export function normalFromMat4(out, a) {
 /**
  * Generates a 2D projection matrix with the given bounds
  *
- * @template {mat3} T
+ * @template {Mat3} T
  * @param {T} out mat3 frustum matrix will be written into
  * @param {number} width Width of your gl context
  * @param {number} height Height of gl context
@@ -656,7 +656,7 @@ export function frob(a) {
 /**
  * Adds two mat3's
  *
- * @template {mat3} T
+ * @template {Mat3} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat3} a the first operand
  * @param {ReadonlyMat3} b the second operand
@@ -678,7 +678,7 @@ export function add(out, a, b) {
 /**
  * Subtracts matrix b from matrix a
  *
- * @template {mat3} T
+ * @template {Mat3} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat3} a the first operand
  * @param {ReadonlyMat3} b the second operand
@@ -700,7 +700,7 @@ export function subtract(out, a, b) {
 /**
  * Multiply each element of the matrix by a scalar.
  *
- * @template {mat3} T
+ * @template {Mat3} T
  * @param {T} out the receiving matrix
  * @param {ReadonlyMat3} a the matrix to scale
  * @param {Number} b amount to scale the matrix's elements by
@@ -722,7 +722,7 @@ export function multiplyScalar(out, a, b) {
 /**
  * Adds two mat3's after multiplying each element of the second operand by a scalar value.
  *
- * @template {mat3} T
+ * @template {Mat3} T
  * @param {T} out the receiving vector
  * @param {ReadonlyMat3} a the first operand
  * @param {ReadonlyMat3} b the second operand

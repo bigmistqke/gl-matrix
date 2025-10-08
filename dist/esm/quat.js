@@ -27,7 +27,7 @@ export function create() {
 /**
  * Set a quat to the identity quaternion
  *
- * @template {quat} T
+ * @template {Quat} T
  * @param {T} out the receiving quaternion
  * @returns {ReturnType.Quat<T>} out
  */
@@ -43,7 +43,7 @@ export function identity(out) {
  * Sets a quat from the given angle and rotation axis,
  * then returns it.
  *
- * @template {quat} T
+ * @template {Quat} T
  * @param {T} out the receiving quaternion
  * @param {ReadonlyVec3} axis the axis around which to rotate
  * @param {Number} rad the angle in radians
@@ -68,7 +68,7 @@ export function setAxisAngle(out, axis, rad) {
  * Example: The quaternion formed by axis [0, 0, 1] and
  *  angle -90 is the same as the quaternion formed by
  *  [0, 0, 1] and 270. This method favors the latter.
- * @param  {vec3} out_axis  Vector receiving the axis of rotation
+ * @param  {Vec3} out_axis  Vector receiving the axis of rotation
  * @param  {ReadonlyQuat} q     Quaternion to be decomposed
  * @return {Number}     Angle, in radians, of the rotation
  */
@@ -103,7 +103,7 @@ export function getAngle(a, b) {
 /**
  * Multiplies two quat's
  *
- * @template {quat} T
+ * @template {Quat} T
  * @param {T} out the receiving quaternion
  * @param {ReadonlyQuat} a the first operand
  * @param {ReadonlyQuat} b the second operand
@@ -128,7 +128,7 @@ export function multiply(out, a, b) {
 /**
  * Rotates a quaternion by the given angle about the X axis
  *
- * @template {quat} T
+ * @template {Quat} T
  * @param {T} out quat receiving operation result
  * @param {ReadonlyQuat} a quat to rotate
  * @param {number} rad angle (in radians) to rotate
@@ -152,7 +152,7 @@ export function rotateX(out, a, rad) {
 /**
  * Rotates a quaternion by the given angle about the Y axis
  *
- * @template {quat} T
+ * @template {Quat} T
  * @param {T} out quat receiving operation result
  * @param {ReadonlyQuat} a quat to rotate
  * @param {number} rad angle (in radians) to rotate
@@ -176,7 +176,7 @@ export function rotateY(out, a, rad) {
 /**
  * Rotates a quaternion by the given angle about the Z axis
  *
- * @template {quat} T
+ * @template {Quat} T
  * @param {T} out quat receiving operation result
  * @param {ReadonlyQuat} a quat to rotate
  * @param {number} rad angle (in radians) to rotate
@@ -202,7 +202,7 @@ export function rotateZ(out, a, rad) {
  * Assumes that quaternion is 1 unit in length.
  * Any existing W component will be ignored.
  *
- * @template {quat} T
+ * @template {Quat} T
  * @param {T} out the receiving quaternion
  * @param {ReadonlyQuat} a quat to calculate W component of
  * @returns {ReturnType.Quat<T>} out
@@ -221,7 +221,7 @@ export function calculateW(out, a) {
 /**
  * Calculate the exponential of a unit quaternion.
  *
- * @template {quat} T
+ * @template {Quat} T
  * @param {T} out the receiving quaternion
  * @param {ReadonlyQuat} a quat to calculate the exponential of
  * @returns {ReturnType.Quat<T>} out
@@ -244,7 +244,7 @@ export function exp(out, a) {
 /**
  * Calculate the natural logarithm of a unit quaternion.
  *
- * @template {quat} T
+ * @template {Quat} T
  * @param {T} out the receiving quaternion
  * @param {ReadonlyQuat} a quat to calculate the exponential of
  * @returns {ReturnType.Quat<T>} out
@@ -266,7 +266,7 @@ export function ln(out, a) {
 /**
  * Calculate the scalar power of a unit quaternion.
  *
- * @template {quat} T
+ * @template {Quat} T
  * @param {T} out the receiving quaternion
  * @param {ReadonlyQuat} a quat to calculate the exponential of
  * @param {Number} b amount to scale the quaternion by
@@ -282,7 +282,7 @@ export function pow(out, a, b) {
 /**
  * Performs a spherical linear interpolation between two quat
  *
- * @template {quat} T
+ * @template {Quat} T
  * @param {T} out the receiving quaternion
  * @param {ReadonlyQuat} a the first operand
  * @param {ReadonlyQuat} b the second operand
@@ -336,7 +336,7 @@ export function slerp(out, a, b, t) {
 /**
  * Generates a random unit quaternion
  *
- * @template {quat} T
+ * @template {Quat} T
  * @param {T} out the receiving quaternion
  * @returns {ReturnType.Quat<T>} out
  */
@@ -358,7 +358,7 @@ export function random(out) {
 /**
  * Calculates the inverse of a quat
  *
- * @template {quat} T
+ * @template {Quat} T
  * @param {T} out the receiving quaternion
  * @param {ReadonlyQuat} a quat to calculate inverse of
  * @returns {ReturnType.Quat<T>} out
@@ -384,7 +384,7 @@ export function invert(out, a) {
  * Calculates the conjugate of a quat
  * If the quaternion is normalized, this function is faster than quat.inverse and produces the same result.
  *
- * @template {quat} T
+ * @template {Quat} T
  * @param {T} out the receiving quaternion
  * @param {ReadonlyQuat} a quat to calculate conjugate of
  * @returns {ReturnType.Quat<T>} out
@@ -403,7 +403,7 @@ export function conjugate(out, a) {
  * NOTE: The resultant quaternion is not normalized, so you should be sure
  * to renormalize the quaternion yourself where necessary.
  *
- * @template {quat} T
+ * @template {Quat} T
  * @param {T} out the receiving quaternion
  * @param {ReadonlyMat3} m rotation matrix
  * @returns {ReturnType.Quat<T>} out
@@ -442,7 +442,7 @@ export function fromMat3(out, m) {
 /**
  * Creates a quaternion from the given euler angle x, y, z using the provided intrinsic order for the conversion.
  *
- * @template {quat} T
+ * @template {Quat} T
  * @param {T} out the receiving quaternion
  * @param {Number} x Angle to rotate around X axis in degrees.
  * @param {Number} y Angle to rotate around Y axis in degrees.
@@ -540,7 +540,7 @@ export var fromValues = vec4.fromValues;
 /**
  * Copy the values from one quat to another
  *
- * @template {quat} T
+ * @template {Quat} T
  * @param {T} out the receiving quaternion
  * @param {ReadonlyQuat} a the source quaternion
  * @returns {ReturnType.Quat<T>} out
@@ -551,7 +551,7 @@ export var copy = vec4.copy;
 /**
  * Set the components of a quat to the given values
  *
- * @template {quat} T
+ * @template {Quat} T
  * @param {T} out the receiving quaternion
  * @param {Number} x X component
  * @param {Number} y Y component
@@ -565,7 +565,7 @@ export var set = vec4.set;
 /**
  * Adds two quat's
  *
- * @template {quat} T
+ * @template {Quat} T
  * @param {T} out the receiving quaternion
  * @param {ReadonlyQuat} a the first operand
  * @param {ReadonlyQuat} b the second operand
@@ -583,7 +583,7 @@ export var mul = multiply;
 /**
  * Scales a quat by a scalar number
  *
- * @template {quat} T
+ * @template {Quat} T
  * @param {T} out the receiving vector
  * @param {ReadonlyQuat} a the vector to scale
  * @param {Number} b amount to scale the vector by
@@ -605,7 +605,7 @@ export var dot = vec4.dot;
 /**
  * Performs a linear interpolation between two quat's
  *
- * @template {quat} T
+ * @template {Quat} T
  * @param {T} out the receiving quaternion
  * @param {ReadonlyQuat} a the first operand
  * @param {ReadonlyQuat} b the second operand
@@ -647,7 +647,7 @@ export var sqrLen = squaredLength;
 /**
  * Normalize a quat
  *
- * @template {quat} T
+ * @template {Quat} T
  * @param {T} out the receiving quaternion
  * @param {ReadonlyQuat} a quaternion to normalize
  * @returns {ReturnType.Quat<T>} out
@@ -683,7 +683,7 @@ export function equals(a, b) {
  *
  * Both vectors are assumed to be unit length.
  *
- * @template {quat} T
+ * @template {Quat} T
  * @param {T} out the receiving quaternion.
  * @param {ReadonlyVec3} a the initial vector
  * @param {ReadonlyVec3} b the destination vector
@@ -721,7 +721,7 @@ export var rotationTo = function () {
 /**
  * Performs a spherical linear interpolation with two control points
  *
- * @template {quat} T
+ * @template {Quat} T
  * @param {T} out the receiving quaternion
  * @param {ReadonlyQuat} a the first operand
  * @param {ReadonlyQuat} b the second operand
@@ -746,7 +746,7 @@ export var sqlerp = function () {
  * axes. Each axis is a vec3 and is expected to be unit length and
  * perpendicular to all other specified axes.
  *
- * @template {quat} T
+ * @template {Quat} T
  * @param {T} out the receiving quaternion
  * @param {ReadonlyVec3} view  the vector representing the viewing direction
  * @param {ReadonlyVec3} right the vector representing the local "right" direction

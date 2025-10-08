@@ -12,44 +12,47 @@
       "types": "./esm/index.d.ts",
       "default": "./esm/index.js"
     },
+    "./types": {
+      "types": "./esm/types.d.ts"
+    },
     "./common": {
-      "types": "./esm/index.d.ts",
+      "types": "./esm/common.d.ts",
       "default": "./esm/common.js"
     },
     "./mat2": {
-      "types": "./esm/index.d.ts",
+      "types": "./esm/mat2.d.ts",
       "default": "./esm/mat2.js"
     },
     "./mat2d": {
-      "types": "./esm/index.d.ts",
+      "types": "./esm/mat2d.d.ts",
       "default": "./esm/mat2d.js"
     },
     "./mat3": {
-      "types": "./esm/index.d.ts",
+      "types": "./esm/mat3.d.ts",
       "default": "./esm/mat3.js"
     },
     "./mat4": {
-      "types": "./esm/index.d.ts",
+      "types": "./esm/mat4.d.ts",
       "default": "./esm/mat4.js"
     },
     "./quat": {
-      "types": "./esm/index.d.ts",
+      "types": "./esm/quat.d.ts",
       "default": "./esm/quat.js"
     },
     "./quat2": {
-      "types": "./esm/index.d.ts",
+      "types": "./esm/quat2.d.ts",
       "default": "./esm/quat2.js"
     },
     "./vec2": {
-      "types": "./esm/index.d.ts",
+      "types": "./esm/vec2.d.ts",
       "default": "./esm/vec2.js"
     },
     "./vec3": {
-      "types": "./esm/index.d.ts",
+      "types": "./esm/vec3.d.ts",
       "default": "./esm/vec3.js"
     },
     "./vec4": {
-      "types": "./esm/index.d.ts",
+      "types": "./esm/vec4.d.ts",
       "default": "./esm/vec4.js"
     }
   },

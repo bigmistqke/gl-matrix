@@ -1,37 +1,22 @@
-import * as glMatrix from "./common.js";
+import type { ArrayType, Mat2, Mat2d, Mat3, Mat4, Quat, Quat2, Vec2, Vec3, Vec4, ReadonlyMat2, ReadonlyMat2d, ReadonlyMat3, ReadonlyMat4, ReadonlyQuat, ReadonlyQuat2, ReadonlyVec2, ReadonlyVec3, ReadonlyVec4, ReturnType } from "./types.js";
 
 /**
  * 2 Dimensional Vector
  * @module vec2
  */
-
 /**
  * Creates a new, empty vec2
  *
  * @returns {ArrayType} a new 2D vector
  */
-export function create() {
-  var out = new glMatrix.ARRAY_TYPE(2);
-  if (glMatrix.ARRAY_TYPE != Float32Array) {
-    out[0] = 0;
-    out[1] = 0;
-  }
-  return out;
-}
-
+export function create(): ArrayType;
 /**
  * Creates a new vec2 initialized with values from an existing vector
  *
  * @param {ReadonlyVec2} a vector to clone
  * @returns {ArrayType} a new 2D vector
  */
-export function clone(a) {
-  var out = new glMatrix.ARRAY_TYPE(2);
-  out[0] = a[0];
-  out[1] = a[1];
-  return out;
-}
-
+export function clone(a: ReadonlyVec2): ArrayType;
 /**
  * Creates a new vec2 initialized with the given values
  *
@@ -39,13 +24,7 @@ export function clone(a) {
  * @param {Number} y Y component
  * @returns {ArrayType} a new 2D vector
  */
-export function fromValues(x, y) {
-  var out = new glMatrix.ARRAY_TYPE(2);
-  out[0] = x;
-  out[1] = y;
-  return out;
-}
-
+export function fromValues(x: number, y: number): ArrayType;
 /**
  * Copy the values from one vec2 to another
  *
@@ -54,12 +33,7 @@ export function fromValues(x, y) {
  * @param {ReadonlyVec2} a the source vector
  * @returns {ReturnType.Vec2<T>} out
  */
-export function copy(out, a) {
-  out[0] = a[0];
-  out[1] = a[1];
-  return out;
-}
-
+export function copy<T extends Vec2>(out: T, a: ReadonlyVec2): ReturnType.Vec2<T>;
 /**
  * Set the components of a vec2 to the given values
  *
@@ -69,12 +43,7 @@ export function copy(out, a) {
  * @param {Number} y Y component
  * @returns {ReturnType.Vec2<T>} out
  */
-export function set(out, x, y) {
-  out[0] = x;
-  out[1] = y;
-  return out;
-}
-
+export function set<T extends Vec2>(out: T, x: number, y: number): ReturnType.Vec2<T>;
 /**
  * Adds two vec2's
  *
@@ -84,12 +53,7 @@ export function set(out, x, y) {
  * @param {ReadonlyVec2} b the second operand
  * @returns {ReturnType.Vec2<T>} out
  */
-export function add(out, a, b) {
-  out[0] = a[0] + b[0];
-  out[1] = a[1] + b[1];
-  return out;
-}
-
+export function add<T extends Vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2): ReturnType.Vec2<T>;
 /**
  * Subtracts vector b from vector a
  *
@@ -99,12 +63,7 @@ export function add(out, a, b) {
  * @param {ReadonlyVec2} b the second operand
  * @returns {ReturnType.Vec2<T>} out
  */
-export function subtract(out, a, b) {
-  out[0] = a[0] - b[0];
-  out[1] = a[1] - b[1];
-  return out;
-}
-
+export function subtract<T extends Vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2): ReturnType.Vec2<T>;
 /**
  * Multiplies two vec2's
  *
@@ -114,12 +73,7 @@ export function subtract(out, a, b) {
  * @param {ReadonlyVec2} b the second operand
  * @returns {ReturnType.Vec2<T>} out
  */
-export function multiply(out, a, b) {
-  out[0] = a[0] * b[0];
-  out[1] = a[1] * b[1];
-  return out;
-}
-
+export function multiply<T extends Vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2): ReturnType.Vec2<T>;
 /**
  * Divides two vec2's
  *
@@ -129,12 +83,7 @@ export function multiply(out, a, b) {
  * @param {ReadonlyVec2} b the second operand
  * @returns {ReturnType.Vec2<T>} out
  */
-export function divide(out, a, b) {
-  out[0] = a[0] / b[0];
-  out[1] = a[1] / b[1];
-  return out;
-}
-
+export function divide<T extends Vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2): ReturnType.Vec2<T>;
 /**
  * Math.ceil the components of a vec2
  *
@@ -143,12 +92,7 @@ export function divide(out, a, b) {
  * @param {ReadonlyVec2} a vector to ceil
  * @returns {ReturnType.Vec2<T>} out
  */
-export function ceil(out, a) {
-  out[0] = Math.ceil(a[0]);
-  out[1] = Math.ceil(a[1]);
-  return out;
-}
-
+export function ceil<T extends Vec2>(out: T, a: ReadonlyVec2): ReturnType.Vec2<T>;
 /**
  * Math.floor the components of a vec2
  *
@@ -157,12 +101,7 @@ export function ceil(out, a) {
  * @param {ReadonlyVec2} a vector to floor
  * @returns {ReturnType.Vec2<T>} out
  */
-export function floor(out, a) {
-  out[0] = Math.floor(a[0]);
-  out[1] = Math.floor(a[1]);
-  return out;
-}
-
+export function floor<T extends Vec2>(out: T, a: ReadonlyVec2): ReturnType.Vec2<T>;
 /**
  * Returns the minimum of two vec2's
  *
@@ -172,12 +111,7 @@ export function floor(out, a) {
  * @param {ReadonlyVec2} b the second operand
  * @returns {ReturnType.Vec2<T>} out
  */
-export function min(out, a, b) {
-  out[0] = Math.min(a[0], b[0]);
-  out[1] = Math.min(a[1], b[1]);
-  return out;
-}
-
+export function min<T extends Vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2): ReturnType.Vec2<T>;
 /**
  * Returns the maximum of two vec2's
  *
@@ -187,12 +121,7 @@ export function min(out, a, b) {
  * @param {ReadonlyVec2} b the second operand
  * @returns {ReturnType.Vec2<T>} out
  */
-export function max(out, a, b) {
-  out[0] = Math.max(a[0], b[0]);
-  out[1] = Math.max(a[1], b[1]);
-  return out;
-}
-
+export function max<T extends Vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2): ReturnType.Vec2<T>;
 /**
  * symmetric round the components of a vec2
  *
@@ -201,12 +130,7 @@ export function max(out, a, b) {
  * @param {ReadonlyVec2} a vector to round
  * @returns {ReturnType.Vec2<T>} out
  */
-export function round(out, a) {
-  out[0] = glMatrix.round(a[0]);
-  out[1] = glMatrix.round(a[1]);
-  return out;
-}
-
+export function round<T extends Vec2>(out: T, a: ReadonlyVec2): ReturnType.Vec2<T>;
 /**
  * Scales a vec2 by a scalar number
  *
@@ -216,12 +140,7 @@ export function round(out, a) {
  * @param {Number} b amount to scale the vector by
  * @returns {ReturnType.Vec2<T>} out
  */
-export function scale(out, a, b) {
-  out[0] = a[0] * b;
-  out[1] = a[1] * b;
-  return out;
-}
-
+export function scale<T extends Vec2>(out: T, a: ReadonlyVec2, b: number): ReturnType.Vec2<T>;
 /**
  * Adds two vec2's after scaling the second operand by a scalar value
  *
@@ -232,12 +151,7 @@ export function scale(out, a, b) {
  * @param {Number} scale the amount to scale b by before adding
  * @returns {ReturnType.Vec2<T>} out
  */
-export function scaleAndAdd(out, a, b, scale) {
-  out[0] = a[0] + b[0] * scale;
-  out[1] = a[1] + b[1] * scale;
-  return out;
-}
-
+export function scaleAndAdd<T extends Vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2, scale: number): ReturnType.Vec2<T>;
 /**
  * Calculates the euclidian distance between two vec2's
  *
@@ -245,12 +159,7 @@ export function scaleAndAdd(out, a, b, scale) {
  * @param {ReadonlyVec2} b the second operand
  * @returns {Number} distance between a and b
  */
-export function distance(a, b) {
-  var x = b[0] - a[0],
-    y = b[1] - a[1];
-  return Math.sqrt(x * x + y * y);
-}
-
+export function distance(a: ReadonlyVec2, b: ReadonlyVec2): number;
 /**
  * Calculates the squared euclidian distance between two vec2's
  *
@@ -258,36 +167,21 @@ export function distance(a, b) {
  * @param {ReadonlyVec2} b the second operand
  * @returns {Number} squared distance between a and b
  */
-export function squaredDistance(a, b) {
-  var x = b[0] - a[0],
-    y = b[1] - a[1];
-  return x * x + y * y;
-}
-
+export function squaredDistance(a: ReadonlyVec2, b: ReadonlyVec2): number;
 /**
  * Calculates the length of a vec2
  *
  * @param {ReadonlyVec2} a vector to calculate length of
  * @returns {Number} length of a
  */
-export function length(a) {
-  var x = a[0],
-    y = a[1];
-  return Math.sqrt(x * x + y * y);
-}
-
+export function length(a: ReadonlyVec2): number;
 /**
  * Calculates the squared length of a vec2
  *
  * @param {ReadonlyVec2} a vector to calculate squared length of
  * @returns {Number} squared length of a
  */
-export function squaredLength(a) {
-  var x = a[0],
-    y = a[1];
-  return x * x + y * y;
-}
-
+export function squaredLength(a: ReadonlyVec2): number;
 /**
  * Negates the components of a vec2
  *
@@ -296,12 +190,7 @@ export function squaredLength(a) {
  * @param {ReadonlyVec2} a vector to negate
  * @returns {ReturnType.Vec2<T>} out
  */
-export function negate(out, a) {
-  out[0] = -a[0];
-  out[1] = -a[1];
-  return out;
-}
-
+export function negate<T extends Vec2>(out: T, a: ReadonlyVec2): ReturnType.Vec2<T>;
 /**
  * Returns the inverse of the components of a vec2
  *
@@ -310,12 +199,7 @@ export function negate(out, a) {
  * @param {ReadonlyVec2} a vector to invert
  * @returns {ReturnType.Vec2<T>} out
  */
-export function inverse(out, a) {
-  out[0] = 1.0 / a[0];
-  out[1] = 1.0 / a[1];
-  return out;
-}
-
+export function inverse<T extends Vec2>(out: T, a: ReadonlyVec2): ReturnType.Vec2<T>;
 /**
  * Normalize a vec2
  *
@@ -324,19 +208,7 @@ export function inverse(out, a) {
  * @param {ReadonlyVec2} a vector to normalize
  * @returns {ReturnType.Vec2<T>} out
  */
-export function normalize(out, a) {
-  var x = a[0],
-    y = a[1];
-  var len = x * x + y * y;
-  if (len > 0) {
-    //TODO: evaluate use of glm_invsqrt here?
-    len = 1 / Math.sqrt(len);
-  }
-  out[0] = a[0] * len;
-  out[1] = a[1] * len;
-  return out;
-}
-
+export function normalize<T extends Vec2>(out: T, a: ReadonlyVec2): ReturnType.Vec2<T>;
 /**
  * Calculates the dot product of two vec2's
  *
@@ -344,10 +216,7 @@ export function normalize(out, a) {
  * @param {ReadonlyVec2} b the second operand
  * @returns {Number} dot product of a and b
  */
-export function dot(a, b) {
-  return a[0] * b[0] + a[1] * b[1];
-}
-
+export function dot(a: ReadonlyVec2, b: ReadonlyVec2): number;
 /**
  * Computes the cross product of two vec2's
  * Note that the cross product must by definition produce a 3D vector
@@ -358,13 +227,7 @@ export function dot(a, b) {
  * @param {ReadonlyVec2} b the second operand
  * @returns {ReturnType.Vec2<T>} out
  */
-export function cross(out, a, b) {
-  var z = a[0] * b[1] - a[1] * b[0];
-  out[0] = out[1] = 0;
-  out[2] = z;
-  return out;
-}
-
+export function cross<T extends Vec3>(out: T, a: ReadonlyVec2, b: ReadonlyVec2): ReturnType.Vec2<T>;
 /**
  * Performs a linear interpolation between two vec2's
  *
@@ -375,14 +238,7 @@ export function cross(out, a, b) {
  * @param {Number} t interpolation amount, in the range [0-1], between the two inputs
  * @returns {ReturnType.Vec2<T>} out
  */
-export function lerp(out, a, b, t) {
-  var ax = a[0],
-    ay = a[1];
-  out[0] = ax + t * (b[0] - ax);
-  out[1] = ay + t * (b[1] - ay);
-  return out;
-}
-
+export function lerp<T extends Vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2, t: number): ReturnType.Vec2<T>;
 /**
  * Generates a random vector with the given scale
  *
@@ -391,14 +247,7 @@ export function lerp(out, a, b, t) {
  * @param {Number} [scale] Length of the resulting vector. If omitted, a unit vector will be returned
  * @returns {ReturnType.Vec2<T>} out
  */
-export function random(out, scale) {
-  scale = scale === undefined ? 1.0 : scale;
-  var r = glMatrix.RANDOM() * 2.0 * Math.PI;
-  out[0] = Math.cos(r) * scale;
-  out[1] = Math.sin(r) * scale;
-  return out;
-}
-
+export function random<T extends Vec2>(out: T, scale?: number): ReturnType.Vec2<T>;
 /**
  * Transforms the vec2 with a mat2
  *
@@ -408,14 +257,7 @@ export function random(out, scale) {
  * @param {ReadonlyMat2} m matrix to transform with
  * @returns {ReturnType.Vec2<T>} out
  */
-export function transformMat2(out, a, m) {
-  var x = a[0],
-    y = a[1];
-  out[0] = m[0] * x + m[2] * y;
-  out[1] = m[1] * x + m[3] * y;
-  return out;
-}
-
+export function transformMat2<T extends Vec2>(out: T, a: ReadonlyVec2, m: ReadonlyMat2): ReturnType.Vec2<T>;
 /**
  * Transforms the vec2 with a mat2d
  *
@@ -425,14 +267,7 @@ export function transformMat2(out, a, m) {
  * @param {ReadonlyMat2d} m matrix to transform with
  * @returns {ReturnType.Vec2<T>} out
  */
-export function transformMat2d(out, a, m) {
-  var x = a[0],
-    y = a[1];
-  out[0] = m[0] * x + m[2] * y + m[4];
-  out[1] = m[1] * x + m[3] * y + m[5];
-  return out;
-}
-
+export function transformMat2d<T extends Vec2>(out: T, a: ReadonlyVec2, m: ReadonlyMat2d): ReturnType.Vec2<T>;
 /**
  * Transforms the vec2 with a mat3
  * 3rd vector component is implicitly '1'
@@ -443,14 +278,7 @@ export function transformMat2d(out, a, m) {
  * @param {ReadonlyMat3} m matrix to transform with
  * @returns {ReturnType.Vec2<T>} out
  */
-export function transformMat3(out, a, m) {
-  var x = a[0],
-    y = a[1];
-  out[0] = m[0] * x + m[3] * y + m[6];
-  out[1] = m[1] * x + m[4] * y + m[7];
-  return out;
-}
-
+export function transformMat3<T extends Vec2>(out: T, a: ReadonlyVec2, m: ReadonlyMat3): ReturnType.Vec2<T>;
 /**
  * Transforms the vec2 with a mat4
  * 3rd vector component is implicitly '0'
@@ -462,14 +290,7 @@ export function transformMat3(out, a, m) {
  * @param {ReadonlyMat4} m matrix to transform with
  * @returns {ReturnType.Vec2<T>} out
  */
-export function transformMat4(out, a, m) {
-  var x = a[0];
-  var y = a[1];
-  out[0] = m[0] * x + m[4] * y + m[12];
-  out[1] = m[1] * x + m[5] * y + m[13];
-  return out;
-}
-
+export function transformMat4<T extends Vec2>(out: T, a: ReadonlyVec2, m: ReadonlyMat4): ReturnType.Vec2<T>;
 /**
  * Rotate a 2D vector
  * @template {Vec2} T
@@ -479,48 +300,22 @@ export function transformMat4(out, a, m) {
  * @param {Number} rad The angle of rotation in radians
  * @returns {ReturnType.Vec2<T>} out
  */
-export function rotate(out, a, b, rad) {
-  //Translate point to the origin
-  var p0 = a[0] - b[0],
-    p1 = a[1] - b[1],
-    sinC = Math.sin(rad),
-    cosC = Math.cos(rad);
-
-  //perform rotation and translate to correct position
-  out[0] = p0 * cosC - p1 * sinC + b[0];
-  out[1] = p0 * sinC + p1 * cosC + b[1];
-  return out;
-}
-
+export function rotate<T extends Vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2, rad: number): ReturnType.Vec2<T>;
 /**
  * Get the smallest angle between two 2D vectors
  * @param {ReadonlyVec2} a The first operand
  * @param {ReadonlyVec2} b The second operand
  * @returns {Number} The angle in radians
  */
-export function angle(a, b) {
-  var ax = a[0],
-    ay = a[1],
-    bx = b[0],
-    by = b[1];
-  return Math.abs(Math.atan2(ay * bx - ax * by, ax * bx + ay * by));
-}
-
+export function angle(a: ReadonlyVec2, b: ReadonlyVec2): number;
 /**
  * Get the signed angle in the interval [-pi,pi] between two 2D vectors (positive if `a` is to the right of `b`)
- * 
+ *
  * @param {ReadonlyVec2} a The first vector
  * @param {ReadonlyVec2} b The second vector
  * @returns {number} The signed angle in radians
  */
-export function signedAngle(a, b) {
-  var ax = a[0],
-    ay = a[1],
-    bx = b[0],
-    by = b[1];
-  return Math.atan2(ax * by - ay * bx, ax * bx + ay * by);
-}
-
+export function signedAngle(a: ReadonlyVec2, b: ReadonlyVec2): number;
 /**
  * Set the components of a vec2 to zero
  *
@@ -528,22 +323,14 @@ export function signedAngle(a, b) {
  * @param {T} out the receiving vector
  * @returns {ReturnType.Vec2<T>} out
  */
-export function zero(out) {
-  out[0] = 0.0;
-  out[1] = 0.0;
-  return out;
-}
-
+export function zero<T extends Vec2>(out: T): ReturnType.Vec2<T>;
 /**
  * Returns a string representation of a vector
  *
  * @param {ReadonlyVec2} a vector to represent as a string
  * @returns {String} string representation of the vector
  */
-export function str(a) {
-  return "vec2(" + a[0] + ", " + a[1] + ")";
-}
-
+export function str(a: ReadonlyVec2): string;
 /**
  * Returns whether or not the vectors exactly have the same elements in the same position (when compared with ===)
  *
@@ -551,10 +338,7 @@ export function str(a) {
  * @param {ReadonlyVec2} b The second vector.
  * @returns {Boolean} True if the vectors are equal, false otherwise.
  */
-export function exactEquals(a, b) {
-  return a[0] === b[0] && a[1] === b[1];
-}
-
+export function exactEquals(a: ReadonlyVec2, b: ReadonlyVec2): boolean;
 /**
  * Returns whether or not the vectors have approximately the same elements in the same position.
  *
@@ -562,90 +346,65 @@ export function exactEquals(a, b) {
  * @param {ReadonlyVec2} b The second vector.
  * @returns {Boolean} True if the vectors are equal, false otherwise.
  */
-export function equals(a, b) {
-  var a0 = a[0],
-    a1 = a[1];
-  var b0 = b[0],
-    b1 = b[1];
-  return Math.abs(a0 - b0) <= glMatrix.EPSILON * Math.max(1.0, Math.abs(a0), Math.abs(b0)) && Math.abs(a1 - b1) <= glMatrix.EPSILON * Math.max(1.0, Math.abs(a1), Math.abs(b1));
-}
-
+export function equals(a: ReadonlyVec2, b: ReadonlyVec2): boolean;
 /**
- * Alias for {@link vec2.length}
- * @function
- */
-export var len = length;
-
-/**
- * Alias for {@link vec2.subtract}
- * @function
- */
-export var sub = subtract;
-
-/**
- * Alias for {@link vec2.multiply}
- * @function
- */
-export var mul = multiply;
-
-/**
- * Alias for {@link vec2.divide}
- * @function
- */
-export var div = divide;
-
-/**
- * Alias for {@link vec2.distance}
- * @function
- */
-export var dist = distance;
-
-/**
- * Alias for {@link vec2.squaredDistance}
- * @function
- */
-export var sqrDist = squaredDistance;
-
-/**
- * Alias for {@link vec2.squaredLength}
- * @function
- */
-export var sqrLen = squaredLength;
-
-/**
- * Perform some operation over an array of vec2s.
+ * Calculates the length of a vec2
  *
- * @param {Array} a the array of vectors to iterate over
- * @param {Number} stride Number of elements between the start of each vec2. If 0 assumes tightly packed
- * @param {Number} offset Number of elements to skip at the beginning of the array
- * @param {Number} count Number of vec2s to iterate over. If 0 iterates over entire array
- * @param {Function} fn Function to call for each vector in the array
- * @param {Object} [arg] additional argument to pass to fn
- * @returns {Array} a
- * @function
+ * @param {ReadonlyVec2} a vector to calculate length of
+ * @returns {Number} length of a
  */
-export var forEach = function () {
-  var vec = create();
-  return function (a, stride, offset, count, fn, arg) {
-    var i, l;
-    if (!stride) {
-      stride = 2;
-    }
-    if (!offset) {
-      offset = 0;
-    }
-    if (count) {
-      l = Math.min(count * stride + offset, a.length);
-    } else {
-      l = a.length;
-    }
-    for (i = offset; i < l; i += stride) {
-      vec[0] = a[i];
-      vec[1] = a[i + 1];
-      fn(vec, vec, arg);
-      a[i] = vec[0];
-      a[i + 1] = vec[1];
-    }
-    return a;
-  };
-}();
+export function len(a: ReadonlyVec2): number;
+/**
+ * Subtracts vector b from vector a
+ *
+ * @template {Vec2} T
+ * @param {T} out the receiving vector
+ * @param {ReadonlyVec2} a the first operand
+ * @param {ReadonlyVec2} b the second operand
+ * @returns {ReturnType.Vec2<T>} out
+ */
+export function sub<T extends Vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2): ReturnType.Vec2<T>;
+/**
+ * Multiplies two vec2's
+ *
+ * @template {Vec2} T
+ * @param {T} out the receiving vector
+ * @param {ReadonlyVec2} a the first operand
+ * @param {ReadonlyVec2} b the second operand
+ * @returns {ReturnType.Vec2<T>} out
+ */
+export function mul<T extends Vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2): ReturnType.Vec2<T>;
+/**
+ * Divides two vec2's
+ *
+ * @template {Vec2} T
+ * @param {T} out the receiving vector
+ * @param {ReadonlyVec2} a the first operand
+ * @param {ReadonlyVec2} b the second operand
+ * @returns {ReturnType.Vec2<T>} out
+ */
+export function div<T extends Vec2>(out: T, a: ReadonlyVec2, b: ReadonlyVec2): ReturnType.Vec2<T>;
+/**
+ * Calculates the euclidian distance between two vec2's
+ *
+ * @param {ReadonlyVec2} a the first operand
+ * @param {ReadonlyVec2} b the second operand
+ * @returns {Number} distance between a and b
+ */
+export function dist(a: ReadonlyVec2, b: ReadonlyVec2): number;
+/**
+ * Calculates the squared euclidian distance between two vec2's
+ *
+ * @param {ReadonlyVec2} a the first operand
+ * @param {ReadonlyVec2} b the second operand
+ * @returns {Number} squared distance between a and b
+ */
+export function sqrDist(a: ReadonlyVec2, b: ReadonlyVec2): number;
+/**
+ * Calculates the squared length of a vec2
+ *
+ * @param {ReadonlyVec2} a vector to calculate squared length of
+ * @returns {Number} squared length of a
+ */
+export function sqrLen(a: ReadonlyVec2): number;
+export function forEach(a: any, stride: any, offset: any, count: any, fn: any, arg: any): any;
