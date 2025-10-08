@@ -33,7 +33,11 @@ typings = typings.replace(/declare module "([^"]+?)" {/g, "export namespace $1 {
 // Add types
 typings = "\n" + sourceTypings.replace(/declare/g, "export") + "\n" + typings;
 
-// Wrap them in a "gl-matrix module"
+// Create ESM version (without module wrapper)
+let esmTypingsPath = "./dist/esm/index.d.ts";
+fs.writeFileSync(esmTypingsPath, typings, "utf-8");
+
+// Wrap them in a "gl-matrix module" for ambient declaration
 typings = 'declare module "gl-matrix" {\n' + typings + "\n}";
 
 fs.writeFileSync(sourcePath, typings, "utf-8");

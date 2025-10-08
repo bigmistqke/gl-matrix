@@ -6,20 +6,53 @@
   "type": "module",
   "main": "./esm/index.js",
   "module": "./esm/index.js",
-  "exports": {
-    ".": "./esm/index.js",
-    "./common": "./esm/common.js",
-    "./mat2": "./esm/mat2.js",
-    "./mat2d": "./esm/mat2d.js",
-    "./mat3": "./esm/mat3.js",
-    "./mat4": "./esm/mat4.js",
-    "./quat": "./esm/quat.js",
-    "./quat2": "./esm/quat2.js",
-    "./vec2": "./esm/vec2.js",
-    "./vec3": "./esm/vec3.js",
-    "./vec4": "./esm/vec4.js"
-  },
   "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./esm/index.d.ts",
+      "default": "./esm/index.js"
+    },
+    "./common": {
+      "types": "./esm/index.d.ts",
+      "default": "./esm/common.js"
+    },
+    "./mat2": {
+      "types": "./esm/index.d.ts",
+      "default": "./esm/mat2.js"
+    },
+    "./mat2d": {
+      "types": "./esm/index.d.ts",
+      "default": "./esm/mat2d.js"
+    },
+    "./mat3": {
+      "types": "./esm/index.d.ts",
+      "default": "./esm/mat3.js"
+    },
+    "./mat4": {
+      "types": "./esm/index.d.ts",
+      "default": "./esm/mat4.js"
+    },
+    "./quat": {
+      "types": "./esm/index.d.ts",
+      "default": "./esm/quat.js"
+    },
+    "./quat2": {
+      "types": "./esm/index.d.ts",
+      "default": "./esm/quat2.js"
+    },
+    "./vec2": {
+      "types": "./esm/index.d.ts",
+      "default": "./esm/vec2.js"
+    },
+    "./vec3": {
+      "types": "./esm/index.d.ts",
+      "default": "./esm/vec3.js"
+    },
+    "./vec4": {
+      "types": "./esm/index.d.ts",
+      "default": "./esm/vec4.js"
+    }
+  },
   "homepage": "http://glmatrix.net",
   "license": "MIT",
   "bugs": {
